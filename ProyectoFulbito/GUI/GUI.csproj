@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alquilarform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alquilarform.Designer.cs">
+      <DependentUpon>Alquilarform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackUpForm.Designer.cs">
+      <DependentUpon>BackUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitacoraCambios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitacoraCambios.Designer.cs">
+      <DependentUpon>BitacoraCambios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BitacoraEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitacoraEventos.Designer.cs">
+      <DependentUpon>BitacoraEventos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarClave.Designer.cs">
+      <DependentUpon>CambiarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CanchasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CanchasForm.Designer.cs">
+      <DependentUpon>CanchasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CobrarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CobrarReserva.Designer.cs">
+      <DependentUpon>CobrarReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRegistrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRegistrarCliente.Designer.cs">
+      <DependentUpon>GRegistrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GReservas.Designer.cs">
+      <DependentUpon>GReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUsuarios.Designer.cs">
+      <DependentUpon>GUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Insumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Insumos.Designer.cs">
+      <DependentUpon>Insumos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfiles.Designer.cs">
+      <DependentUpon>Perfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SistemaFDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaFDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Tarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjeta.Designer.cs">
+      <DependentUpon>Tarjeta.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Alquilarform.resx">
+      <DependentUpon>Alquilarform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackUpForm.resx">
+      <DependentUpon>BackUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitacoraCambios.resx">
+      <DependentUpon>BitacoraCambios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitacoraEventos.resx">
+      <DependentUpon>BitacoraEventos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambiarClave.resx">
+      <DependentUpon>CambiarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CanchasForm.resx">
+      <DependentUpon>CanchasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CobrarReserva.resx">
+      <DependentUpon>CobrarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRegistrarCliente.resx">
+      <DependentUpon>GRegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GReservas.resx">
+      <DependentUpon>GReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUsuarios.resx">
+      <DependentUpon>GUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Insumos.resx">
+      <DependentUpon>Insumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfiles.resx">
+      <DependentUpon>Perfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Reserva.rdlc" />
+    <EmbeddedResource Include="Tarjeta.resx">
+      <DependentUpon>Tarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SistemaFDataSet.xsc">
+      <DependentUpon>SistemaFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaFDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaFDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SistemaFDataSet.xss">
+      <DependentUpon>SistemaFDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Be\Be.csproj">
+      <Project>{38d4fed4-9d12-4f96-bb0f-dc9ad903c696}</Project>
+      <Name>Be</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bll\Bll.csproj">
+      <Project>{22b44495-b081-40db-873b-2ace6d217438}</Project>
+      <Name>Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{2a57cac6-1944-4433-a096-b7e93a047b7d}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interface\Interface.csproj">
+      <Project>{fa4430f3-91b3-4b52-9578-20a52237210c}</Project>
+      <Name>Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mapper\Mapper.csproj">
+      <Project>{db0916cf-976f-4584-8b96-a9c559a563d6}</Project>
+      <Name>Mapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicioClase\ServicioClase.csproj">
+      <Project>{631824ae-a69d-44bf-a5b2-0aa5841ed1c3}</Project>
+      <Name>ServicioClase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servicios\Servicios.csproj">
+      <Project>{ccacf972-d3d7-4d02-85c5-0ddaf733e1bd}</Project>
+      <Name>Servicios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respaldo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oculto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oculto1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

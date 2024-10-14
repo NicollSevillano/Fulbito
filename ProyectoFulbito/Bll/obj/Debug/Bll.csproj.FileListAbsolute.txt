@@ -1,0 +1,46 @@
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\obj\Debug\Bll.csproj.AssemblyReference.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\obj\Debug\Bll.csproj.CoreCompileInputs.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Bll.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Bll.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Be.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Interface.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Mapper.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\ServicioClase.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Dao.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Servicios.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Be.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Interface.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Mapper.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\ServicioClase.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Dao.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\Servicios.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\obj\Debug\Bll.csproj.Up2Date
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\obj\Debug\Bll.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\obj\Debug\Bll.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\itextsharp.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\itextsharp.xml
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Bll\bin\Debug\BouncyCastle.Cryptography.xml
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Bll.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Bll.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Be.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Interface.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Mapper.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\ServicioClase.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Dao.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Servicios.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\itextsharp.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\BouncyCastle.Cryptography.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Be.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Interface.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Mapper.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\ServicioClase.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Dao.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\Servicios.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\itextsharp.xml
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\bin\Debug\BouncyCastle.Cryptography.xml
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\obj\Debug\Bll.csproj.AssemblyReference.cache
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\obj\Debug\Bll.csproj.CoreCompileInputs.cache
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\obj\Debug\Bll.csproj.Up2Date
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\obj\Debug\Bll.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\Bll\obj\Debug\Bll.pdb

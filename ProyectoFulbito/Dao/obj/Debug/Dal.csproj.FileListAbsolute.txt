@@ -1,0 +1,6 @@
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Dao\bin\Debug\Dao.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Dao\bin\Debug\Dao.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Dao\obj\Debug\Dal.csproj.AssemblyReference.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Dao\obj\Debug\Dal.csproj.CoreCompileInputs.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Dao\obj\Debug\Dao.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Dao\obj\Debug\Dao.pdb

@@ -1,0 +1,294 @@
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.BackUpForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.CanchasForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.BitacoraCambiosForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.BitacoraEventosForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.CambiarClaveForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.GRegistrarClienteForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.GReservasForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.GUsuariosForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.InsumosForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.LogIn.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.PerfilesForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.TarjetaForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\GUI.exe.config
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\GUI.exe
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\GUI.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Be.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Bll.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Controles.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Interface.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\itextsharp.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Mapper.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ServicioClase.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Servicios.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Dao.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Be.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Bll.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Controles.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Interface.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Mapper.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ServicioClase.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Servicios.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\itextsharp.xml
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Dao.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.CobrarReservaForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.MenuPrincipalForm.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.Up2Date
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.exe
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\EnvDTE.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\stdole.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.Reporte.resources
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\GUI\obj\Debug\GUI.Alquilarform.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\GUI.exe.config
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\GUI.exe
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\GUI.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Be.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Bll.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Controles.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Interface.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\itextsharp.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Mapper.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ServicioClase.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Servicios.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Dao.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\EnvDTE.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\stdole.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Be.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Bll.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Controles.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Interface.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Mapper.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ServicioClase.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Servicios.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\itextsharp.xml
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Dao.pdb
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.Alquilarform.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.BackUpForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.BitacoraCambiosForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.BitacoraEventosForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.CambiarClaveForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.CanchasForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.CobrarReservaForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.GRegistrarClienteForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.GReservasForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.GUsuariosForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.InsumosForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.LogIn.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.MenuPrincipalForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.PerfilesForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.Reporte.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.TarjetaForm.resources
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.exe
+D:\Nicoll\Nueva carpeta\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\GUI.exe.config
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\GUI.exe
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\GUI.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Be.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Bll.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Controles.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Interface.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\itextsharp.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Mapper.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ServicioClase.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Servicios.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Dao.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\EnvDTE.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\stdole.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Be.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Bll.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Controles.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Interface.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Mapper.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ServicioClase.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Servicios.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\itextsharp.xml
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\Dao.pdb
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.Alquilarform.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.BackUpForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.BitacoraCambiosForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.BitacoraEventosForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.CambiarClaveForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.CanchasForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.CobrarReservaForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.GRegistrarClienteForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.GReservasForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.GUsuariosForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.InsumosForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.LogIn.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.MenuPrincipalForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.PerfilesForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.Reporte.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.TarjetaForm.resources
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.csproj.Up2Date
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.exe
+C:\Users\Nicoll\Desktop\Fulbito-main\ProyectoFulbito\GUI\obj\Debug\GUI.pdb

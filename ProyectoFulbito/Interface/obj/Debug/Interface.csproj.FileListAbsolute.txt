@@ -1,0 +1,6 @@
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Interface\bin\Debug\Interface.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Interface\bin\Debug\Interface.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Interface\obj\Debug\Interface.csproj.AssemblyReference.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Interface\obj\Debug\Interface.csproj.CoreCompileInputs.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Interface\obj\Debug\Interface.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\Interface\obj\Debug\Interface.pdb

@@ -1,0 +1,9 @@
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\ServicioClase\bin\Debug\ServicioClase.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\ServicioClase\bin\Debug\ServicioClase.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\ServicioClase\bin\Debug\Interface.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\ServicioClase\bin\Debug\Interface.pdb
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\ServicioClase\obj\Debug\ServicioClase.csproj.AssemblyReference.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\ServicioClase\obj\Debug\ServicioClase.csproj.CoreCompileInputs.cache
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\ServicioClase\obj\Debug\Servicio.71A683D5.Up2Date
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\ServicioClase\obj\Debug\ServicioClase.dll
+C:\Users\Nicoll\Desktop\Fulbito\ProyectoFulbito\ServicioClase\obj\Debug\ServicioClase.pdb

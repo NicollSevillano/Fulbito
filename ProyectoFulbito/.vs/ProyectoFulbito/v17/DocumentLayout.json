@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{22B44495-B081-40DB-873B-2ACE6D217438}|Bll\\Bll.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\bll\\bllinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22B44495-B081-40DB-873B-2ACE6D217438}|Bll\\Bll.csproj|solutionrelative:bll\\bllinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38D4FED4-9D12-4F96-BB0F-DC9AD903C696}|Be\\Be.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\be\\beinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38D4FED4-9D12-4F96-BB0F-DC9AD903C696}|Be\\Be.csproj|solutionrelative:be\\beinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB0916CF-976F-4584-8B96-A9C559A563D6}|Mapper\\Mapper.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\mapper\\mapperinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB0916CF-976F-4584-8B96-A9C559A563D6}|Mapper\\Mapper.csproj|solutionrelative:mapper\\mapperinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB0916CF-976F-4584-8B96-A9C559A563D6}|Mapper\\Mapper.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\mapper\\mappercancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB0916CF-976F-4584-8B96-A9C559A563D6}|Mapper\\Mapper.csproj|solutionrelative:mapper\\mappercancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22B44495-B081-40DB-873B-2ACE6D217438}|Bll\\Bll.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\bll\\bllcancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22B44495-B081-40DB-873B-2ACE6D217438}|Bll\\Bll.csproj|solutionrelative:bll\\bllcancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BllInsumo.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Bll\\BllInsumo.cs",
+              "RelativeDocumentMoniker": "Bll\\BllInsumo.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Bll\\BllInsumo.cs",
+              "RelativeToolTip": "Bll\\BllInsumo.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T17:10:40.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BeInsumo.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Be\\BeInsumo.cs",
+              "RelativeDocumentMoniker": "Be\\BeInsumo.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Be\\BeInsumo.cs",
+              "RelativeToolTip": "Be\\BeInsumo.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAmwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T17:10:36.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MapperCancha.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Mapper\\MapperCancha.cs",
+              "RelativeDocumentMoniker": "Mapper\\MapperCancha.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Mapper\\MapperCancha.cs",
+              "RelativeToolTip": "Mapper\\MapperCancha.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T01:08:25.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MapperInsumo.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Mapper\\MapperInsumo.cs",
+              "RelativeDocumentMoniker": "Mapper\\MapperInsumo.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Mapper\\MapperInsumo.cs",
+              "RelativeToolTip": "Mapper\\MapperInsumo.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAqwA8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T01:08:19.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BllCancha.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Bll\\BllCancha.cs",
+              "RelativeDocumentMoniker": "Bll\\BllCancha.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Bll\\BllCancha.cs",
+              "RelativeToolTip": "Bll\\BllCancha.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T01:07:46.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Insumos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Insumos.cs",
+              "RelativeDocumentMoniker": "GUI\\Insumos.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Insumos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\Insumos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T00:43:49.628Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
