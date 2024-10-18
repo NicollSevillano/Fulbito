@@ -4,6 +4,7 @@ Implementación de patrones de diseño
 Conexión a la base de datos
 Realización de reportes
 #Desarrollo en capas / Capas utilizadas:
+
 DAL ✔
 BE ✔
 BLL ✔
