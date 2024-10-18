@@ -5,12 +5,12 @@ Conexión a la base de datos
 Realización de reportes
 #Desarrollo en capas / Capas utilizadas:
 
-DAL ✔
-BE ✔
-BLL ✔
-Controles ✔
-GUI ✔
-Interfaz ✔
-Mapper ✔
-Servicio ✔
-Servicio clase ✔
+- DAL ✔
+- BE ✔
+- BLL ✔
+- Controles ✔
+- GUI ✔
+- Interfaz ✔
+- Mapper ✔
+- Servicio ✔
+- Servicio clase ✔
