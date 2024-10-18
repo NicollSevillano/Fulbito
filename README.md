@@ -3,6 +3,7 @@
 - Implementación de patrones de diseño
 - Conexión a la base de datos
 - Realización de reportes
+- Serialización XML - JSON
 
 #Desarrollo en capas / Capas utilizadas:
 
