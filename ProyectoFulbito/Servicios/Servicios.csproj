@@ -68,6 +68,7 @@
     <Compile Include="FacturaReporte.cs" />
     <Compile Include="LanguageManager.cs" />
     <Compile Include="LogBitacora.cs" />
+    <Compile Include="LogCambios.cs" />
     <Compile Include="PerfilManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionManager.cs" />

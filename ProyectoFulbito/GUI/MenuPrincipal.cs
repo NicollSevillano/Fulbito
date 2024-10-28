@@ -29,6 +29,8 @@ namespace GUI
         BitacoraEventosForm _bEventos;
         CanchasForm _canchas;
         BackUpForm backrestore;
+        InsumosForm insumos;
+        BitacoraCambiosForm cambios;
         public MenuPrincipalForm()
         {
             InitializeComponent();
@@ -56,6 +58,8 @@ namespace GUI
             LanguageManager.Suscribir(this);
             _canchas = new CanchasForm();
             backrestore = new BackUpForm();
+            insumos = new InsumosForm();
+            cambios = new BitacoraCambiosForm();
         }
         private void habilitarControles()
         {
@@ -160,6 +164,20 @@ namespace GUI
         {
             this.Hide();
             backrestore.ShowDialog();
+            this.Show();
+        }
+
+        private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            insumos.ShowDialog();
+            this.Show();
+        }
+
+        private void cambiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            cambios.ShowDialog();
             this.Show();
         }
     }

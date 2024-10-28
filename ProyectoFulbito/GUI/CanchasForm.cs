@@ -127,7 +127,7 @@ namespace GUI
         {
             if (dgvCanchas.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Seleccione un usuario para modificar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione una cancha cambiar el estado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             BeCancha aux = LlamarCancha();
             aux.Estado = cmbEstadoCancha.SelectedItem.ToString();
@@ -157,8 +157,9 @@ namespace GUI
 
         private void btnLimpiarCancha_Click(object sender, EventArgs e)
         {
-            Refrescar();
             cmbFiltroEstadoCancha.SelectedIndex = -1;
+            lCancha = bllCancha.Consulta();
+            Refrescar();
         }
 
         private void btnVolverCanchas_Click(object sender, EventArgs e)

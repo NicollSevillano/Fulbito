@@ -157,7 +157,7 @@
             // btnFiltrarEstado
             // 
             this.btnFiltrarEstado.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrarEstado.Location = new System.Drawing.Point(190, 67);
+            this.btnFiltrarEstado.Location = new System.Drawing.Point(190, 80);
             this.btnFiltrarEstado.Name = "btnFiltrarEstado";
             this.btnFiltrarEstado.Size = new System.Drawing.Size(107, 37);
             this.btnFiltrarEstado.TabIndex = 23;
@@ -326,7 +326,7 @@
             // btnLimpiarCancha
             // 
             this.btnLimpiarCancha.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCancha.Location = new System.Drawing.Point(77, 67);
+            this.btnLimpiarCancha.Location = new System.Drawing.Point(77, 80);
             this.btnLimpiarCancha.Name = "btnLimpiarCancha";
             this.btnLimpiarCancha.Size = new System.Drawing.Size(107, 37);
             this.btnLimpiarCancha.TabIndex = 26;

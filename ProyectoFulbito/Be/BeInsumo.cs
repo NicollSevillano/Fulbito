@@ -10,9 +10,9 @@ namespace Be
     public class BeInsumo : IEntity
     {
         public BeInsumo() { }
-        public BeInsumo(DateTime pFechaHora, string pNombre, int pCantidadActual, string pProveedor, string pEstado, string pObservaciones)
+        public BeInsumo(DateTime pFechaHora, string pNombre, int pCantidad, int pCantidadActual, string pProveedor, string pEstado, string pObservaciones)
         {
-            fechaHora = pFechaHora; Nombre = pNombre; cantidadActual = pCantidadActual;
+            fechaHora = pFechaHora; Nombre = pNombre; Cantidad = pCantidad; cantidadActual = pCantidadActual;
             Proveedor = pProveedor; Estado = pEstado; Observaciones = pObservaciones;
         }
         public BeInsumo(object[] array)
@@ -20,6 +20,7 @@ namespace Be
             id = array[0].ToString();
             fechaHora = DateTime.Parse(array[1].ToString());
             Nombre = array[2].ToString();
+            Cantidad = int.Parse(array[3].ToString());
             cantidadActual = int.Parse(array[4].ToString());
             Proveedor = array[5].ToString();
             Estado = array[6].ToString();

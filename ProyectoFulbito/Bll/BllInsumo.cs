@@ -26,7 +26,10 @@ namespace Bll
         {
             return mInsumo.Consulta();
         }
-
+        public void CambiarEstado(BeInsumo pObject)
+        {
+            mInsumo.CambiarEstado(pObject);
+        }
         public List<BeInsumo> ConsultaCondicional(string pCondicion, string pCondicion2 = null)
         {
             throw new NotImplementedException();
