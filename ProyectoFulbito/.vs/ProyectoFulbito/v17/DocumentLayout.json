@@ -3,40 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\alquilarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\alquilarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\gui\\alquilarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\alquilarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\bitacoraeventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\bitacoraeventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\greservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\greservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\alquilarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\alquilarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\bitacoracambios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\bitacoracambios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\bitacoracambios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\bitacoracambios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CCACF972-D3D7-4D02-85C5-0DDAF733E1BD}|Servicios\\Servicios.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\servicios\\logcambios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCACF972-D3D7-4D02-85C5-0DDAF733E1BD}|Servicios\\Servicios.csproj|solutionrelative:servicios\\logcambios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\bitacoraeventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\bitacoraeventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\proyectofulbito\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\gui\\greservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\greservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\gui\\greservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BEEA5EB9-7FC2-42A6-9406-0B1BD2362546}|GUI\\GUI.csproj|solutionrelative:gui\\greservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,16 +41,71 @@
           "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BitacoraEventos.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraEventos.cs",
+              "RelativeDocumentMoniker": "GUI\\BitacoraEventos.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraEventos.cs",
+              "RelativeToolTip": "GUI\\BitacoraEventos.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAcwFAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T01:20:31.357Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BitacoraEventos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraEventos.cs",
+              "RelativeDocumentMoniker": "GUI\\BitacoraEventos.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraEventos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\BitacoraEventos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T01:20:29.773Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Program.cs",
+              "RelativeToolTip": "GUI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T01:18:15.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GReservas.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\GReservas.cs",
+              "RelativeDocumentMoniker": "GUI\\GReservas.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\GReservas.cs",
+              "RelativeToolTip": "GUI\\GReservas.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAjwCcAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T00:50:39.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Alquilarform.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Alquilarform.cs",
+              "RelativeDocumentMoniker": "GUI\\Alquilarform.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Alquilarform.cs",
+              "RelativeToolTip": "GUI\\Alquilarform.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAADwvzwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T00:50:31.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Alquilarform.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Alquilarform.cs",
               "RelativeDocumentMoniker": "GUI\\Alquilarform.cs",
@@ -70,103 +117,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "GReservas.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\GReservas.cs",
               "RelativeDocumentMoniker": "GUI\\GReservas.cs",
               "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\GReservas.cs [Dise\u00F1o]",
               "RelativeToolTip": "GUI\\GReservas.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T00:13:57.594Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Insumos.cs",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Insumos.cs",
-              "RelativeDocumentMoniker": "GUI\\Insumos.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Insumos.cs",
-              "RelativeToolTip": "GUI\\Insumos.cs",
-              "ViewState": "AQIAAGoAAAAAAAAAAAAQwHwAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T00:13:10.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Insumos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Insumos.cs",
-              "RelativeDocumentMoniker": "GUI\\Insumos.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\Insumos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\Insumos.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T00:13:08.907Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BitacoraEventos.cs",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraEventos.cs",
-              "RelativeDocumentMoniker": "GUI\\BitacoraEventos.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraEventos.cs",
-              "RelativeToolTip": "GUI\\BitacoraEventos.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAwwBsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T23:54:12.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BitacoraEventos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraEventos.cs",
-              "RelativeDocumentMoniker": "GUI\\BitacoraEventos.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraEventos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\BitacoraEventos.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T23:54:10.833Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BitacoraCambios.cs",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraCambios.cs",
-              "RelativeDocumentMoniker": "GUI\\BitacoraCambios.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraCambios.cs",
-              "RelativeToolTip": "GUI\\BitacoraCambios.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAwwCMAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T23:17:26.315Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "LogCambios.cs",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Servicios\\LogCambios.cs",
-              "RelativeDocumentMoniker": "Servicios\\LogCambios.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\Servicios\\LogCambios.cs",
-              "RelativeToolTip": "Servicios\\LogCambios.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAywBwAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T21:10:42.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BitacoraCambios.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraCambios.cs",
-              "RelativeDocumentMoniker": "GUI\\BitacoraCambios.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\ProyectoFulbito\\GUI\\BitacoraCambios.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\BitacoraCambios.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T06:04:41.315Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-10-28T00:13:57.594Z"
             }
           ]
         }

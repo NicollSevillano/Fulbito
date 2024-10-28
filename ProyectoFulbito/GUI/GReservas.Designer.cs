@@ -52,6 +52,7 @@
             this.btnDisponibilidad = new System.Windows.Forms.Button();
             this.btnReservar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAlquilarInusmos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -156,7 +157,7 @@
             this.dgvReservas.Name = "dgvReservas";
             this.dgvReservas.ReadOnly = true;
             this.dgvReservas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReservas.Size = new System.Drawing.Size(536, 297);
+            this.dgvReservas.Size = new System.Drawing.Size(536, 336);
             this.dgvReservas.TabIndex = 31;
             // 
             // ColumnaIdR
@@ -197,9 +198,9 @@
             // btnCancelarReserva
             // 
             this.btnCancelarReserva.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarReserva.Location = new System.Drawing.Point(571, 408);
+            this.btnCancelarReserva.Location = new System.Drawing.Point(571, 364);
             this.btnCancelarReserva.Name = "btnCancelarReserva";
-            this.btnCancelarReserva.Size = new System.Drawing.Size(148, 42);
+            this.btnCancelarReserva.Size = new System.Drawing.Size(148, 33);
             this.btnCancelarReserva.TabIndex = 37;
             this.btnCancelarReserva.Text = "Cancelar reserva";
             this.btnCancelarReserva.UseVisualStyleBackColor = true;
@@ -208,9 +209,9 @@
             // btnSalirR
             // 
             this.btnSalirR.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalirR.Location = new System.Drawing.Point(612, 458);
+            this.btnSalirR.Location = new System.Drawing.Point(612, 506);
             this.btnSalirR.Name = "btnSalirR";
-            this.btnSalirR.Size = new System.Drawing.Size(107, 42);
+            this.btnSalirR.Size = new System.Drawing.Size(107, 33);
             this.btnSalirR.TabIndex = 36;
             this.btnSalirR.Text = "Salir";
             this.btnSalirR.UseVisualStyleBackColor = true;
@@ -219,9 +220,9 @@
             // btnCobrar
             // 
             this.btnCobrar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(612, 358);
+            this.btnCobrar.Location = new System.Drawing.Point(612, 325);
             this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(107, 42);
+            this.btnCobrar.Size = new System.Drawing.Size(107, 33);
             this.btnCobrar.TabIndex = 35;
             this.btnCobrar.Text = "Cobrar";
             this.btnCobrar.UseVisualStyleBackColor = true;
@@ -230,9 +231,9 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(571, 258);
+            this.btnRegistrar.Location = new System.Drawing.Point(571, 247);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(148, 42);
+            this.btnRegistrar.Size = new System.Drawing.Size(148, 33);
             this.btnRegistrar.TabIndex = 34;
             this.btnRegistrar.Text = "Registrar Cliente";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -243,7 +244,7 @@
             this.btnDisponibilidad.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDisponibilidad.Location = new System.Drawing.Point(571, 208);
             this.btnDisponibilidad.Name = "btnDisponibilidad";
-            this.btnDisponibilidad.Size = new System.Drawing.Size(148, 42);
+            this.btnDisponibilidad.Size = new System.Drawing.Size(148, 33);
             this.btnDisponibilidad.TabIndex = 33;
             this.btnDisponibilidad.Text = "Ver disponibilidad";
             this.btnDisponibilidad.UseVisualStyleBackColor = true;
@@ -252,9 +253,9 @@
             // btnReservar
             // 
             this.btnReservar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservar.Location = new System.Drawing.Point(612, 308);
+            this.btnReservar.Location = new System.Drawing.Point(612, 286);
             this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Size = new System.Drawing.Size(107, 42);
+            this.btnReservar.Size = new System.Drawing.Size(107, 33);
             this.btnReservar.TabIndex = 32;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = true;
@@ -270,12 +271,24 @@
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAlquilarInusmos
+            // 
+            this.btnAlquilarInusmos.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlquilarInusmos.Location = new System.Drawing.Point(568, 403);
+            this.btnAlquilarInusmos.Name = "btnAlquilarInusmos";
+            this.btnAlquilarInusmos.Size = new System.Drawing.Size(148, 33);
+            this.btnAlquilarInusmos.TabIndex = 39;
+            this.btnAlquilarInusmos.Text = "Alquilar insumos";
+            this.btnAlquilarInusmos.UseVisualStyleBackColor = true;
+            this.btnAlquilarInusmos.Click += new System.EventHandler(this.btnAlquilarInusmos_Click);
+            // 
             // GReservasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
-            this.ClientSize = new System.Drawing.Size(728, 512);
+            this.ClientSize = new System.Drawing.Size(728, 551);
+            this.Controls.Add(this.btnAlquilarInusmos);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelarReserva);
             this.Controls.Add(this.btnSalirR);
@@ -328,5 +341,6 @@
         private System.Windows.Forms.Button btnDisponibilidad;
         private System.Windows.Forms.Button btnReservar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAlquilarInusmos;
     }
 }

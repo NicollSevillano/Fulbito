@@ -31,6 +31,7 @@ namespace GUI
         BackUpForm backrestore;
         InsumosForm insumos;
         BitacoraCambiosForm cambios;
+        Alquilarform alquilar;
         public MenuPrincipalForm()
         {
             InitializeComponent();
@@ -60,6 +61,7 @@ namespace GUI
             backrestore = new BackUpForm();
             insumos = new InsumosForm();
             cambios = new BitacoraCambiosForm();
+            alquilar = new Alquilarform();
         }
         private void habilitarControles()
         {
@@ -178,6 +180,13 @@ namespace GUI
         {
             this.Hide();
             cambios.ShowDialog();
+            this.Show();
+        }
+
+        private void alquilarInsumoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            alquilar.ShowDialog();
             this.Show();
         }
     }

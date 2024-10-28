@@ -31,6 +31,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BitacoraCambiosForm));
             this.dgvInsumoCambios = new System.Windows.Forms.DataGridView();
+            this.id_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodInsumo_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaHora_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Existe_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descrip_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Act_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labBitacoraCambios = new System.Windows.Forms.Label();
             this.cmbBitacoraEventosUsuarios = new System.Windows.Forms.ComboBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -43,14 +51,6 @@
             this.btnActivarCambios = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolverbCambios = new System.Windows.Forms.Button();
-            this.id_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodInsumo_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaHora_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Existe_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descrip_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Act_BitacoraCambios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumoCambios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -81,8 +81,63 @@
             this.dgvInsumoCambios.Location = new System.Drawing.Point(12, 57);
             this.dgvInsumoCambios.Name = "dgvInsumoCambios";
             this.dgvInsumoCambios.ReadOnly = true;
+            this.dgvInsumoCambios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInsumoCambios.Size = new System.Drawing.Size(814, 241);
             this.dgvInsumoCambios.TabIndex = 0;
+            // 
+            // id_BitacoraCambios
+            // 
+            this.id_BitacoraCambios.FillWeight = 45.68528F;
+            this.id_BitacoraCambios.HeaderText = "Id";
+            this.id_BitacoraCambios.Name = "id_BitacoraCambios";
+            this.id_BitacoraCambios.ReadOnly = true;
+            // 
+            // CodInsumo_BitacoraCambios
+            // 
+            this.CodInsumo_BitacoraCambios.HeaderText = "Id Insumo";
+            this.CodInsumo_BitacoraCambios.Name = "CodInsumo_BitacoraCambios";
+            this.CodInsumo_BitacoraCambios.ReadOnly = true;
+            // 
+            // fechaHora_BitacoraCambios
+            // 
+            this.fechaHora_BitacoraCambios.FillWeight = 127.3787F;
+            this.fechaHora_BitacoraCambios.HeaderText = "Fecha - Hora";
+            this.fechaHora_BitacoraCambios.Name = "fechaHora_BitacoraCambios";
+            this.fechaHora_BitacoraCambios.ReadOnly = true;
+            // 
+            // Nombre_BitacoraCambios
+            // 
+            this.Nombre_BitacoraCambios.FillWeight = 127.3787F;
+            this.Nombre_BitacoraCambios.HeaderText = "Nombre";
+            this.Nombre_BitacoraCambios.Name = "Nombre_BitacoraCambios";
+            this.Nombre_BitacoraCambios.ReadOnly = true;
+            // 
+            // Existe_BitacoraCambios
+            // 
+            this.Existe_BitacoraCambios.FillWeight = 127.3787F;
+            this.Existe_BitacoraCambios.HeaderText = "Existe";
+            this.Existe_BitacoraCambios.Name = "Existe_BitacoraCambios";
+            this.Existe_BitacoraCambios.ReadOnly = true;
+            // 
+            // Descrip_BitacoraCambios
+            // 
+            this.Descrip_BitacoraCambios.FillWeight = 127.3787F;
+            this.Descrip_BitacoraCambios.HeaderText = "Descripción";
+            this.Descrip_BitacoraCambios.Name = "Descrip_BitacoraCambios";
+            this.Descrip_BitacoraCambios.ReadOnly = true;
+            // 
+            // Usuario_BitacoraCambios
+            // 
+            this.Usuario_BitacoraCambios.HeaderText = "Usuario";
+            this.Usuario_BitacoraCambios.Name = "Usuario_BitacoraCambios";
+            this.Usuario_BitacoraCambios.ReadOnly = true;
+            // 
+            // Act_BitacoraCambios
+            // 
+            this.Act_BitacoraCambios.FillWeight = 44.79998F;
+            this.Act_BitacoraCambios.HeaderText = "Act.";
+            this.Act_BitacoraCambios.Name = "Act_BitacoraCambios";
+            this.Act_BitacoraCambios.ReadOnly = true;
             // 
             // labBitacoraCambios
             // 
@@ -200,60 +255,6 @@
             this.btnVolverbCambios.Text = "Volver";
             this.btnVolverbCambios.UseVisualStyleBackColor = true;
             this.btnVolverbCambios.Click += new System.EventHandler(this.btnVolverbCambios_Click);
-            // 
-            // id_BitacoraCambios
-            // 
-            this.id_BitacoraCambios.FillWeight = 45.68528F;
-            this.id_BitacoraCambios.HeaderText = "Id";
-            this.id_BitacoraCambios.Name = "id_BitacoraCambios";
-            this.id_BitacoraCambios.ReadOnly = true;
-            // 
-            // CodInsumo_BitacoraCambios
-            // 
-            this.CodInsumo_BitacoraCambios.HeaderText = "Id Insumo";
-            this.CodInsumo_BitacoraCambios.Name = "CodInsumo_BitacoraCambios";
-            this.CodInsumo_BitacoraCambios.ReadOnly = true;
-            // 
-            // fechaHora_BitacoraCambios
-            // 
-            this.fechaHora_BitacoraCambios.FillWeight = 127.3787F;
-            this.fechaHora_BitacoraCambios.HeaderText = "Fecha - Hora";
-            this.fechaHora_BitacoraCambios.Name = "fechaHora_BitacoraCambios";
-            this.fechaHora_BitacoraCambios.ReadOnly = true;
-            // 
-            // Nombre_BitacoraCambios
-            // 
-            this.Nombre_BitacoraCambios.FillWeight = 127.3787F;
-            this.Nombre_BitacoraCambios.HeaderText = "Nombre";
-            this.Nombre_BitacoraCambios.Name = "Nombre_BitacoraCambios";
-            this.Nombre_BitacoraCambios.ReadOnly = true;
-            // 
-            // Existe_BitacoraCambios
-            // 
-            this.Existe_BitacoraCambios.FillWeight = 127.3787F;
-            this.Existe_BitacoraCambios.HeaderText = "Existe";
-            this.Existe_BitacoraCambios.Name = "Existe_BitacoraCambios";
-            this.Existe_BitacoraCambios.ReadOnly = true;
-            // 
-            // Descrip_BitacoraCambios
-            // 
-            this.Descrip_BitacoraCambios.FillWeight = 127.3787F;
-            this.Descrip_BitacoraCambios.HeaderText = "Descripción";
-            this.Descrip_BitacoraCambios.Name = "Descrip_BitacoraCambios";
-            this.Descrip_BitacoraCambios.ReadOnly = true;
-            // 
-            // Usuario_BitacoraCambios
-            // 
-            this.Usuario_BitacoraCambios.HeaderText = "Usuario";
-            this.Usuario_BitacoraCambios.Name = "Usuario_BitacoraCambios";
-            this.Usuario_BitacoraCambios.ReadOnly = true;
-            // 
-            // Act_BitacoraCambios
-            // 
-            this.Act_BitacoraCambios.FillWeight = 44.79998F;
-            this.Act_BitacoraCambios.HeaderText = "Act.";
-            this.Act_BitacoraCambios.Name = "Act_BitacoraCambios";
-            this.Act_BitacoraCambios.ReadOnly = true;
             // 
             // BitacoraCambiosForm
             // 

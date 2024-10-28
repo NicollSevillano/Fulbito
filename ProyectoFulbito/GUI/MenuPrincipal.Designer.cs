@@ -52,6 +52,7 @@
             this.labNombreMp = new System.Windows.Forms.Label();
             this.comboIdioma1 = new Controles.ComboIdioma();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.alquilarInsumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +80,8 @@
             // 
             this.reservaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
-            this.clientesToolStripMenuItem});
+            this.clientesToolStripMenuItem,
+            this.alquilarInsumoToolStripMenuItem});
             this.reservaToolStripMenuItem.Name = "reservaToolStripMenuItem";
             this.reservaToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
             this.reservaToolStripMenuItem.Text = "Reserva";
@@ -87,7 +89,7 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(189, 24);
             this.toolStripMenuItem2.Text = "Reservar";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -96,7 +98,7 @@
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarClienteToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // registrarClienteToolStripMenuItem
@@ -124,27 +126,27 @@
             this.eventosToolStripMenuItem,
             this.cambiosToolStripMenuItem});
             this.bitácoraToolStripMenuItem.Name = "bitácoraToolStripMenuItem";
-            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.bitácoraToolStripMenuItem.Text = "Bitácora";
             // 
             // eventosToolStripMenuItem
             // 
             this.eventosToolStripMenuItem.Name = "eventosToolStripMenuItem";
-            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.eventosToolStripMenuItem.Text = "Eventos";
             this.eventosToolStripMenuItem.Click += new System.EventHandler(this.eventosToolStripMenuItem_Click);
             // 
             // cambiosToolStripMenuItem
             // 
             this.cambiosToolStripMenuItem.Name = "cambiosToolStripMenuItem";
-            this.cambiosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.cambiosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.cambiosToolStripMenuItem.Text = "Cambios";
             this.cambiosToolStripMenuItem.Click += new System.EventHandler(this.cambiosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -153,7 +155,7 @@
             this.canchasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarCanchaToolStripMenuItem});
             this.canchasToolStripMenuItem.Name = "canchasToolStripMenuItem";
-            this.canchasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.canchasToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.canchasToolStripMenuItem.Text = "Canchas";
             // 
             // registrarCanchaToolStripMenuItem
@@ -166,14 +168,14 @@
             // insumosToolStripMenuItem
             // 
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
-            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.insumosToolStripMenuItem.Text = "Insumos";
             this.insumosToolStripMenuItem.Click += new System.EventHandler(this.insumosToolStripMenuItem_Click);
             // 
             // backUpToolStripMenuItem
             // 
             this.backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
-            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.backUpToolStripMenuItem.Text = "BackUp";
             this.backUpToolStripMenuItem.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
             // 
@@ -251,6 +253,13 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // alquilarInsumoToolStripMenuItem
+            // 
+            this.alquilarInsumoToolStripMenuItem.Name = "alquilarInsumoToolStripMenuItem";
+            this.alquilarInsumoToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
+            this.alquilarInsumoToolStripMenuItem.Text = "Alquilar insumo";
+            this.alquilarInsumoToolStripMenuItem.Click += new System.EventHandler(this.alquilarInsumoToolStripMenuItem_Click);
+            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,5 +311,6 @@
         private System.Windows.Forms.Label labNombreMp;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Controles.ComboIdioma comboIdioma1;
+        private System.Windows.Forms.ToolStripMenuItem alquilarInsumoToolStripMenuItem;
     }
 }

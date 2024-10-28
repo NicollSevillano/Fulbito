@@ -191,5 +191,10 @@ namespace GUI
             this.Close();
             LogBitacora.AgregarEvento("Salir de reservas", 1, SessionManager.getInstance.usuario);
         }
+
+        private void btnAlquilarInusmos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
