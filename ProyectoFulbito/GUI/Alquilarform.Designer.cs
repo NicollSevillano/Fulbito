@@ -45,6 +45,8 @@
             this.btnAlquilar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtFechaAlquilar = new System.Windows.Forms.TextBox();
+            this.labFechaAlquilar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +54,7 @@
             // cmbClienteAlquiler
             // 
             this.cmbClienteAlquiler.FormattingEnabled = true;
-            this.cmbClienteAlquiler.Location = new System.Drawing.Point(657, 23);
+            this.cmbClienteAlquiler.Location = new System.Drawing.Point(675, 23);
             this.cmbClienteAlquiler.Name = "cmbClienteAlquiler";
             this.cmbClienteAlquiler.Size = new System.Drawing.Size(121, 21);
             this.cmbClienteAlquiler.TabIndex = 0;
@@ -61,7 +63,7 @@
             // 
             this.lbClienteAlquiler.AutoSize = true;
             this.lbClienteAlquiler.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClienteAlquiler.Location = new System.Drawing.Point(559, 22);
+            this.lbClienteAlquiler.Location = new System.Drawing.Point(577, 22);
             this.lbClienteAlquiler.Name = "lbClienteAlquiler";
             this.lbClienteAlquiler.Size = new System.Drawing.Size(58, 19);
             this.lbClienteAlquiler.TabIndex = 1;
@@ -71,7 +73,7 @@
             // 
             this.labInsumoAlquiler.AutoSize = true;
             this.labInsumoAlquiler.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labInsumoAlquiler.Location = new System.Drawing.Point(559, 67);
+            this.labInsumoAlquiler.Location = new System.Drawing.Point(577, 67);
             this.labInsumoAlquiler.Name = "labInsumoAlquiler";
             this.labInsumoAlquiler.Size = new System.Drawing.Size(61, 19);
             this.labInsumoAlquiler.TabIndex = 2;
@@ -80,7 +82,7 @@
             // cmbInsumoAlquiler
             // 
             this.cmbInsumoAlquiler.FormattingEnabled = true;
-            this.cmbInsumoAlquiler.Location = new System.Drawing.Point(657, 68);
+            this.cmbInsumoAlquiler.Location = new System.Drawing.Point(675, 68);
             this.cmbInsumoAlquiler.Name = "cmbInsumoAlquiler";
             this.cmbInsumoAlquiler.Size = new System.Drawing.Size(121, 21);
             this.cmbInsumoAlquiler.TabIndex = 3;
@@ -89,7 +91,7 @@
             // 
             this.labCantidad.AutoSize = true;
             this.labCantidad.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCantidad.Location = new System.Drawing.Point(559, 113);
+            this.labCantidad.Location = new System.Drawing.Point(577, 149);
             this.labCantidad.Name = "labCantidad";
             this.labCantidad.Size = new System.Drawing.Size(72, 19);
             this.labCantidad.TabIndex = 4;
@@ -98,7 +100,7 @@
             // txtCantidadAlquiler
             // 
             this.txtCantidadAlquiler.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadAlquiler.Location = new System.Drawing.Point(657, 110);
+            this.txtCantidadAlquiler.Location = new System.Drawing.Point(675, 146);
             this.txtCantidadAlquiler.Name = "txtCantidadAlquiler";
             this.txtCantidadAlquiler.Size = new System.Drawing.Size(121, 24);
             this.txtCantidadAlquiler.TabIndex = 5;
@@ -126,7 +128,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(541, 333);
+            this.dataGridView1.Size = new System.Drawing.Size(541, 406);
             this.dataGridView1.TabIndex = 6;
             // 
             // Id_Alquiler
@@ -167,7 +169,7 @@
             // btnAlquilar
             // 
             this.btnAlquilar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlquilar.Location = new System.Drawing.Point(571, 151);
+            this.btnAlquilar.Location = new System.Drawing.Point(695, 182);
             this.btnAlquilar.Name = "btnAlquilar";
             this.btnAlquilar.Size = new System.Drawing.Size(101, 30);
             this.btnAlquilar.TabIndex = 7;
@@ -178,7 +180,7 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(678, 151);
+            this.btnVolver.Location = new System.Drawing.Point(695, 227);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(101, 30);
             this.btnVolver.TabIndex = 8;
@@ -188,19 +190,39 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(571, 199);
+            this.pictureBox1.Location = new System.Drawing.Point(589, 272);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(207, 146);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // txtFechaAlquilar
+            // 
+            this.txtFechaAlquilar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaAlquilar.Location = new System.Drawing.Point(675, 104);
+            this.txtFechaAlquilar.Name = "txtFechaAlquilar";
+            this.txtFechaAlquilar.Size = new System.Drawing.Size(121, 24);
+            this.txtFechaAlquilar.TabIndex = 11;
+            // 
+            // labFechaAlquilar
+            // 
+            this.labFechaAlquilar.AutoSize = true;
+            this.labFechaAlquilar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labFechaAlquilar.Location = new System.Drawing.Point(577, 107);
+            this.labFechaAlquilar.Name = "labFechaAlquilar";
+            this.labFechaAlquilar.Size = new System.Drawing.Size(49, 19);
+            this.labFechaAlquilar.TabIndex = 10;
+            this.labFechaAlquilar.Text = "Fecha";
+            // 
             // Alquilarform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
-            this.ClientSize = new System.Drawing.Size(790, 363);
+            this.ClientSize = new System.Drawing.Size(808, 434);
+            this.Controls.Add(this.txtFechaAlquilar);
+            this.Controls.Add(this.labFechaAlquilar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAlquilar);
@@ -239,5 +261,7 @@
         private System.Windows.Forms.Button btnAlquilar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtFechaAlquilar;
+        private System.Windows.Forms.Label labFechaAlquilar;
     }
 }

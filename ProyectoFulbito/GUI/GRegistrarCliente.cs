@@ -8,10 +8,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Xml;
+using Newtonsoft.Json;
 
 namespace GUI
 {
@@ -23,6 +29,9 @@ namespace GUI
         public GRegistrarClienteForm()
         {
             InitializeComponent();
+            cmbSerializacion.Items.Add("XML");
+            cmbSerializacion.Items.Add("JSON");
+            cmbSerializacion.SelectedIndex = 0;
         }
 
         private void GRegistrarCliente_Load(object sender, EventArgs e)
@@ -149,6 +158,112 @@ namespace GUI
             txtDni.Text = row.Cells[1].Value.ToString();
             txtNombre.Text = row.Cells[2].Value.ToString();
             txtTelefono.Text = row.Cells[3].Value.ToString();
+        }
+
+        private void btnSerializar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                listArchivoDeserializado.Items.Clear();
+
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = $"{cmbSerializacion.SelectedItem} Files|*.{cmbSerializacion.SelectedItem.ToString().ToLower()}";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string formato = cmbSerializacion.SelectedItem.ToString();
+
+                    switch (formato)
+                    {
+                        case "XML":
+                            SerializarXML(lCliente, saveFileDialog.FileName);
+                            MostrarSerializado(saveFileDialog.FileName);
+                            break;
+                        case "JSON":
+                            SerializarJson(lCliente, saveFileDialog.FileName);
+                            MostrarSerializado(saveFileDialog.FileName);
+                            break;
+                    }
+                    MessageBox.Show($"Serialización en formato {formato} con éxito");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al serialziar: {ex.Message}");
+            }
+        }
+
+        private void btnDeserializar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = $"{cmbSerializacion.SelectedItem} Files|*.{cmbSerializacion.SelectedItem.ToString().ToLower()}";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string formato = cmbSerializacion.SelectedItem.ToString();
+                List<BeCliente> cliente = null;
+
+                listArchivoDeserializado.Items.Clear();
+
+                switch (formato)
+                {
+                    case "XML":
+                        cliente = DeserializarXML(openFileDialog.FileName);
+                        break;
+                    case "JSON":
+                        cliente = DeserializarJson(openFileDialog.FileName);
+                        break;
+                }
+                MostrarDeserializado(cliente);
+            }
+        }
+        private void SerializarXML(List<BeCliente> pCliente, string pPath)
+        {
+            using (FileStream fs = new FileStream(pPath, FileMode.Create))
+            {
+                XmlSerializer serilizar = new XmlSerializer(typeof(List<BeCliente>));
+                serilizar.Serialize(fs, pCliente);
+            }
+        }
+        private void SerializarJson(List<BeCliente> pCliente, string pPath)
+        {
+            string json = JsonConvert.SerializeObject(pCliente, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(pPath, json);
+        }
+        private List<BeCliente> DeserializarXML(string pPath)
+        {
+            using (FileStream fs = new FileStream(pPath, FileMode.Open))
+            {
+                XmlSerializer serializar = new XmlSerializer(typeof(List<BeCliente>));
+                return (List<BeCliente>)serializar.Deserialize(fs);
+            }
+        }
+        private List<BeCliente> DeserializarJson(string pPath)
+        {
+            string json = File.ReadAllText(pPath);
+            return JsonConvert.DeserializeObject<List<BeCliente>>(json);
+        }
+        private void MostrarSerializado(string path)
+        {
+            listArchivoSerializado.Items.Clear();
+
+            string[] lineas = File.ReadAllLines(path);
+
+            foreach (string linea in lineas)
+            {
+                listArchivoSerializado.Items.Add(linea);
+            }
+        }
+        private void MostrarDeserializado(List<BeCliente> pLCliente)
+        {
+            listArchivoDeserializado.Items.Clear();
+
+            foreach (BeCliente cliente in pLCliente)
+            {
+                listArchivoDeserializado.Items.Add($"DNI: {cliente.DNI}");
+                listArchivoDeserializado.Items.Add($"Nombre: {cliente.Nombre}");
+                listArchivoDeserializado.Items.Add($"Telefono: {cliente.Telefono}");
+                listArchivoDeserializado.Items.Add("");
+            }
         }
     }
 }

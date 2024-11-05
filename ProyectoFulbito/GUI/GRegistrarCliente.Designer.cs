@@ -48,6 +48,11 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSerializar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labtipoSerilizar = new System.Windows.Forms.Label();
+            this.cmbSerializacion = new System.Windows.Forms.ComboBox();
+            this.listArchivoDeserializado = new System.Windows.Forms.ListBox();
+            this.listArchivoSerializado = new System.Windows.Forms.ListBox();
+            this.btnDeserializar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -167,7 +172,7 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(485, 328);
+            this.btnVolver.Location = new System.Drawing.Point(679, 289);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(98, 34);
             this.btnVolver.TabIndex = 18;
@@ -178,7 +183,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(688, 169);
+            this.btnModificar.Location = new System.Drawing.Point(679, 249);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(98, 34);
             this.btnModificar.TabIndex = 17;
@@ -189,7 +194,7 @@
             // btnBorrar
             // 
             this.btnBorrar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.Location = new System.Drawing.Point(584, 169);
+            this.btnBorrar.Location = new System.Drawing.Point(679, 209);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(98, 34);
             this.btnBorrar.TabIndex = 16;
@@ -200,7 +205,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(480, 169);
+            this.btnAgregar.Location = new System.Drawing.Point(679, 169);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(98, 34);
             this.btnAgregar.TabIndex = 15;
@@ -211,29 +216,80 @@
             // btnSerializar
             // 
             this.btnSerializar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSerializar.Location = new System.Drawing.Point(485, 288);
+            this.btnSerializar.Location = new System.Drawing.Point(12, 400);
             this.btnSerializar.Name = "btnSerializar";
             this.btnSerializar.Size = new System.Drawing.Size(98, 34);
             this.btnSerializar.TabIndex = 19;
             this.btnSerializar.Text = "Serializar";
             this.btnSerializar.UseVisualStyleBackColor = true;
+            this.btnSerializar.Click += new System.EventHandler(this.btnSerializar_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(589, 209);
+            this.pictureBox1.Location = new System.Drawing.Point(480, 170);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 153);
+            this.pictureBox1.Size = new System.Drawing.Size(193, 153);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
+            // 
+            // labtipoSerilizar
+            // 
+            this.labtipoSerilizar.AutoSize = true;
+            this.labtipoSerilizar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labtipoSerilizar.Location = new System.Drawing.Point(9, 374);
+            this.labtipoSerilizar.Name = "labtipoSerilizar";
+            this.labtipoSerilizar.Size = new System.Drawing.Size(153, 19);
+            this.labtipoSerilizar.TabIndex = 22;
+            this.labtipoSerilizar.Text = "Tipo de serialización";
+            // 
+            // cmbSerializacion
+            // 
+            this.cmbSerializacion.FormattingEnabled = true;
+            this.cmbSerializacion.Location = new System.Drawing.Point(168, 373);
+            this.cmbSerializacion.Name = "cmbSerializacion";
+            this.cmbSerializacion.Size = new System.Drawing.Size(138, 21);
+            this.cmbSerializacion.TabIndex = 21;
+            // 
+            // listArchivoDeserializado
+            // 
+            this.listArchivoDeserializado.FormattingEnabled = true;
+            this.listArchivoDeserializado.Location = new System.Drawing.Point(509, 400);
+            this.listArchivoDeserializado.Name = "listArchivoDeserializado";
+            this.listArchivoDeserializado.Size = new System.Drawing.Size(263, 225);
+            this.listArchivoDeserializado.TabIndex = 25;
+            // 
+            // listArchivoSerializado
+            // 
+            this.listArchivoSerializado.FormattingEnabled = true;
+            this.listArchivoSerializado.Location = new System.Drawing.Point(116, 400);
+            this.listArchivoSerializado.Name = "listArchivoSerializado";
+            this.listArchivoSerializado.Size = new System.Drawing.Size(263, 225);
+            this.listArchivoSerializado.TabIndex = 24;
+            // 
+            // btnDeserializar
+            // 
+            this.btnDeserializar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeserializar.Location = new System.Drawing.Point(402, 400);
+            this.btnDeserializar.Name = "btnDeserializar";
+            this.btnDeserializar.Size = new System.Drawing.Size(101, 38);
+            this.btnDeserializar.TabIndex = 23;
+            this.btnDeserializar.Text = "Deserializar";
+            this.btnDeserializar.UseVisualStyleBackColor = true;
+            this.btnDeserializar.Click += new System.EventHandler(this.btnDeserializar_Click);
             // 
             // GRegistrarClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
-            this.ClientSize = new System.Drawing.Size(793, 374);
+            this.ClientSize = new System.Drawing.Size(789, 639);
+            this.Controls.Add(this.listArchivoDeserializado);
+            this.Controls.Add(this.listArchivoSerializado);
+            this.Controls.Add(this.btnDeserializar);
+            this.Controls.Add(this.labtipoSerilizar);
+            this.Controls.Add(this.cmbSerializacion);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSerializar);
             this.Controls.Add(this.btnVolver);
@@ -279,5 +335,10 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSerializar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labtipoSerilizar;
+        private System.Windows.Forms.ComboBox cmbSerializacion;
+        private System.Windows.Forms.ListBox listArchivoDeserializado;
+        private System.Windows.Forms.ListBox listArchivoSerializado;
+        private System.Windows.Forms.Button btnDeserializar;
     }
 }

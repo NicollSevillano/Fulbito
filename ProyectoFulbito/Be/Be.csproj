@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BeAlquiler.cs" />
     <Compile Include="BeCancha.cs" />
     <Compile Include="BeCliente.cs" />
     <Compile Include="BeFactura.cs" />

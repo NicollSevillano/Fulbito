@@ -4,6 +4,7 @@
 - Conexión a la base de datos
 - Realización de reportes
 - Serialización XML - JSON
+- Implementación PRINCIPIOS SOLID
 
 #Desarrollo en capas / Capas utilizadas:
 
