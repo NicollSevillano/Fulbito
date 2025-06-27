@@ -10,16 +10,6 @@ namespace Servicios
 {
     public class Encriptar
     {
-        //public static string HashPassword(string password)
-        //{
-        //    return BCrypt.Net.BCrypt.HashPassword(password);
-        //}
-
-        //public static bool VerifyPassword(string password, string hashedPassword)
-        //{
-        //    return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
-        //}
-
         public static string Encrypt(string pString)
         {
             UnicodeEncoding uCode = new UnicodeEncoding();

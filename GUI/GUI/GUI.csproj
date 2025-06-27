@@ -178,12 +178,6 @@
     <Compile Include="PerfilesForm.Designer.cs">
       <DependentUpon>PerfilesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proveedoresform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proveedoresform.Designer.cs">
-      <DependentUpon>Proveedoresform.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReportReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PerfilesForm.resx">
       <DependentUpon>PerfilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proveedoresform.resx">
-      <DependentUpon>Proveedoresform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Reserva.rdlc" />
     <EmbeddedResource Include="ReportReserva.resx">

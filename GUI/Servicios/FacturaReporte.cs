@@ -65,7 +65,6 @@ namespace Servicios
                     cb.RestoreState();
                     document.Add(img);
                 }
-
                 document.Close();
                 Process.Start(path.FileName);
             }

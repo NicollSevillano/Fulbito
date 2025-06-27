@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DigitoVerificador.cs" />
     <Compile Include="FacturaReporte.cs" />
     <Compile Include="LanguageManager.cs" />
     <Compile Include="LogBitacora.cs" />
