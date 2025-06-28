@@ -45,6 +45,7 @@ Reports are viewable within the GUI and can be exported.
 - **Composite**: for permission management
 - **Singleton**: configuration and language control
 - **Factory** and **Strategy** in selected modules
+- **Observer**: to update the system according to the selected language (currently Spanish and English)
 - Clean separation of concerns across layers
 
 ## 🛠️ Technologies Used
