@@ -45,6 +45,7 @@ Estos reportes pueden visualizarse desde la GUI y exportarse.
 - **Composite**: para la gestión de permisos
 - **Singleton**: configuración y gestión de idioma
 - **Factory** y **Strategy** en ciertos módulos
+- **Observer**: para porder hacer el sistema multi-idioma (actualmente español e inglés)
 - Separación clara de capas (Responsabilidad Única)
 
 ## 🛠️ Tecnologías Utilizadas
