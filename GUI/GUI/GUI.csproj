@@ -92,6 +92,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlquilarInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlquilarInsumos.Designer.cs">
+      <DependentUpon>AlquilarInsumos.cs</DependentUpon>
+    </Compile>
     <Compile Include="BackUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,12 @@
     <Compile Include="HorasReservas.Designer.cs">
       <DependentUpon>HorasReservas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inconsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inconsistencia.Designer.cs">
+      <DependentUpon>Inconsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Insumos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +208,9 @@
     <Compile Include="Tarjeta.Designer.cs">
       <DependentUpon>Tarjeta.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlquilarInsumos.resx">
+      <DependentUpon>AlquilarInsumos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BackUpForm.resx">
       <DependentUpon>BackUpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HorasReservas.resx">
       <DependentUpon>HorasReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inconsistencia.resx">
+      <DependentUpon>Inconsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Insumos.resx">
       <DependentUpon>Insumos.cs</DependentUpon>

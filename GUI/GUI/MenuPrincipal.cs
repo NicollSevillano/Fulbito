@@ -31,6 +31,7 @@ namespace GUI
         ControlCanchasform _canchas;
         BackUpForm backrestore;
         HorasReservas hReservas;
+        AlquilarInsumos alquilarInsumos;
         public MenuPrincipalForm()
         {
             InitializeComponent();
@@ -59,6 +60,7 @@ namespace GUI
             _canchas = new ControlCanchasform();
             backrestore = new BackUpForm();
             hReservas = new HorasReservas();
+            alquilarInsumos = new AlquilarInsumos();
         }
         private void habilitarControles()
         {
@@ -175,6 +177,13 @@ namespace GUI
         {
             this.Hide();
             hReservas.ShowDialog();
+            this.Show();
+        }
+
+        private void insumosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            alquilarInsumos.ShowDialog();
             this.Show();
         }
     }

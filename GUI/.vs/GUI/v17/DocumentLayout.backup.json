@@ -1,0 +1,115 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|c:\\users\\nssev\\onedrive\\escritorio\\fulbito\\gui\\servicios\\digitoverificador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|solutionrelative:servicios\\digitoverificador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\servicios\\logbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|solutionrelative:servicios\\logbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\gregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\gregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\gregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\gregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\be\\becliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|solutionrelative:be\\becliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DigitoVerificador.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Servicios\\DigitoVerificador.cs",
+              "RelativeDocumentMoniker": "Servicios\\DigitoVerificador.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Servicios\\DigitoVerificador.cs",
+              "RelativeToolTip": "Servicios\\DigitoVerificador.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T04:48:40.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogBitacora.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Servicios\\LogBitacora.cs",
+              "RelativeDocumentMoniker": "Servicios\\LogBitacora.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Servicios\\LogBitacora.cs",
+              "RelativeToolTip": "Servicios\\LogBitacora.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T04:48:29.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GRegistrarCliente.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\GRegistrarCliente.cs",
+              "RelativeDocumentMoniker": "GUI\\GRegistrarCliente.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\GRegistrarCliente.cs",
+              "RelativeToolTip": "GUI\\GRegistrarCliente.cs",
+              "ViewState": "AgIAABYBAAAAAAAAAAAtwCcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T04:48:16.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GRegistrarCliente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\GRegistrarCliente.cs",
+              "RelativeDocumentMoniker": "GUI\\GRegistrarCliente.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\Fulbito\\GUI\\GUI\\GRegistrarCliente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\Fulbito\\GUI\\GUI\\GRegistrarCliente.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T04:48:15.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MenuPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\MenuPrincipal.cs",
+              "RelativeDocumentMoniker": "GUI\\MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\Fulbito\\GUI\\GUI\\MenuPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\Fulbito\\GUI\\GUI\\MenuPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T04:48:09.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BeCliente.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Be\\BeCliente.cs",
+              "RelativeDocumentMoniker": "Be\\BeCliente.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Be\\BeCliente.cs",
+              "RelativeToolTip": "Be\\BeCliente.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAA2wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T04:48:01.542Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

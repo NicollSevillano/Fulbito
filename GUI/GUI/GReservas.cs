@@ -78,15 +78,15 @@ namespace GUI
         private void Clientes()
         {
             cmbClientes.Items.Clear();
-            BllCliente aux = new BllCliente();
-            lCliente = aux.Consulta();
+            lCliente = blCliente.Consulta();
             cmbClientes.DisplayMember = "Nombre";
             cmbClientes.ValueMember = "id";
             foreach (BeCliente cliente in lCliente)
             {
-                cmbClientes.Items.Add(cliente); 
+                cmbClientes.Items.Add(cliente);
             }
         }
+
         private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             BeCliente aux = (BeCliente)cmbClientes.SelectedItem;
@@ -114,9 +114,9 @@ namespace GUI
                 return;
             }
 
-            if (!ValidarCliente())
+            if (cmbCancha.SelectedItem == null)
             {
-                MessageBox.Show("Debe registrar al cliente para reservar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se ha seleccionado ninguna cancha.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -126,70 +126,102 @@ namespace GUI
                 return;
             }
 
-            BeCancha bcancha1 = ObtenerCancha();
-            BeCliente bcliente1 = ObtenerCliente();
-            List<BeReserva> reservas = new List<BeReserva>();
+            BeCancha bcancha = ObtenerCancha();
+            BeCliente bcliente = ObtenerCliente();
 
+            if (bcancha == null)
+            {
+                MessageBox.Show("No se encontró la cancha seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (bcliente == null)
+            {
+                MessageBox.Show("No se encontró el cliente seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            List<BeReserva> reservas = new List<BeReserva>();
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
-                TimeSpan horarioEntrada = TimeSpan.Parse(row.Cells[1].Value.ToString());
-                BeReserva nuevaReserva = new BeReserva(bcancha1, bcliente1, dateTimePicker1.Value.Date, horarioEntrada, false);
+                var horaCell = row.Cells[1].Value;
+                if (horaCell == null || string.IsNullOrEmpty(horaCell.ToString()))
+                {
+                    MessageBox.Show("La hora seleccionada no es válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    continue;
+                }
+
+                TimeSpan horarioEntrada;
+                if (!TimeSpan.TryParse(horaCell.ToString(), out horarioEntrada))
+                {
+                    MessageBox.Show("El formato de la hora no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    continue;
+                }
+
+                BeReserva nuevaReserva = new BeReserva(bcancha, bcliente, dateTimePicker1.Value.Date, horarioEntrada, false);
                 reservas.Add(nuevaReserva);
             }
 
             if (reservas.Count == 0)
             {
-                MessageBox.Show("Seleccione al menos un horario para reservar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione al menos un horario válido para reservar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            foreach (BeReserva reserva in reservas)
+            try
             {
-                bool yaExiste = dgvReservas.Rows.Cast<DataGridViewRow>()
-                    .Any(row => row.Cells[1].Value.ToString() == reserva.Cancha.Nombre &&
-                                row.Cells[3].Value.ToString() == reserva.Fecha.ToShortDateString() &&
-                                row.Cells[4].Value.ToString() == reserva.Hora.ToString());
-
-                if (!yaExiste)
+                foreach (BeReserva reserva in reservas)
                 {
-                    blReserva.Alta(reserva); 
-                    dgvReservas.Rows.Add(reserva.id, reserva.Cancha.Nombre, reserva.Cliente.Nombre, reserva.Fecha.ToShortDateString(), reserva.Hora.ToString(), reserva.Pagado ? "Sí" : "No");
+                    blReserva.Alta(reserva);
                 }
+
+                lReserva = blReserva.Consulta();
+                Refrescar();
+
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows.Cast<DataGridViewRow>().ToList())
+                {
+                    dataGridView1.Rows.Remove(row);
+                }
+
+                LogBitacora.AgregarEvento("Reserva de cancha", 3, SessionManager.getInstance.usuario, "Reservas");
+                MessageBox.Show("¡Reserva realizada con éxito! No se olvide de pagar.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            lReserva = blReserva.Consulta();
-            Refrescar();
-            AplicarColoresPagado();
-
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows.Cast<DataGridViewRow>().ToList())
+            catch (Exception ex)
             {
-                dataGridView1.Rows.Remove(row);
+                MessageBox.Show("Error al guardar la reserva: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            LogBitacora.AgregarEvento("Reserva de cancha", 3, SessionManager.getInstance.usuario, "Reservas");
-            MessageBox.Show("¡Reserva realizada con éxito! No se olvide de pagar.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AplicarColoresPagado()
         {
             foreach (DataGridViewRow row in dgvReservas.Rows)
             {
-                if (row.Cells[5].Value != null && row.Cells[5].Value.ToString() == "Sí")
+                bool pagado = row.Cells[5].Value != null && row.Cells[5].Value.ToString() == "Sí";
+                bool cancelada = row.Cells[6].Value != null && row.Cells[6].Value.ToString() == "Sí";
+
+                if (cancelada)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Yellow;
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+                else if (pagado)
                 {
                     row.DefaultCellStyle.BackColor = Color.Green;
+                    row.DefaultCellStyle.ForeColor = Color.White;
                 }
                 else
                 {
                     row.DefaultCellStyle.BackColor = Color.Red;
+                    row.DefaultCellStyle.ForeColor = Color.White;
                 }
             }
         }
+
         private BeCancha ObtenerCancha()
         {
             string aux = cmbCancha.Text;
-            BeCancha cancha = lCancha.Find(x => x.Nombre == aux);
-            return cancha;
+            return lCancha.Find(x => x.Nombre == aux);
         }
+
         private BeCliente ObtenerCliente()
         {
             if (cmbClientes.SelectedItem == null)
@@ -234,16 +266,18 @@ namespace GUI
             }
 
             List<BeReserva> reservasExistentes = blReserva.Consulta()
-                .Where(r => r.Cancha.Nombre == canchaSeleccionada && r.Fecha.Date == fechaSeleccionada)
+                .Where(r => r.Cancha.Nombre == canchaSeleccionada
+                    && r.Fecha.Date == fechaSeleccionada
+                    && !r.Cancelada) 
                 .ToList();
 
             List<BeHorarios> horariosDisponibles = horarios
-                .Where(h => !reservasExistentes.Any(r => r.Hora == h.HoraEntrada))
+                .Where(h => !reservasExistentes.Any(r => r.Hora.Equals(h.HoraEntrada)))
                 .ToList();
 
             foreach (BeHorarios h in horariosDisponibles)
             {
-                dataGridView1.Rows.Add(h.id, h.HoraEntrada, h.HoraSalida);
+                dataGridView1.Rows.Add(h.id, h.HoraEntrada.ToString(@"hh\:mm\:ss"), h.HoraSalida.ToString(@"hh\:mm\:ss"));
             }
 
             if (dataGridView1.Rows.Count == 0)
@@ -251,6 +285,7 @@ namespace GUI
                 MessageBox.Show("No hay horarios disponibles para la cancha seleccionada en esta fecha.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
         private BeReserva LlamarReserva()
         {
@@ -264,13 +299,34 @@ namespace GUI
         {
             dgvReservas.Rows.Clear();
 
-            foreach (BeReserva r in lReserva)
+            if (!dgvReservas.Columns.Contains("Cancelada"))
             {
-                dgvReservas.Rows.Add(r.id, r.Cancha.Nombre, r.Cliente.Nombre, r.Fecha.ToShortDateString(), r.Hora.ToString(), r.Pagado ? "Sí" : "No");
+                DataGridViewTextBoxColumn colCancelada = new DataGridViewTextBoxColumn();
+                colCancelada.Name = "Cancelada";
+                colCancelada.HeaderText = "Cancelada";
+                colCancelada.Visible = false; 
+                dgvReservas.Columns.Add(colCancelada);
             }
 
-            AplicarColoresPagado(); 
+            lReserva = blReserva.Consulta();
+
+            foreach (BeReserva r in lReserva)
+            {
+                dgvReservas.Rows.Add(
+                    r.id,
+                    r.Cancha != null ? r.Cancha.Nombre : "[Cancha nula]",
+                    r.Cliente != null ? r.Cliente.Nombre : "[Cliente nulo]",
+                    r.Fecha.ToShortDateString(),
+                    r.Hora.ToString(),
+                    r.Pagado ? "Sí" : "No",
+                    r.Cancelada ? "Sí" : "No"
+                );
+            }
+
+            AplicarColoresPagado();
         }
+
+
         private void btnCobrar_Click(object sender, EventArgs e)
         {
             if (dgvReservas.SelectedRows.Count == 0) { MessageBox.Show("Tiene que seleccionar una reserva"); return; }
@@ -312,23 +368,21 @@ namespace GUI
                 return;
             }
 
-            DialogResult resultado = MessageBox.Show("Usted está por cancelar la reserva", "Cancelar reserva", MessageBoxButtons.YesNo);
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea cancelar la reserva?", "Cancelar reserva", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado != DialogResult.Yes) return;
 
-            string id = dgvReservas.SelectedRows[0].Cells[0].Value.ToString();
-            BeReserva aux = blReserva.Consulta().Find(x => x.id == id);
+            int id = Convert.ToInt32(dgvReservas.SelectedRows[0].Cells[0].Value);
 
-            if (aux != null)
-            {
-                foreach (DataGridViewCell cell in dgvReservas.SelectedRows[0].Cells)
-                {
-                    cell.Style.BackColor = Color.Yellow;
-                    cell.Style.ForeColor = Color.Black;
-                }
+            blReserva.Cancelar(id);
 
-                MessageBox.Show("Color cambiado a amarillo.", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            lReserva = blReserva.Consulta();
+            Refrescar();
+            btnDisponibilidad_Click(null, null);
+
+            MessageBox.Show("Reserva cancelada y horario liberado.");
         }
+
+
         private void btnCobrar_Click_1(object sender, EventArgs e)
         {
             if (dgvReservas.SelectedRows.Count == 0)
@@ -338,13 +392,14 @@ namespace GUI
             }
             CobrarReservaForm cobrarReserva = new CobrarReservaForm(LlamarReserva())
             {
-                Owner = this 
+                Owner = this
             };
             LanguageManager.Suscribir(cobrarReserva);
             LogBitacora.AgregarEvento("Pagar reserva", 3, SessionManager.getInstance.usuario, "Pagar reservas");
 
-            cobrarReserva.ShowDialog(); 
+            cobrarReserva.ShowDialog();
         }
+
         public void ActualizarGrilla()
         {
             dgvReservas.DataSource = null;  

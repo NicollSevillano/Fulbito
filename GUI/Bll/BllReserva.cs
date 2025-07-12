@@ -21,7 +21,7 @@ namespace Bll
 
         public void Baja(int pId)
         {
-            throw new NotImplementedException();
+            mReserva.Baja(pId);
         }
 
         public List<BeReserva> Consulta()
@@ -42,5 +42,10 @@ namespace Bll
         {
             //mReserva.Disponibilidad(pCanchaNombre, pFecha);
         }
+        public void Cancelar(int idReserva)
+        {
+            mReserva.CancelarReserva(idReserva);
+        }
+
     }
 }

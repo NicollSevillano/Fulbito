@@ -44,49 +44,57 @@ namespace GUI
         }
         private bool Cargartxt()
         {
-            bool txtValidado = false;
-            if (txtDni.ToString() == string.Empty ||
-                txtNombre.ToString() == string.Empty ||
-                txtTelefono.ToString() == string.Empty ||
-                txtDireccion.ToString() == string.Empty)
-            {
-                txtValidado = true;
-            }
-            return txtValidado;
+            return string.IsNullOrWhiteSpace(txtDni.Text) ||
+                   string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                   string.IsNullOrWhiteSpace(txtTelefono.Text) ||
+                   string.IsNullOrWhiteSpace(txtDireccion.Text);
         }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!Cargartxt())
+                if (Cargartxt())
                 {
-                    BeCliente nuevoCliente;
-                    nuevoCliente = new BeCliente(txtDni.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text);
-                    blCliente.Alta(nuevoCliente);
-                    lCliente = blCliente.Consulta();
-                    LogBitacora.AgregarEvento("Registrar cliente", 2, SessionManager.getInstance.usuario, "Clientes");
-                    Refrescar();
+                    MessageBox.Show("Debe completar todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
+                BeCliente nuevoCliente = new BeCliente(txtDni.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text);
+                blCliente.Alta(nuevoCliente);
+                lCliente = blCliente.Consulta();
+                Refrescar();
+                MessageBox.Show("Usuario agregado correctamente.");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if (dgvCliente.SelectedRows.Count > 0)
+            try
             {
+                if (dgvCliente.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Debe seleccionar un usuario para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 foreach (DataGridViewRow d in dgvCliente.SelectedRows)
                 {
                     int id = Convert.ToInt32(d.Cells[0].Value);
                     blCliente.Baja(id);
-                    lCliente = blCliente.Consulta();
                 }
-                LogBitacora.AgregarEvento("Eliminar cliente", 2, SessionManager.getInstance.usuario, "Clientes");
-                MessageBox.Show("Usuario eliminado"); 
+                lCliente = blCliente.Consulta();
+                Refrescar();
+                MessageBox.Show("Usuario eliminado correctamente.");
             }
-            Refrescar();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void Refrescar()
         {
@@ -116,35 +124,43 @@ namespace GUI
         {
             try
             {
-                if(dgvCliente.Rows.Count > 0)
+                if (dgvCliente.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("Debe seleccionar un usuario para modificar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
                 DataGridViewRow dgr = dgvCliente.SelectedRows[0];
-                string cliente = dgr.Cells[0].Value.ToString();
+                int clienteId = Convert.ToInt32(dgr.Cells[0].Value);
+                BeCliente clienteModificar = lCliente.Find(x => x.id == clienteId.ToString());
 
-                BeCliente clienteModificar = lCliente.Find(x => x.id == cliente);
-
-                if (!Cargartxt())
+                if (clienteModificar == null)
                 {
-                    clienteModificar.DNI = txtDni.Text;
-                    clienteModificar.Nombre = txtNombre.Text;
-                    clienteModificar.Telefono = txtTelefono.Text;
-                    clienteModificar.Direccion = txtDireccion.Text;
-
-                    blCliente.Modificacion(clienteModificar);
-                    lCliente = blCliente.Consulta();
-                    Refrescar();
-                    LogBitacora.AgregarEvento("Modificar cliente", 3, SessionManager.getInstance.usuario, "Clientes");
-                    MessageBox.Show("Usuario modificado");
+                    MessageBox.Show("No se pudo encontrar el cliente en la lista.");
+                    return;
                 }
+
+                if (Cargartxt())
+                {
+                    MessageBox.Show("Debe completar todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                clienteModificar.DNI = txtDni.Text;
+                clienteModificar.Nombre = txtNombre.Text;
+                clienteModificar.Telefono = txtTelefono.Text;
+                clienteModificar.Direccion = txtDireccion.Text;
+
+                blCliente.Modificacion(clienteModificar);
+                lCliente = blCliente.Consulta();
+                Refrescar();
+                MessageBox.Show("Usuario modificado correctamente.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -171,6 +187,7 @@ namespace GUI
 
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvCliente.SelectedRows.Count == 0) return;
             DataGridViewRow row = dgvCliente.SelectedRows[0];
             txtDni.Text = row.Cells[1].Value.ToString();
             txtNombre.Text = row.Cells[2].Value.ToString();

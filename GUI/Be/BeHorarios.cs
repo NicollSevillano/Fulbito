@@ -12,7 +12,9 @@ namespace Be
     {
         public BeHorarios(string pId, TimeSpan pHE, TimeSpan pHS)
         {
-            id = pId; HoraEntrada = pHE; HoraSalida = pHS;
+            id = pId;
+            HoraEntrada = pHE;
+            HoraSalida = pHS;
         }
         public BeHorarios(object[] _object)
         {
@@ -24,4 +26,5 @@ namespace Be
         public TimeSpan HoraEntrada { get; set; }
         public TimeSpan HoraSalida { get; set; }
     }
+
 }

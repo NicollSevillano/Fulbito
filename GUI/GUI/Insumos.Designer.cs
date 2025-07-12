@@ -31,36 +31,36 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsumosForm));
             this.labInsumos = new System.Windows.Forms.Label();
+            this.ObservacionesInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProveedorInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantActualInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaHoraInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.checkBoxEstado = new System.Windows.Forms.CheckBox();
-            this.checkBoxNombre = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.btnFiltrarInsumo = new System.Windows.Forms.Button();
-            this.groupObservacionesInsumos = new System.Windows.Forms.GroupBox();
-            this.btnObservaciones = new System.Windows.Forms.Button();
             this.btnAgregarInsumos = new System.Windows.Forms.Button();
             this.btnModificarInsumos = new System.Windows.Forms.Button();
             this.btnBorrarInsumos = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.labNombre = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.labNombreInsumos = new System.Windows.Forms.Label();
             this.labCantidadInsumos = new System.Windows.Forms.Label();
+            this.btnObservaciones = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.groupObservacionesInsumos = new System.Windows.Forms.GroupBox();
             this.labProveedor = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.checkBoxEstado = new System.Windows.Forms.CheckBox();
+            this.labNombre = new System.Windows.Forms.Label();
+            this.btnFiltrarInsumo = new System.Windows.Forms.Button();
+            this.checkBoxNombre = new System.Windows.Forms.CheckBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.IdInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaHoraInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantActualInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProveedorInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ObservacionesInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupObservacionesInsumos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,6 +76,61 @@
             this.labInsumos.Size = new System.Drawing.Size(137, 19);
             this.labInsumos.TabIndex = 1;
             this.labInsumos.Text = "Estado de insumos";
+            // 
+            // ObservacionesInsumos
+            // 
+            this.ObservacionesInsumos.FillWeight = 110.7445F;
+            this.ObservacionesInsumos.HeaderText = "Observaciones";
+            this.ObservacionesInsumos.Name = "ObservacionesInsumos";
+            this.ObservacionesInsumos.ReadOnly = true;
+            // 
+            // EstadoInsumos
+            // 
+            this.EstadoInsumos.FillWeight = 110.7445F;
+            this.EstadoInsumos.HeaderText = "Estado";
+            this.EstadoInsumos.Name = "EstadoInsumos";
+            this.EstadoInsumos.ReadOnly = true;
+            // 
+            // ProveedorInsumos
+            // 
+            this.ProveedorInsumos.FillWeight = 110.7445F;
+            this.ProveedorInsumos.HeaderText = "Proveedor";
+            this.ProveedorInsumos.Name = "ProveedorInsumos";
+            this.ProveedorInsumos.ReadOnly = true;
+            // 
+            // CantActualInsumos
+            // 
+            this.CantActualInsumos.HeaderText = "Cantidad actual";
+            this.CantActualInsumos.Name = "CantActualInsumos";
+            this.CantActualInsumos.ReadOnly = true;
+            // 
+            // CantidadInsumos
+            // 
+            this.CantidadInsumos.FillWeight = 110.7445F;
+            this.CantidadInsumos.HeaderText = "Cantidad";
+            this.CantidadInsumos.Name = "CantidadInsumos";
+            this.CantidadInsumos.ReadOnly = true;
+            // 
+            // NombreInsumos
+            // 
+            this.NombreInsumos.FillWeight = 110.7445F;
+            this.NombreInsumos.HeaderText = "Nombre";
+            this.NombreInsumos.Name = "NombreInsumos";
+            this.NombreInsumos.ReadOnly = true;
+            // 
+            // fechaHoraInsumos
+            // 
+            this.fechaHoraInsumos.FillWeight = 110.7445F;
+            this.fechaHoraInsumos.HeaderText = "Fecha-Hora";
+            this.fechaHoraInsumos.Name = "fechaHoraInsumos";
+            this.fechaHoraInsumos.ReadOnly = true;
+            // 
+            // IdInsumos
+            // 
+            this.IdInsumos.FillWeight = 35.533F;
+            this.IdInsumos.HeaderText = "ID";
+            this.IdInsumos.Name = "IdInsumos";
+            this.IdInsumos.ReadOnly = true;
             // 
             // dataGridView1
             // 
@@ -106,76 +161,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(866, 231);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // checkBoxEstado
-            // 
-            this.checkBoxEstado.AutoSize = true;
-            this.checkBoxEstado.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxEstado.Location = new System.Drawing.Point(16, 122);
-            this.checkBoxEstado.Name = "checkBoxEstado";
-            this.checkBoxEstado.Size = new System.Drawing.Size(73, 23);
-            this.checkBoxEstado.TabIndex = 6;
-            this.checkBoxEstado.Text = "Estado";
-            this.checkBoxEstado.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxNombre
-            // 
-            this.checkBoxNombre.AutoSize = true;
-            this.checkBoxNombre.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxNombre.Location = new System.Drawing.Point(16, 81);
-            this.checkBoxNombre.Name = "checkBoxNombre";
-            this.checkBoxNombre.Size = new System.Drawing.Size(168, 23);
-            this.checkBoxNombre.TabIndex = 8;
-            this.checkBoxNombre.Text = "Nombre proveedor";
-            this.checkBoxNombre.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(247, 80);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 27);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(247, 121);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(159, 27);
-            this.comboBox2.TabIndex = 11;
-            // 
-            // btnFiltrarInsumo
-            // 
-            this.btnFiltrarInsumo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrarInsumo.Location = new System.Drawing.Point(302, 173);
-            this.btnFiltrarInsumo.Name = "btnFiltrarInsumo";
-            this.btnFiltrarInsumo.Size = new System.Drawing.Size(104, 36);
-            this.btnFiltrarInsumo.TabIndex = 12;
-            this.btnFiltrarInsumo.Text = "Filtrar";
-            this.btnFiltrarInsumo.UseVisualStyleBackColor = true;
-            // 
-            // groupObservacionesInsumos
-            // 
-            this.groupObservacionesInsumos.Controls.Add(this.textBox5);
-            this.groupObservacionesInsumos.Controls.Add(this.btnObservaciones);
-            this.groupObservacionesInsumos.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupObservacionesInsumos.Location = new System.Drawing.Point(12, 424);
-            this.groupObservacionesInsumos.Name = "groupObservacionesInsumos";
-            this.groupObservacionesInsumos.Size = new System.Drawing.Size(415, 200);
-            this.groupObservacionesInsumos.TabIndex = 13;
-            this.groupObservacionesInsumos.TabStop = false;
-            this.groupObservacionesInsumos.Text = "Observaciones";
-            // 
-            // btnObservaciones
-            // 
-            this.btnObservaciones.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObservaciones.Location = new System.Drawing.Point(291, 136);
-            this.btnObservaciones.Name = "btnObservaciones";
-            this.btnObservaciones.Size = new System.Drawing.Size(118, 46);
-            this.btnObservaciones.TabIndex = 19;
-            this.btnObservaciones.Text = "Agregar observaciones";
-            this.btnObservaciones.UseVisualStyleBackColor = true;
             // 
             // btnAgregarInsumos
             // 
@@ -228,23 +213,6 @@
             this.textBox3.Size = new System.Drawing.Size(161, 20);
             this.textBox3.TabIndex = 18;
             // 
-            // labNombre
-            // 
-            this.labNombre.AutoSize = true;
-            this.labNombre.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labNombre.Location = new System.Drawing.Point(16, 45);
-            this.labNombre.Name = "labNombre";
-            this.labNombre.Size = new System.Drawing.Size(147, 19);
-            this.labNombre.TabIndex = 13;
-            this.labNombre.Text = "Nombre de insumo";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(246, 42);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 27);
-            this.textBox4.TabIndex = 14;
-            // 
             // labNombreInsumos
             // 
             this.labNombreInsumos.AutoSize = true;
@@ -264,6 +232,36 @@
             this.labCantidadInsumos.Size = new System.Drawing.Size(72, 19);
             this.labCantidadInsumos.TabIndex = 21;
             this.labCantidadInsumos.Text = "Cantidad";
+            // 
+            // btnObservaciones
+            // 
+            this.btnObservaciones.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObservaciones.Location = new System.Drawing.Point(291, 136);
+            this.btnObservaciones.Name = "btnObservaciones";
+            this.btnObservaciones.Size = new System.Drawing.Size(118, 46);
+            this.btnObservaciones.TabIndex = 19;
+            this.btnObservaciones.Text = "Agregar observaciones";
+            this.btnObservaciones.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(8, 26);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(277, 156);
+            this.textBox5.TabIndex = 20;
+            // 
+            // groupObservacionesInsumos
+            // 
+            this.groupObservacionesInsumos.Controls.Add(this.textBox5);
+            this.groupObservacionesInsumos.Controls.Add(this.btnObservaciones);
+            this.groupObservacionesInsumos.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupObservacionesInsumos.Location = new System.Drawing.Point(12, 424);
+            this.groupObservacionesInsumos.Name = "groupObservacionesInsumos";
+            this.groupObservacionesInsumos.Size = new System.Drawing.Size(415, 200);
+            this.groupObservacionesInsumos.TabIndex = 13;
+            this.groupObservacionesInsumos.TabStop = false;
+            this.groupObservacionesInsumos.Text = "Observaciones";
             // 
             // labProveedor
             // 
@@ -285,6 +283,71 @@
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(246, 42);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(160, 27);
+            this.textBox4.TabIndex = 14;
+            // 
+            // checkBoxEstado
+            // 
+            this.checkBoxEstado.AutoSize = true;
+            this.checkBoxEstado.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxEstado.Location = new System.Drawing.Point(16, 122);
+            this.checkBoxEstado.Name = "checkBoxEstado";
+            this.checkBoxEstado.Size = new System.Drawing.Size(73, 23);
+            this.checkBoxEstado.TabIndex = 6;
+            this.checkBoxEstado.Text = "Estado";
+            this.checkBoxEstado.UseVisualStyleBackColor = true;
+            // 
+            // labNombre
+            // 
+            this.labNombre.AutoSize = true;
+            this.labNombre.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labNombre.Location = new System.Drawing.Point(16, 45);
+            this.labNombre.Name = "labNombre";
+            this.labNombre.Size = new System.Drawing.Size(147, 19);
+            this.labNombre.TabIndex = 13;
+            this.labNombre.Text = "Nombre de insumo";
+            // 
+            // btnFiltrarInsumo
+            // 
+            this.btnFiltrarInsumo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrarInsumo.Location = new System.Drawing.Point(302, 173);
+            this.btnFiltrarInsumo.Name = "btnFiltrarInsumo";
+            this.btnFiltrarInsumo.Size = new System.Drawing.Size(104, 36);
+            this.btnFiltrarInsumo.TabIndex = 12;
+            this.btnFiltrarInsumo.Text = "Filtrar";
+            this.btnFiltrarInsumo.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxNombre
+            // 
+            this.checkBoxNombre.AutoSize = true;
+            this.checkBoxNombre.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNombre.Location = new System.Drawing.Point(16, 81);
+            this.checkBoxNombre.Name = "checkBoxNombre";
+            this.checkBoxNombre.Size = new System.Drawing.Size(168, 23);
+            this.checkBoxNombre.TabIndex = 8;
+            this.checkBoxNombre.Text = "Nombre proveedor";
+            this.checkBoxNombre.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(247, 80);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(159, 27);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(247, 121);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(159, 27);
+            this.comboBox2.TabIndex = 11;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -301,69 +364,6 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
-            // 
-            // IdInsumos
-            // 
-            this.IdInsumos.FillWeight = 35.533F;
-            this.IdInsumos.HeaderText = "ID";
-            this.IdInsumos.Name = "IdInsumos";
-            this.IdInsumos.ReadOnly = true;
-            // 
-            // fechaHoraInsumos
-            // 
-            this.fechaHoraInsumos.FillWeight = 110.7445F;
-            this.fechaHoraInsumos.HeaderText = "Fecha-Hora";
-            this.fechaHoraInsumos.Name = "fechaHoraInsumos";
-            this.fechaHoraInsumos.ReadOnly = true;
-            // 
-            // NombreInsumos
-            // 
-            this.NombreInsumos.FillWeight = 110.7445F;
-            this.NombreInsumos.HeaderText = "Nombre";
-            this.NombreInsumos.Name = "NombreInsumos";
-            this.NombreInsumos.ReadOnly = true;
-            // 
-            // CantidadInsumos
-            // 
-            this.CantidadInsumos.FillWeight = 110.7445F;
-            this.CantidadInsumos.HeaderText = "Cantidad";
-            this.CantidadInsumos.Name = "CantidadInsumos";
-            this.CantidadInsumos.ReadOnly = true;
-            // 
-            // CantActualInsumos
-            // 
-            this.CantActualInsumos.HeaderText = "Cantidad actual";
-            this.CantActualInsumos.Name = "CantActualInsumos";
-            this.CantActualInsumos.ReadOnly = true;
-            // 
-            // ProveedorInsumos
-            // 
-            this.ProveedorInsumos.FillWeight = 110.7445F;
-            this.ProveedorInsumos.HeaderText = "Proveedor";
-            this.ProveedorInsumos.Name = "ProveedorInsumos";
-            this.ProveedorInsumos.ReadOnly = true;
-            // 
-            // EstadoInsumos
-            // 
-            this.EstadoInsumos.FillWeight = 110.7445F;
-            this.EstadoInsumos.HeaderText = "Estado";
-            this.EstadoInsumos.Name = "EstadoInsumos";
-            this.EstadoInsumos.ReadOnly = true;
-            // 
-            // ObservacionesInsumos
-            // 
-            this.ObservacionesInsumos.FillWeight = 110.7445F;
-            this.ObservacionesInsumos.HeaderText = "Observaciones";
-            this.ObservacionesInsumos.Name = "ObservacionesInsumos";
-            this.ObservacionesInsumos.ReadOnly = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(8, 26);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(277, 156);
-            this.textBox5.TabIndex = 20;
             // 
             // InsumosForm
             // 
@@ -402,35 +402,35 @@
 
         #endregion
         private System.Windows.Forms.Label labInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantActualInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaHoraInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdInsumos;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox checkBoxEstado;
-        private System.Windows.Forms.CheckBox checkBoxNombre;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button btnFiltrarInsumo;
-        private System.Windows.Forms.GroupBox groupObservacionesInsumos;
         private System.Windows.Forms.Button btnAgregarInsumos;
         private System.Windows.Forms.Button btnModificarInsumos;
         private System.Windows.Forms.Button btnBorrarInsumos;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label labNombre;
         private System.Windows.Forms.Label labNombreInsumos;
         private System.Windows.Forms.Label labCantidadInsumos;
-        private System.Windows.Forms.Label labProveedor;
         private System.Windows.Forms.Button btnObservaciones;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaHoraInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantActualInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesInsumos;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.GroupBox groupObservacionesInsumos;
+        private System.Windows.Forms.Label labProveedor;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.CheckBox checkBoxEstado;
+        private System.Windows.Forms.Label labNombre;
+        private System.Windows.Forms.Button btnFiltrarInsumo;
+        private System.Windows.Forms.CheckBox checkBoxNombre;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

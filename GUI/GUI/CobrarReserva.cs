@@ -61,30 +61,34 @@ namespace GUI
         }
         private void btncPagar_Click(object sender, EventArgs e)
         {
-            if (rbEfectivo.Checked || rbTransferencia.Checked || rbDebito.Checked)
+            if (!(rbEfectivo.Checked || rbTransferencia.Checked || rbDebito.Checked))
             {
-                DialogResult resultado = MessageBox.Show("¿Pago realizado?", "Confirmar", MessageBoxButtons.OKCancel);
-                if (resultado == DialogResult.OK)
+                MessageBox.Show("Seleccione un método de pago", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult resultado = MessageBox.Show("¿Pago realizado?", "Confirmar", MessageBoxButtons.OKCancel);
+            if (resultado == DialogResult.OK)
+            {
+                mreserva.ActualizarPago(bReserva.id, true);
+
+                MessageBox.Show("Reserva confirmada");
+                LogBitacora.AgregarEvento("Pago de reserva", 3, SessionManager.getInstance.usuario, "Cobrar reserva");
+                FacturaReporte.Reporte(bReserva);
+
+                if (Owner is GReservasForm formReservas)
                 {
-                    mreserva.ActualizarPago(bReserva.id, true);
-
-                    MessageBox.Show("Reserva confirmada");
-
-                    LogBitacora.AgregarEvento("Pago de reserva", 3, SessionManager.getInstance.usuario, "Cobrar reserva");
-                    FacturaReporte.Reporte(bReserva);
-                    if (Owner is GReservasForm formReservas)
-                    {
-                        formReservas.Refrescar();
-                    }
-
-                    this.Close(); 
+                    formReservas.Refrescar();
                 }
-                else
-                {
-                    MessageBox.Show("Por favor, pagar la reserva");
-                }
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, pagar la reserva");
             }
         }
+
         private string Alias()
         {
             string[] alias = { "alias1", "alias2", "alias3" }; 

@@ -40,6 +40,12 @@
             this.txtPrecioCancha = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvCanchas = new System.Windows.Forms.DataGridView();
+            this.IdCanchas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacidadCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ObservacionesCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labCapacidadCancha = new System.Windows.Forms.Label();
             this.txtCapacidadCancha = new System.Windows.Forms.TextBox();
             this.groupEstadoObservaciones = new System.Windows.Forms.GroupBox();
@@ -50,12 +56,6 @@
             this.btnEstadoCancha = new System.Windows.Forms.Button();
             this.cmbEstadoCancha = new System.Windows.Forms.ComboBox();
             this.labEstadoCancha = new System.Windows.Forms.Label();
-            this.IdCanchas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapacidadCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ObservacionesCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCanchas)).BeginInit();
             this.groupEstadoObservaciones.SuspendLayout();
@@ -177,6 +177,48 @@
             this.dgvCanchas.Size = new System.Drawing.Size(730, 243);
             this.dgvCanchas.TabIndex = 12;
             // 
+            // IdCanchas
+            // 
+            this.IdCanchas.FillWeight = 35.53299F;
+            this.IdCanchas.HeaderText = "ID";
+            this.IdCanchas.Name = "IdCanchas";
+            this.IdCanchas.ReadOnly = true;
+            // 
+            // TipoCancha
+            // 
+            this.TipoCancha.FillWeight = 110.7445F;
+            this.TipoCancha.HeaderText = "Tipo cancha";
+            this.TipoCancha.Name = "TipoCancha";
+            this.TipoCancha.ReadOnly = true;
+            // 
+            // PrecioCancha
+            // 
+            this.PrecioCancha.FillWeight = 110.7445F;
+            this.PrecioCancha.HeaderText = "Precio";
+            this.PrecioCancha.Name = "PrecioCancha";
+            this.PrecioCancha.ReadOnly = true;
+            // 
+            // CapacidadCancha
+            // 
+            this.CapacidadCancha.FillWeight = 110.7445F;
+            this.CapacidadCancha.HeaderText = "Capacidad";
+            this.CapacidadCancha.Name = "CapacidadCancha";
+            this.CapacidadCancha.ReadOnly = true;
+            // 
+            // EstadoCancha
+            // 
+            this.EstadoCancha.FillWeight = 110.7445F;
+            this.EstadoCancha.HeaderText = "Estado";
+            this.EstadoCancha.Name = "EstadoCancha";
+            this.EstadoCancha.ReadOnly = true;
+            // 
+            // ObservacionesCancha
+            // 
+            this.ObservacionesCancha.FillWeight = 110.7445F;
+            this.ObservacionesCancha.HeaderText = "Observaciones";
+            this.ObservacionesCancha.Name = "ObservacionesCancha";
+            this.ObservacionesCancha.ReadOnly = true;
+            // 
             // labCapacidadCancha
             // 
             this.labCapacidadCancha.AutoSize = true;
@@ -277,48 +319,6 @@
             this.labEstadoCancha.Size = new System.Drawing.Size(54, 19);
             this.labEstadoCancha.TabIndex = 18;
             this.labEstadoCancha.Text = "Estado";
-            // 
-            // IdCanchas
-            // 
-            this.IdCanchas.FillWeight = 35.53299F;
-            this.IdCanchas.HeaderText = "ID";
-            this.IdCanchas.Name = "IdCanchas";
-            this.IdCanchas.ReadOnly = true;
-            // 
-            // TipoCancha
-            // 
-            this.TipoCancha.FillWeight = 110.7445F;
-            this.TipoCancha.HeaderText = "Tipo cancha";
-            this.TipoCancha.Name = "TipoCancha";
-            this.TipoCancha.ReadOnly = true;
-            // 
-            // PrecioCancha
-            // 
-            this.PrecioCancha.FillWeight = 110.7445F;
-            this.PrecioCancha.HeaderText = "Precio";
-            this.PrecioCancha.Name = "PrecioCancha";
-            this.PrecioCancha.ReadOnly = true;
-            // 
-            // CapacidadCancha
-            // 
-            this.CapacidadCancha.FillWeight = 110.7445F;
-            this.CapacidadCancha.HeaderText = "Capacidad";
-            this.CapacidadCancha.Name = "CapacidadCancha";
-            this.CapacidadCancha.ReadOnly = true;
-            // 
-            // EstadoCancha
-            // 
-            this.EstadoCancha.FillWeight = 110.7445F;
-            this.EstadoCancha.HeaderText = "Estado";
-            this.EstadoCancha.Name = "EstadoCancha";
-            this.EstadoCancha.ReadOnly = true;
-            // 
-            // ObservacionesCancha
-            // 
-            this.ObservacionesCancha.FillWeight = 110.7445F;
-            this.ObservacionesCancha.HeaderText = "Observaciones";
-            this.ObservacionesCancha.Name = "ObservacionesCancha";
-            this.ObservacionesCancha.ReadOnly = true;
             // 
             // ControlCanchasform
             // 

@@ -46,12 +46,6 @@ namespace Servicios
             p4.SqlDbType = SqlDbType.NVarChar;
             arrayList.Add(p4);
 
-            SqlParameter p5 = new SqlParameter();
-            p5.ParameterName = "@Modulo";
-            p5.Value = pModulo;
-            p5.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p5);
-
             dao.Escribir(altaBitacora, arrayList);
         }
         public static DataTable ConsultaBitacora()

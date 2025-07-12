@@ -17,6 +17,7 @@ namespace Be
             Fecha = pFecha; 
             Hora = pHora;
             Pagado = pPagado;
+
         }
         public BeReserva() { }
         public BeReserva(object[] array)
@@ -25,6 +26,10 @@ namespace Be
             Fecha = DateTime.Parse(array[3].ToString());
             Hora = TimeSpan.Parse(array[4].ToString());
             Pagado = bool.Parse(array[5].ToString());
+            if (array[7] == DBNull.Value)
+                this.Cancelada = false; 
+            else
+                this.Cancelada = Convert.ToBoolean(array[7]);
         }
         public string id { get ; set ; }
         public BeCancha Cancha { get; set; }
@@ -32,5 +37,7 @@ namespace Be
         public DateTime Fecha { get; set; }
         public TimeSpan Hora { get; set; }
         public bool Pagado { get; set; }
+        public bool Cancelada { get; set; }
+
     }
 }

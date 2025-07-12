@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dal
 {
@@ -14,6 +10,7 @@ namespace Dal
         private SqlConnection conexion = new SqlConnection(@"Data Source=.;Initial Catalog=SistemaF;Integrated Security=True");
         private SqlTransaction transaction;
         private SqlCommand cmd;
+
         public DataTable Leer(string storeProcedure, ArrayList pParametros = null)
         {
             DataTable dataTable = new DataTable();
@@ -24,7 +21,7 @@ namespace Dal
             try
             {
                 dataAdapter = new SqlDataAdapter(cmd);
-                if ((pParametros != null))
+                if (pParametros != null)
                 {
                     foreach (SqlParameter parameter in pParametros)
                     {
@@ -32,13 +29,9 @@ namespace Dal
                     }
                 }
             }
-            catch (SqlException ex)
+            catch
             {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                throw;
             }
             finally
             {
@@ -50,6 +43,7 @@ namespace Dal
             dataAdapter.Fill(dataTable);
             return dataTable;
         }
+
         public int Escribir(string storeProcedure, ArrayList pParametros = null)
         {
             try

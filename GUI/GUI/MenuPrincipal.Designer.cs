@@ -35,6 +35,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reservasHechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitácoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,8 @@
             this.labPerfilMp = new System.Windows.Forms.Label();
             this.comboIdioma1 = new Controles.ComboIdioma();
             this.btnSalirm = new System.Windows.Forms.Button();
-            this.reservasHechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alquilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insumosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +67,7 @@
             this.toolStripMenuItem1,
             this.reservaToolStripMenuItem,
             this.administradorToolStripMenuItem,
+            this.alquilerToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -108,6 +111,13 @@
             this.registrarClienteToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
             this.registrarClienteToolStripMenuItem.Text = "Registrar cliente";
             this.registrarClienteToolStripMenuItem.Click += new System.EventHandler(this.registrarClienteToolStripMenuItem_Click);
+            // 
+            // reservasHechasToolStripMenuItem
+            // 
+            this.reservasHechasToolStripMenuItem.Name = "reservasHechasToolStripMenuItem";
+            this.reservasHechasToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
+            this.reservasHechasToolStripMenuItem.Text = "Reservas hechas";
+            this.reservasHechasToolStripMenuItem.Click += new System.EventHandler(this.reservasHechasToolStripMenuItem_Click);
             // 
             // administradorToolStripMenuItem
             // 
@@ -259,12 +269,20 @@
             this.btnSalirm.UseVisualStyleBackColor = true;
             this.btnSalirm.Click += new System.EventHandler(this.btnSalirm_Click);
             // 
-            // reservasHechasToolStripMenuItem
+            // alquilerToolStripMenuItem
             // 
-            this.reservasHechasToolStripMenuItem.Name = "reservasHechasToolStripMenuItem";
-            this.reservasHechasToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
-            this.reservasHechasToolStripMenuItem.Text = "Reservas hechas";
-            this.reservasHechasToolStripMenuItem.Click += new System.EventHandler(this.reservasHechasToolStripMenuItem_Click);
+            this.alquilerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insumosToolStripMenuItem1});
+            this.alquilerToolStripMenuItem.Name = "alquilerToolStripMenuItem";
+            this.alquilerToolStripMenuItem.Size = new System.Drawing.Size(76, 23);
+            this.alquilerToolStripMenuItem.Text = "Alquiler";
+            // 
+            // insumosToolStripMenuItem1
+            // 
+            this.insumosToolStripMenuItem1.Name = "insumosToolStripMenuItem1";
+            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.insumosToolStripMenuItem1.Text = "Insumos";
+            this.insumosToolStripMenuItem1.Click += new System.EventHandler(this.insumosToolStripMenuItem1_Click);
             // 
             // MenuPrincipalForm
             // 
@@ -320,5 +338,7 @@
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backUpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reservasHechasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alquilerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem1;
     }
 }
