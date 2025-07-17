@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Be;
 using Interface;
 using Mapper;
+using Servicios;
 
 namespace Bll
 {
     public class BllCancha : IABMC<BeCancha>
     {
         MapperCancha mCancha = new MapperCancha();
+
         public void Alta(BeCancha pObject)
         {
             mCancha.Alta(pObject);
@@ -35,6 +34,16 @@ namespace Bll
         public void Modificacion(BeCancha pObject)
         {
             mCancha.Modificacion(pObject);
+        }
+
+        public void CambiarEstado(int pId, string pEstado)
+        {
+            mCancha.CambiarEstado(pId, pEstado);
+        }
+
+        public void CambiarObservaciones(int pId, string pObs)
+        {
+            mCancha.CambiarObservaciones(pId, pObs);
         }
     }
 }

@@ -32,6 +32,7 @@ namespace GUI
         BackUpForm backrestore;
         HorasReservas hReservas;
         AlquilarInsumos alquilarInsumos;
+        InsumosForm insumos;
         public MenuPrincipalForm()
         {
             InitializeComponent();
@@ -61,6 +62,7 @@ namespace GUI
             backrestore = new BackUpForm();
             hReservas = new HorasReservas();
             alquilarInsumos = new AlquilarInsumos();
+            insumos = new InsumosForm();
         }
         private void habilitarControles()
         {
@@ -184,6 +186,13 @@ namespace GUI
         {
             this.Hide();
             alquilarInsumos.ShowDialog();
+            this.Show();
+        }
+
+        private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            insumos.ShowDialog();
             this.Show();
         }
     }

@@ -17,28 +17,33 @@ namespace Controles
             InitializeComponent();
         }
         private int _stock;
+
         private void Stock_Load(object sender, EventArgs e)
         {
-            numericUpDown1.Value = _stock;
             numericUpDown1.Minimum = 0;
+            numericUpDown1.Value = _stock;
+            VerificarBotonMenos();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(numericUpDown1.Value > 0)
-            {
-                numericUpDown1.Value++;
-            }
+            numericUpDown1.Value++;
+            VerificarBotonMenos();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(numericUpDown1.Value > 0)
+            if (numericUpDown1.Value > numericUpDown1.Minimum)
             {
                 numericUpDown1.Value--;
-                label1.Text = numericUpDown1.Value.ToString();
-                label1.ForeColor = numericUpDown1.Value == 0 ? Color.Red : Color.Black;
+                VerificarBotonMenos();
             }
         }
+
+        private void VerificarBotonMenos()
+        {
+            button2.Enabled = numericUpDown1.Value > numericUpDown1.Minimum;
+        }
     }
+
 }

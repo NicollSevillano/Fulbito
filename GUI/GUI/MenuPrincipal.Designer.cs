@@ -46,6 +46,8 @@
             this.registrarCanchaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alquilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insumosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labNombreMp = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.labPerfilMp = new System.Windows.Forms.Label();
             this.comboIdioma1 = new Controles.ComboIdioma();
             this.btnSalirm = new System.Windows.Forms.Button();
-            this.alquilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.insumosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -138,7 +138,7 @@
             this.eventosToolStripMenuItem,
             this.cambiosToolStripMenuItem});
             this.bitácoraToolStripMenuItem.Name = "bitácoraToolStripMenuItem";
-            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.bitácoraToolStripMenuItem.Text = "Bitácora";
             // 
             // eventosToolStripMenuItem
@@ -157,13 +157,13 @@
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -172,7 +172,7 @@
             this.canchasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarCanchaToolStripMenuItem});
             this.canchasToolStripMenuItem.Name = "canchasToolStripMenuItem";
-            this.canchasToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.canchasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.canchasToolStripMenuItem.Text = "Canchas";
             // 
             // registrarCanchaToolStripMenuItem
@@ -185,15 +185,31 @@
             // insumosToolStripMenuItem
             // 
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
-            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.insumosToolStripMenuItem.Text = "Insumos";
+            this.insumosToolStripMenuItem.Click += new System.EventHandler(this.insumosToolStripMenuItem_Click);
             // 
             // backUpToolStripMenuItem
             // 
             this.backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
-            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.backUpToolStripMenuItem.Text = "BackUp";
             this.backUpToolStripMenuItem.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
+            // 
+            // alquilerToolStripMenuItem
+            // 
+            this.alquilerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insumosToolStripMenuItem1});
+            this.alquilerToolStripMenuItem.Name = "alquilerToolStripMenuItem";
+            this.alquilerToolStripMenuItem.Size = new System.Drawing.Size(76, 23);
+            this.alquilerToolStripMenuItem.Text = "Alquiler";
+            // 
+            // insumosToolStripMenuItem1
+            // 
+            this.insumosToolStripMenuItem1.Name = "insumosToolStripMenuItem1";
+            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(135, 24);
+            this.insumosToolStripMenuItem1.Text = "Insumos";
+            this.insumosToolStripMenuItem1.Click += new System.EventHandler(this.insumosToolStripMenuItem1_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -268,21 +284,6 @@
             this.btnSalirm.Text = "Salir";
             this.btnSalirm.UseVisualStyleBackColor = true;
             this.btnSalirm.Click += new System.EventHandler(this.btnSalirm_Click);
-            // 
-            // alquilerToolStripMenuItem
-            // 
-            this.alquilerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.insumosToolStripMenuItem1});
-            this.alquilerToolStripMenuItem.Name = "alquilerToolStripMenuItem";
-            this.alquilerToolStripMenuItem.Size = new System.Drawing.Size(76, 23);
-            this.alquilerToolStripMenuItem.Text = "Alquiler";
-            // 
-            // insumosToolStripMenuItem1
-            // 
-            this.insumosToolStripMenuItem1.Name = "insumosToolStripMenuItem1";
-            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.insumosToolStripMenuItem1.Text = "Insumos";
-            this.insumosToolStripMenuItem1.Click += new System.EventHandler(this.insumosToolStripMenuItem1_Click);
             // 
             // MenuPrincipalForm
             // 

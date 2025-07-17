@@ -10,3 +10,15 @@ C:\Users\nssev\OneDrive\Escritorio\Fulbito\Fulbito\GUI\Dal\bin\Debug\itextsharp.
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\Fulbito\GUI\Dal\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\Fulbito\GUI\Dal\bin\Debug\itextsharp.xml
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\Fulbito\GUI\Dal\obj\Debug\Dal.csproj.Up2Date
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\bin\Debug\Dal.dll.config
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\bin\Debug\Dal.dll
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\bin\Debug\Dal.pdb
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\bin\Debug\itextsharp.dll
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\bin\Debug\itextsharp.xml
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\obj\Debug\Dal.csproj.AssemblyReference.cache
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\obj\Debug\Dal.csproj.CoreCompileInputs.cache
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\obj\Debug\Dal.csproj.Up2Date
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\obj\Debug\Dal.dll
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Dal\obj\Debug\Dal.pdb

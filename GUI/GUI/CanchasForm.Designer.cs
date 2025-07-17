@@ -40,12 +40,6 @@
             this.txtPrecioCancha = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvCanchas = new System.Windows.Forms.DataGridView();
-            this.IdCanchas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapacidadCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ObservacionesCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labCapacidadCancha = new System.Windows.Forms.Label();
             this.txtCapacidadCancha = new System.Windows.Forms.TextBox();
             this.groupEstadoObservaciones = new System.Windows.Forms.GroupBox();
@@ -56,6 +50,13 @@
             this.btnEstadoCancha = new System.Windows.Forms.Button();
             this.cmbEstadoCancha = new System.Windows.Forms.ComboBox();
             this.labEstadoCancha = new System.Windows.Forms.Label();
+            this.IdCanchas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacidadCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ObservacionesCancha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCanchas)).BeginInit();
             this.groupEstadoObservaciones.SuspendLayout();
@@ -64,7 +65,7 @@
             // btnAltaCancha
             // 
             this.btnAltaCancha.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAltaCancha.Location = new System.Drawing.Point(602, 335);
+            this.btnAltaCancha.Location = new System.Drawing.Point(678, 341);
             this.btnAltaCancha.Name = "btnAltaCancha";
             this.btnAltaCancha.Size = new System.Drawing.Size(101, 37);
             this.btnAltaCancha.TabIndex = 1;
@@ -75,7 +76,7 @@
             // btnBajaCancha
             // 
             this.btnBajaCancha.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBajaCancha.Location = new System.Drawing.Point(602, 378);
+            this.btnBajaCancha.Location = new System.Drawing.Point(678, 384);
             this.btnBajaCancha.Name = "btnBajaCancha";
             this.btnBajaCancha.Size = new System.Drawing.Size(101, 37);
             this.btnBajaCancha.TabIndex = 2;
@@ -86,7 +87,7 @@
             // btnModificarCancha
             // 
             this.btnModificarCancha.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarCancha.Location = new System.Drawing.Point(602, 421);
+            this.btnModificarCancha.Location = new System.Drawing.Point(678, 427);
             this.btnModificarCancha.Name = "btnModificarCancha";
             this.btnModificarCancha.Size = new System.Drawing.Size(101, 37);
             this.btnModificarCancha.TabIndex = 3;
@@ -98,7 +99,7 @@
             // 
             this.labDatosCanchas.AutoSize = true;
             this.labDatosCanchas.Font = new System.Drawing.Font("Maiandra GD", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labDatosCanchas.Location = new System.Drawing.Point(336, 282);
+            this.labDatosCanchas.Location = new System.Drawing.Point(412, 288);
             this.labDatosCanchas.Name = "labDatosCanchas";
             this.labDatosCanchas.Size = new System.Drawing.Size(164, 22);
             this.labDatosCanchas.TabIndex = 5;
@@ -108,7 +109,7 @@
             // 
             this.labTcancha.AutoSize = true;
             this.labTcancha.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labTcancha.Location = new System.Drawing.Point(343, 334);
+            this.labTcancha.Location = new System.Drawing.Point(419, 340);
             this.labTcancha.Name = "labTcancha";
             this.labTcancha.Size = new System.Drawing.Size(95, 19);
             this.labTcancha.TabIndex = 6;
@@ -118,7 +119,7 @@
             // 
             this.labPrecioCancha.AutoSize = true;
             this.labPrecioCancha.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labPrecioCancha.Location = new System.Drawing.Point(343, 369);
+            this.labPrecioCancha.Location = new System.Drawing.Point(419, 375);
             this.labPrecioCancha.Name = "labPrecioCancha";
             this.labPrecioCancha.Size = new System.Drawing.Size(53, 19);
             this.labPrecioCancha.TabIndex = 7;
@@ -126,14 +127,14 @@
             // 
             // txtTipoCancha
             // 
-            this.txtTipoCancha.Location = new System.Drawing.Point(452, 335);
+            this.txtTipoCancha.Location = new System.Drawing.Point(528, 341);
             this.txtTipoCancha.Name = "txtTipoCancha";
             this.txtTipoCancha.Size = new System.Drawing.Size(127, 20);
             this.txtTipoCancha.TabIndex = 8;
             // 
             // txtPrecioCancha
             // 
-            this.txtPrecioCancha.Location = new System.Drawing.Point(452, 370);
+            this.txtPrecioCancha.Location = new System.Drawing.Point(528, 376);
             this.txtPrecioCancha.Name = "txtPrecioCancha";
             this.txtPrecioCancha.Size = new System.Drawing.Size(127, 20);
             this.txtPrecioCancha.TabIndex = 9;
@@ -174,56 +175,15 @@
             this.dgvCanchas.Name = "dgvCanchas";
             this.dgvCanchas.ReadOnly = true;
             this.dgvCanchas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCanchas.Size = new System.Drawing.Size(730, 243);
+            this.dgvCanchas.Size = new System.Drawing.Size(830, 243);
             this.dgvCanchas.TabIndex = 12;
-            // 
-            // IdCanchas
-            // 
-            this.IdCanchas.FillWeight = 35.53299F;
-            this.IdCanchas.HeaderText = "ID";
-            this.IdCanchas.Name = "IdCanchas";
-            this.IdCanchas.ReadOnly = true;
-            // 
-            // TipoCancha
-            // 
-            this.TipoCancha.FillWeight = 110.7445F;
-            this.TipoCancha.HeaderText = "Tipo cancha";
-            this.TipoCancha.Name = "TipoCancha";
-            this.TipoCancha.ReadOnly = true;
-            // 
-            // PrecioCancha
-            // 
-            this.PrecioCancha.FillWeight = 110.7445F;
-            this.PrecioCancha.HeaderText = "Precio";
-            this.PrecioCancha.Name = "PrecioCancha";
-            this.PrecioCancha.ReadOnly = true;
-            // 
-            // CapacidadCancha
-            // 
-            this.CapacidadCancha.FillWeight = 110.7445F;
-            this.CapacidadCancha.HeaderText = "Capacidad";
-            this.CapacidadCancha.Name = "CapacidadCancha";
-            this.CapacidadCancha.ReadOnly = true;
-            // 
-            // EstadoCancha
-            // 
-            this.EstadoCancha.FillWeight = 110.7445F;
-            this.EstadoCancha.HeaderText = "Estado";
-            this.EstadoCancha.Name = "EstadoCancha";
-            this.EstadoCancha.ReadOnly = true;
-            // 
-            // ObservacionesCancha
-            // 
-            this.ObservacionesCancha.FillWeight = 110.7445F;
-            this.ObservacionesCancha.HeaderText = "Observaciones";
-            this.ObservacionesCancha.Name = "ObservacionesCancha";
-            this.ObservacionesCancha.ReadOnly = true;
+            this.dgvCanchas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCanchas_CellClick);
             // 
             // labCapacidadCancha
             // 
             this.labCapacidadCancha.AutoSize = true;
             this.labCapacidadCancha.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCapacidadCancha.Location = new System.Drawing.Point(343, 405);
+            this.labCapacidadCancha.Location = new System.Drawing.Point(419, 411);
             this.labCapacidadCancha.Name = "labCapacidadCancha";
             this.labCapacidadCancha.Size = new System.Drawing.Size(82, 19);
             this.labCapacidadCancha.TabIndex = 15;
@@ -231,7 +191,7 @@
             // 
             // txtCapacidadCancha
             // 
-            this.txtCapacidadCancha.Location = new System.Drawing.Point(452, 406);
+            this.txtCapacidadCancha.Location = new System.Drawing.Point(528, 412);
             this.txtCapacidadCancha.Name = "txtCapacidadCancha";
             this.txtCapacidadCancha.Size = new System.Drawing.Size(127, 20);
             this.txtCapacidadCancha.TabIndex = 16;
@@ -320,12 +280,66 @@
             this.labEstadoCancha.TabIndex = 18;
             this.labEstadoCancha.Text = "Estado";
             // 
+            // IdCanchas
+            // 
+            this.IdCanchas.FillWeight = 49.07099F;
+            this.IdCanchas.HeaderText = "ID";
+            this.IdCanchas.Name = "IdCanchas";
+            this.IdCanchas.ReadOnly = true;
+            // 
+            // TipoCancha
+            // 
+            this.TipoCancha.FillWeight = 89.73434F;
+            this.TipoCancha.HeaderText = "Tipo cancha";
+            this.TipoCancha.Name = "TipoCancha";
+            this.TipoCancha.ReadOnly = true;
+            // 
+            // PrecioCancha
+            // 
+            this.PrecioCancha.FillWeight = 118.7107F;
+            this.PrecioCancha.HeaderText = "Precio";
+            this.PrecioCancha.Name = "PrecioCancha";
+            this.PrecioCancha.ReadOnly = true;
+            // 
+            // CapacidadCancha
+            // 
+            this.CapacidadCancha.FillWeight = 66.23949F;
+            this.CapacidadCancha.HeaderText = "Capacidad";
+            this.CapacidadCancha.Name = "CapacidadCancha";
+            this.CapacidadCancha.ReadOnly = true;
+            // 
+            // EstadoCancha
+            // 
+            this.EstadoCancha.FillWeight = 112.5621F;
+            this.EstadoCancha.HeaderText = "Estado";
+            this.EstadoCancha.Name = "EstadoCancha";
+            this.EstadoCancha.ReadOnly = true;
+            // 
+            // ObservacionesCancha
+            // 
+            this.ObservacionesCancha.FillWeight = 152.9379F;
+            this.ObservacionesCancha.HeaderText = "Observaciones";
+            this.ObservacionesCancha.Name = "ObservacionesCancha";
+            this.ObservacionesCancha.ReadOnly = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(729, 619);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 37);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ControlCanchasform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
-            this.ClientSize = new System.Drawing.Size(752, 668);
+            this.ClientSize = new System.Drawing.Size(852, 668);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupEstadoObservaciones);
             this.Controls.Add(this.txtCapacidadCancha);
             this.Controls.Add(this.labCapacidadCancha);
@@ -379,5 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CapacidadCancha;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCancha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesCancha;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -69,6 +69,10 @@
       <Project>{26df20eb-7137-456d-a132-518528613f97}</Project>
       <Name>Mapper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Servicios\Servicios.csproj">
+      <Project>{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}</Project>
+      <Name>Servicios</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

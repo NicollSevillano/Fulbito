@@ -50,8 +50,6 @@ namespace GUI
                 textBox1.Text = "Error al verificar la integridad: " + ex.Message;
             }
         }
-
-
         private void button2_Click(object sender, EventArgs e)
         {
 

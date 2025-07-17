@@ -1,0 +1,12 @@
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\bin\Debug\Interface.dll.config
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\bin\Debug\Interface.dll
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\bin\Debug\Interface.pdb
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\bin\Debug\itextsharp.dll
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\bin\Debug\itextsharp.xml
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\obj\Debug\Interface.csproj.AssemblyReference.cache
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\obj\Debug\Interface.csproj.CoreCompileInputs.cache
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\obj\Debug\Interface.csproj.Up2Date
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\obj\Debug\Interface.dll
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\Interface\obj\Debug\Interface.pdb

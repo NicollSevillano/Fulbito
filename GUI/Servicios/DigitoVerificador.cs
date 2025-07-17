@@ -5,10 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios
 {
@@ -20,25 +18,25 @@ namespace Servicios
         {
             return dao.Leer("Verificar_Integridad_Global");
         }
-        public List<String> VerificarTabla(string tableName)
+
+        public List<string> VerificarTabla(string tableName)
         {
-            List<String> errores = new List<string>();
+            List<string> errores = new List<string>();
             DataTable dt = dao.Leer($"SELECT * FROM {tableName}");
 
             StringBuilder sbDVH = new StringBuilder();
 
             foreach (DataRow row in dt.Rows)
             {
-                string concat = string.Empty;
+                string concat = "";
+                int dvhIndex = row.Table.Columns["DVH"].Ordinal;
+                for (int i = 0; i < row.ItemArray.Length; i++)
+                {
+                    if (i == dvhIndex) continue;
+                    concat += row[i]?.ToString() ?? "";
+                }
 
-                if (tableName == "Cliente")
-                    concat = $"{row["CodigoCliente"]}|{row["DNI"]}|{row["Nombre"]}|{row["Telefono"]}|{row["Direccion"]}";
-                else if (tableName == "Cancha")
-                    concat = $"{row["CodigoCancha"]}|{row["TipoCancha"]}|{row["Precio"]}|{row["Capacidad"]}|{row["Estado"]}|{row["Observaciones"]}";
-                else if (tableName == "Reserva")
-                    concat = $"{row["CodigoReserva"]}|{row["CodigoCancha"]}|{row["CodigoClient"]}|{row["Fecha"]}|{row["Hora"]}|{row["Pagado"]}";
-
-                string dvhCalculado = SHA256Base64(concat);
+                string dvhCalculado = GetSHA256Hex(concat);
                 string dvhBD = row["DVH"].ToString();
 
                 if (dvhCalculado != dvhBD)
@@ -47,7 +45,7 @@ namespace Servicios
                 sbDVH.Append(dvhBD);
             }
 
-            string dvvCalculado = SHA256Base64(sbDVH.ToString());
+            string dvvCalculado = GetSHA256Hex(sbDVH.ToString());
             var parametros = new ArrayList();
             parametros.Add(new SqlParameter("@Tabla", tableName));
             DataTable dtDVV = dao.Leer("SELECT DVV FROM IntegrityControl WHERE Tabla = @Tabla", parametros);
@@ -72,50 +70,73 @@ namespace Servicios
 
             foreach (DataRow row in dt.Rows)
             {
-                string concat = string.Empty;
+                string concat = "";
+                int dvhIndex = row.Table.Columns["DVH"].Ordinal;
+                for (int i = 0; i < row.ItemArray.Length; i++)
+                {
+                    if (i == dvhIndex) continue;
+                    concat += row[i]?.ToString() ?? "";
+                }
 
-                if (tableName == "Cliente")
-                    concat = $"{row["CodigoCliente"]}|{row["DNI"]}|{row["Nombre"]}|{row["Telefono"]}|{row["Direccion"]}";
-                else if (tableName == "Cancha")
-                    concat = $"{row["CodigoCancha"]}|{row["TipoCancha"]}|{row["Precio"]}|{row["Capacidad"]}|{row["Estado"]}|{row["Observaciones"]}";
-                else if (tableName == "Reserva")
-                    concat = $"{row["CodigoReserva"]}|{row["CodigoCancha"]}|{row["CodigoClient"]}|{row["Fecha"]}|{row["Hora"]}|{row["Pagado"]}";
+                string dvh = GetSHA256Hex(concat);
 
-                string dvh = SHA256Base64(concat);
-
-                var parametros = new System.Collections.ArrayList();
+                var parametros = new ArrayList();
                 string idCampo = tableName == "Cliente" ? "CodigoCliente" :
                                  tableName == "Cancha" ? "CodigoCancha" : "CodigoReserva";
-                parametros.Add(new System.Data.SqlClient.SqlParameter("@Id", row[idCampo]));
-                parametros.Add(new System.Data.SqlClient.SqlParameter("@DVH", dvh));
+                parametros.Add(new SqlParameter("@Id", row[idCampo]));
+                parametros.Add(new SqlParameter("@DVH", dvh));
 
                 dao.Escribir($"UPDATE {tableName} SET DVH = @DVH WHERE {idCampo} = @Id", parametros);
             }
+            RecalcularTablaVertical(tableName);
         }
         public void RecalcularTablaVertical(string tableName)
         {
-            DataTable dt = dao.Leer($"SELECT DVH FROM {tableName} ORDER BY 1"); 
+            string idCampo = tableName == "Cliente" ? "CodigoCliente" :
+                             tableName == "Cancha" ? "CodigoCancha" :
+                             tableName == "Reserva" ? "CodigoReserva" : null;
+
+            if (idCampo == null)
+                throw new Exception("No se reconoce el campo clave primaria para la tabla " + tableName);
+
+            DataTable dt = dao.Leer($"SELECT DVH FROM {tableName} ORDER BY {idCampo}");
+
             StringBuilder sbDVH = new StringBuilder();
-
             foreach (DataRow row in dt.Rows)
-                sbDVH.Append(row["DVH"].ToString());
+            {
+                if (row["DVH"] != DBNull.Value)
+                    sbDVH.Append(row["DVH"].ToString());
+            }
 
-            string dvv = SHA256Base64(sbDVH.ToString());
+            string dvv = GetSHA256Hex(sbDVH.ToString());
 
-            var parametros = new System.Collections.ArrayList();
-            parametros.Add(new System.Data.SqlClient.SqlParameter("@DVV", dvv));
-            parametros.Add(new System.Data.SqlClient.SqlParameter("@Tabla", tableName));
+            var checkParams = new ArrayList();
+            checkParams.Add(new SqlParameter("@Tabla", tableName));
+            DataTable dtCheck = dao.Leer("SELECT COUNT(*) as C FROM IntegrityControl WHERE Tabla = @Tabla", checkParams);
 
-            dao.Escribir("UPDATE IntegrityControl SET DVV = @DVV, FechaActualización = GETDATE() WHERE Tabla = @Tabla", parametros);
+            var parametros = new ArrayList();
+            parametros.Add(new SqlParameter("@Tabla", tableName));
+            parametros.Add(new SqlParameter("@DVV", dvv));
+
+            if (dtCheck.Rows.Count > 0 && Convert.ToInt32(dtCheck.Rows[0]["C"]) > 0)
+            {
+                dao.Escribir("sp_ActualizarDVV", parametros);
+            }
+            else
+            {
+                dao.Escribir("sp_InsertarDVV", parametros);
+            }
         }
 
-        public string SHA256Base64(string input)
+        public string GetSHA256Hex(string input)
         {
-            using (SHA256 sha256Hash = SHA256.Create())
+            using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] sourceBytes = Encoding.UTF8.GetBytes(input);
-                byte[] hashBytes = sha256Hash.ComputeHash(sourceBytes);
-                return Convert.ToBase64String(hashBytes);
+                ASCIIEncoding encoding = new ASCIIEncoding();
+                byte[] stream = sha256.ComputeHash(encoding.GetBytes(input));
+                var sb = new StringBuilder();
+                for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+                return sb.ToString();
             }
         }
     }

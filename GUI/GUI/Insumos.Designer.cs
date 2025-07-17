@@ -31,14 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsumosForm));
             this.labInsumos = new System.Windows.Forms.Label();
-            this.ObservacionesInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProveedorInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantActualInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaHoraInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAgregarInsumos = new System.Windows.Forms.Button();
             this.btnModificarInsumos = new System.Windows.Forms.Button();
@@ -61,6 +53,13 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.IdInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantActualInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProveedorInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ObservacionesInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupObservacionesInsumos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,61 +75,6 @@
             this.labInsumos.Size = new System.Drawing.Size(137, 19);
             this.labInsumos.TabIndex = 1;
             this.labInsumos.Text = "Estado de insumos";
-            // 
-            // ObservacionesInsumos
-            // 
-            this.ObservacionesInsumos.FillWeight = 110.7445F;
-            this.ObservacionesInsumos.HeaderText = "Observaciones";
-            this.ObservacionesInsumos.Name = "ObservacionesInsumos";
-            this.ObservacionesInsumos.ReadOnly = true;
-            // 
-            // EstadoInsumos
-            // 
-            this.EstadoInsumos.FillWeight = 110.7445F;
-            this.EstadoInsumos.HeaderText = "Estado";
-            this.EstadoInsumos.Name = "EstadoInsumos";
-            this.EstadoInsumos.ReadOnly = true;
-            // 
-            // ProveedorInsumos
-            // 
-            this.ProveedorInsumos.FillWeight = 110.7445F;
-            this.ProveedorInsumos.HeaderText = "Proveedor";
-            this.ProveedorInsumos.Name = "ProveedorInsumos";
-            this.ProveedorInsumos.ReadOnly = true;
-            // 
-            // CantActualInsumos
-            // 
-            this.CantActualInsumos.HeaderText = "Cantidad actual";
-            this.CantActualInsumos.Name = "CantActualInsumos";
-            this.CantActualInsumos.ReadOnly = true;
-            // 
-            // CantidadInsumos
-            // 
-            this.CantidadInsumos.FillWeight = 110.7445F;
-            this.CantidadInsumos.HeaderText = "Cantidad";
-            this.CantidadInsumos.Name = "CantidadInsumos";
-            this.CantidadInsumos.ReadOnly = true;
-            // 
-            // NombreInsumos
-            // 
-            this.NombreInsumos.FillWeight = 110.7445F;
-            this.NombreInsumos.HeaderText = "Nombre";
-            this.NombreInsumos.Name = "NombreInsumos";
-            this.NombreInsumos.ReadOnly = true;
-            // 
-            // fechaHoraInsumos
-            // 
-            this.fechaHoraInsumos.FillWeight = 110.7445F;
-            this.fechaHoraInsumos.HeaderText = "Fecha-Hora";
-            this.fechaHoraInsumos.Name = "fechaHoraInsumos";
-            this.fechaHoraInsumos.ReadOnly = true;
-            // 
-            // IdInsumos
-            // 
-            this.IdInsumos.FillWeight = 35.533F;
-            this.IdInsumos.HeaderText = "ID";
-            this.IdInsumos.Name = "IdInsumos";
-            this.IdInsumos.ReadOnly = true;
             // 
             // dataGridView1
             // 
@@ -149,7 +93,6 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdInsumos,
-            this.fechaHoraInsumos,
             this.NombreInsumos,
             this.CantidadInsumos,
             this.CantActualInsumos,
@@ -159,7 +102,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(8, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(866, 231);
+            this.dataGridView1.Size = new System.Drawing.Size(925, 231);
             this.dataGridView1.TabIndex = 4;
             // 
             // btnAgregarInsumos
@@ -171,6 +114,7 @@
             this.btnAgregarInsumos.TabIndex = 13;
             this.btnAgregarInsumos.Text = "Agregar";
             this.btnAgregarInsumos.UseVisualStyleBackColor = true;
+            this.btnAgregarInsumos.Click += new System.EventHandler(this.btnAgregarInsumos_Click);
             // 
             // btnModificarInsumos
             // 
@@ -276,7 +220,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(443, 505);
+            this.pictureBox1.Location = new System.Drawing.Point(481, 505);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(431, 119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -358,19 +302,67 @@
             this.groupBox1.Controls.Add(this.checkBoxEstado);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(443, 284);
+            this.groupBox1.Location = new System.Drawing.Point(481, 284);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(431, 215);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
             // 
+            // IdInsumos
+            // 
+            this.IdInsumos.FillWeight = 35.533F;
+            this.IdInsumos.HeaderText = "ID";
+            this.IdInsumos.Name = "IdInsumos";
+            this.IdInsumos.ReadOnly = true;
+            // 
+            // NombreInsumos
+            // 
+            this.NombreInsumos.FillWeight = 110.7445F;
+            this.NombreInsumos.HeaderText = "Nombre";
+            this.NombreInsumos.Name = "NombreInsumos";
+            this.NombreInsumos.ReadOnly = true;
+            // 
+            // CantidadInsumos
+            // 
+            this.CantidadInsumos.FillWeight = 110.7445F;
+            this.CantidadInsumos.HeaderText = "Cantidad";
+            this.CantidadInsumos.Name = "CantidadInsumos";
+            this.CantidadInsumos.ReadOnly = true;
+            // 
+            // CantActualInsumos
+            // 
+            this.CantActualInsumos.HeaderText = "Cantidad actual";
+            this.CantActualInsumos.Name = "CantActualInsumos";
+            this.CantActualInsumos.ReadOnly = true;
+            // 
+            // ProveedorInsumos
+            // 
+            this.ProveedorInsumos.FillWeight = 110.7445F;
+            this.ProveedorInsumos.HeaderText = "Proveedor";
+            this.ProveedorInsumos.Name = "ProveedorInsumos";
+            this.ProveedorInsumos.ReadOnly = true;
+            // 
+            // EstadoInsumos
+            // 
+            this.EstadoInsumos.FillWeight = 110.7445F;
+            this.EstadoInsumos.HeaderText = "Estado";
+            this.EstadoInsumos.Name = "EstadoInsumos";
+            this.EstadoInsumos.ReadOnly = true;
+            // 
+            // ObservacionesInsumos
+            // 
+            this.ObservacionesInsumos.FillWeight = 110.7445F;
+            this.ObservacionesInsumos.HeaderText = "Observaciones";
+            this.ObservacionesInsumos.Name = "ObservacionesInsumos";
+            this.ObservacionesInsumos.ReadOnly = true;
+            // 
             // InsumosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
-            this.ClientSize = new System.Drawing.Size(887, 636);
+            this.ClientSize = new System.Drawing.Size(945, 636);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labProveedor);
@@ -402,14 +394,6 @@
 
         #endregion
         private System.Windows.Forms.Label labInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantActualInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaHoraInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdInsumos;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAgregarInsumos;
         private System.Windows.Forms.Button btnModificarInsumos;
@@ -432,5 +416,12 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantActualInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesInsumos;
     }
 }

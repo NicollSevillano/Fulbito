@@ -51,6 +51,7 @@
     <Compile Include="BeCancha.cs" />
     <Compile Include="BeFactura.cs" />
     <Compile Include="BeHorarios.cs" />
+    <Compile Include="BeInsumo.cs" />
     <Compile Include="BelUsuario.cs" />
     <Compile Include="BeReserva.cs" />
     <Compile Include="BeCliente.cs" />

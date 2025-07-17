@@ -159,6 +159,8 @@ namespace GUI
 
                 BeReserva nuevaReserva = new BeReserva(bcancha, bcliente, dateTimePicker1.Value.Date, horarioEntrada, false);
                 reservas.Add(nuevaReserva);
+                var dv = new DigitoVerificador();
+                dv.RecalcularTablaVertical("Reserva");
             }
 
             if (reservas.Count == 0)

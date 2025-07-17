@@ -3,9 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Be;
 using Dal;
 using Interface;
@@ -16,28 +13,17 @@ namespace Mapper
     {
         Dao dao = new Dao();
         ArrayList arraylist;
+
         public void Alta(BeCancha pObject)
         {
             string spAltaCancha = "sp_Alta_Cancha";
             arraylist = new ArrayList();
 
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@TipoCancha";
-            p1.Value = pObject.Nombre;
-            p1.SqlDbType = SqlDbType.NVarChar;
-            arraylist.Add(p1);
-
-            SqlParameter p2 = new SqlParameter();
-            p2.ParameterName = "@Precio";
-            p2.Value = pObject.Precio;
-            p2.SqlDbType = SqlDbType.NVarChar;
-            arraylist.Add(p2);
-
-            SqlParameter p3 = new SqlParameter();
-            p3.ParameterName = "@Capacidad";
-            p3.Value = pObject.Capacidad;
-            p3.SqlDbType = SqlDbType.Int;
-            arraylist.Add(p3);
+            arraylist.Add(new SqlParameter("@TipoCancha", pObject.Nombre));
+            arraylist.Add(new SqlParameter("@Precio", pObject.Precio));
+            arraylist.Add(new SqlParameter("@Capacidad", pObject.Capacidad));
+            arraylist.Add(new SqlParameter("@Estado", pObject.Estado));
+            arraylist.Add(new SqlParameter("@Observaciones", pObject.Observaciones));
 
             dao.Escribir(spAltaCancha, arraylist);
         }
@@ -46,13 +32,7 @@ namespace Mapper
         {
             string spBajaCancha = "sp_Baja_Cancha";
             arraylist = new ArrayList();
-
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@IdCancha";
-            p1.Value = pId;
-            p1.SqlDbType = SqlDbType.Int;
-            arraylist.Add(p1);
-
+            arraylist.Add(new SqlParameter("@IdCancha", pId));
             dao.Escribir(spBajaCancha, arraylist);
         }
 
@@ -69,47 +49,38 @@ namespace Mapper
             return lCancha;
         }
 
-        public List<BeCancha> ConsultaCondicional(string pCondicion, string pCondicion2 = null)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Modificacion(BeCancha pObject)
         {
             string spModificarCancha = "sp_Cancha_Modificar";
             arraylist = new ArrayList();
-
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@CodigoCancha";
-            p1.Value = pObject.id;
-            p1.SqlDbType = SqlDbType.Int;
-            arraylist.Add(p1);
-
-            SqlParameter p2 = new SqlParameter();
-            p2.ParameterName = "@TipoCancha";
-            p2.Value = pObject.Nombre;
-            p2.SqlDbType = SqlDbType.NVarChar;
-            arraylist.Add(p2);
-
-            SqlParameter p3 = new SqlParameter();
-            p3.ParameterName = "@Precio";
-            p3.Value = pObject.Precio;
-            p3.SqlDbType = SqlDbType.Decimal;
-            arraylist.Add(p3);
-
-            SqlParameter p4 = new SqlParameter();
-            p4.ParameterName = "@Estado";
-            p4.Value = pObject.Estado;
-            p4.SqlDbType = SqlDbType.NVarChar;
-            arraylist.Add(p4);
-
-            SqlParameter p5 = new SqlParameter();
-            p5.ParameterName = "@Observaciones";
-            p5.Value = pObject.Observaciones;
-            p5.SqlDbType = SqlDbType.NVarChar;
-            arraylist.Add(p5);
-
+            arraylist.Add(new SqlParameter("@CodigoCancha", int.Parse(pObject.id)));
+            arraylist.Add(new SqlParameter("@TipoCancha", pObject.Nombre));
+            arraylist.Add(new SqlParameter("@Precio", pObject.Precio));
+            arraylist.Add(new SqlParameter("@Capacidad", pObject.Capacidad));
             dao.Escribir(spModificarCancha, arraylist);
+        }
+
+        public void CambiarEstado(int idCancha, string nuevoEstado)
+        {
+            string sp = "sp_Cambiar_Estado_Cancha";
+            var al = new ArrayList();
+            al.Add(new SqlParameter("@CodigoCancha", idCancha));
+            al.Add(new SqlParameter("@Estado", nuevoEstado));
+            dao.Escribir(sp, al);
+        }
+
+        public void CambiarObservaciones(int idCancha, string nuevasObs)
+        {
+            string sp = "sp_Cambiar_Observaciones_Cancha";
+            var al = new ArrayList();
+            al.Add(new SqlParameter("@CodigoCancha", idCancha));
+            al.Add(new SqlParameter("@Observaciones", nuevasObs));
+            dao.Escribir(sp, al);
+        }
+
+        public List<BeCancha> ConsultaCondicional(string pCondicion, string pCondicion2 = null)
+        {
+            throw new NotImplementedException();
         }
     }
 }
