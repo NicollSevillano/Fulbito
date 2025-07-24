@@ -14,33 +14,20 @@ namespace Servicios
     {
         private Dao dao = new Dao();
 
-        public DataTable VerificarIntegridadGlobal()
-        {
-            return dao.Leer("Verificar_Integridad_Global");
-        }
-
         public List<string> VerificarTabla(string tableName)
         {
             List<string> errores = new List<string>();
-            DataTable dt = dao.Leer($"SELECT * FROM {tableName}");
-
+            DataTable dt = dao.Leer(GetListarSP(tableName));
             StringBuilder sbDVH = new StringBuilder();
 
             foreach (DataRow row in dt.Rows)
             {
-                string concat = "";
-                int dvhIndex = row.Table.Columns["DVH"].Ordinal;
-                for (int i = 0; i < row.ItemArray.Length; i++)
-                {
-                    if (i == dvhIndex) continue;
-                    concat += row[i]?.ToString() ?? "";
-                }
-
+                string concat = ConcatenarCampos(tableName, row);
                 string dvhCalculado = GetSHA256Hex(concat);
                 string dvhBD = row["DVH"].ToString();
 
                 if (dvhCalculado != dvhBD)
-                    errores.Add($"Registro ID: {row[0]} tiene DVH inválido.");
+                    errores.Add($"Registro ID: {GetIdCampo(tableName, row)} tiene DVH inválido.");
 
                 sbDVH.Append(dvhBD);
             }
@@ -48,7 +35,7 @@ namespace Servicios
             string dvvCalculado = GetSHA256Hex(sbDVH.ToString());
             var parametros = new ArrayList();
             parametros.Add(new SqlParameter("@Tabla", tableName));
-            DataTable dtDVV = dao.Leer("SELECT DVV FROM IntegrityControl WHERE Tabla = @Tabla", parametros);
+            DataTable dtDVV = dao.Leer("sp_Obtener_DVV", parametros);
 
             if (dtDVV.Rows.Count > 0)
             {
@@ -66,65 +53,91 @@ namespace Servicios
 
         public void RecalcularTablas(string tableName)
         {
-            DataTable dt = dao.Leer($"SELECT * FROM {tableName}");
-
+            DataTable dt = dao.Leer(GetListarSP(tableName));
             foreach (DataRow row in dt.Rows)
             {
-                string concat = "";
-                int dvhIndex = row.Table.Columns["DVH"].Ordinal;
-                for (int i = 0; i < row.ItemArray.Length; i++)
-                {
-                    if (i == dvhIndex) continue;
-                    concat += row[i]?.ToString() ?? "";
-                }
-
+                string concat = ConcatenarCampos(tableName, row);
                 string dvh = GetSHA256Hex(concat);
 
                 var parametros = new ArrayList();
-                string idCampo = tableName == "Cliente" ? "CodigoCliente" :
-                                 tableName == "Cancha" ? "CodigoCancha" : "CodigoReserva";
+                string idCampo = GetIdCampoNombre(tableName);
                 parametros.Add(new SqlParameter("@Id", row[idCampo]));
                 parametros.Add(new SqlParameter("@DVH", dvh));
-
-                dao.Escribir($"UPDATE {tableName} SET DVH = @DVH WHERE {idCampo} = @Id", parametros);
+                parametros.Add(new SqlParameter("@Tabla", tableName));
+                dao.Escribir("sp_Actualizar_DVH", parametros);
             }
             RecalcularTablaVertical(tableName);
         }
+
         public void RecalcularTablaVertical(string tableName)
         {
-            string idCampo = tableName == "Cliente" ? "CodigoCliente" :
-                             tableName == "Cancha" ? "CodigoCancha" :
-                             tableName == "Reserva" ? "CodigoReserva" : null;
-
-            if (idCampo == null)
-                throw new Exception("No se reconoce el campo clave primaria para la tabla " + tableName);
-
-            DataTable dt = dao.Leer($"SELECT DVH FROM {tableName} ORDER BY {idCampo}");
-
+            string sp = GetListarDVHSP(tableName);
+            DataTable dt = dao.Leer(sp);
             StringBuilder sbDVH = new StringBuilder();
             foreach (DataRow row in dt.Rows)
             {
                 if (row["DVH"] != DBNull.Value)
                     sbDVH.Append(row["DVH"].ToString());
             }
-
             string dvv = GetSHA256Hex(sbDVH.ToString());
-
-            var checkParams = new ArrayList();
-            checkParams.Add(new SqlParameter("@Tabla", tableName));
-            DataTable dtCheck = dao.Leer("SELECT COUNT(*) as C FROM IntegrityControl WHERE Tabla = @Tabla", checkParams);
 
             var parametros = new ArrayList();
             parametros.Add(new SqlParameter("@Tabla", tableName));
             parametros.Add(new SqlParameter("@DVV", dvv));
+            dao.Escribir("sp_InsertarDVV", parametros);
+        }
 
-            if (dtCheck.Rows.Count > 0 && Convert.ToInt32(dtCheck.Rows[0]["C"]) > 0)
+        private string GetListarSP(string tableName)
+        {
+            switch (tableName)
             {
-                dao.Escribir("sp_ActualizarDVV", parametros);
+                case "Cliente": return "sp_Cliente_Listar";
+                case "Cancha": return "sp_Listar_Cancha";
+                case "Reserva": return "sp_Listar_Reserva";
+                default: throw new Exception("Tabla no reconocida");
             }
-            else
+        }
+
+        private string GetListarDVHSP(string tableName)
+        {
+            switch (tableName)
             {
-                dao.Escribir("sp_InsertarDVV", parametros);
+                case "Cliente": return "sp_ListarDVH_Cliente";
+                case "Cancha": return "sp_ListarDVH_Cancha";
+                case "Reserva": return "sp_ListarDVH_Reserva";
+                default: throw new Exception("Tabla no reconocida");
+            }
+        }
+
+        private string GetIdCampoNombre(string tableName)
+        {
+            switch (tableName)
+            {
+                case "Cliente": return "CodigoCliente";
+                case "Cancha": return "CodigoCancha";
+                case "Reserva": return "CodigoReserva";
+                default: throw new Exception("Tabla no reconocida");
+            }
+        }
+        private object GetIdCampo(string tableName, DataRow row)
+        {
+            return row[GetIdCampoNombre(tableName)];
+        }
+
+        private string ConcatenarCampos(string tableName, DataRow row)
+        {
+            switch (tableName)
+            {
+                case "Cliente":
+                    return $"{row["CodigoCliente"].ToString().Trim()}{row["DNI"].ToString().Trim()}{row["Nombre"].ToString().Trim()}{row["Telefono"].ToString().Trim()}{row["Direccion"].ToString().Trim()}";
+
+                case "Cancha":
+                    return $"{row["CodigoCancha"].ToString().Trim()}{row["TipoCancha"].ToString().Trim()}{row["Precio"].ToString().Trim()}{row["Capacidad"].ToString().Trim()}{row["Estado"].ToString().Trim()}{row["Observaciones"].ToString().Trim()}";
+
+                case "Reserva":
+                    return $"{row["CodigoReserva"].ToString().Trim()}{row["Fecha"].ToString().Trim()}{row["Hora"].ToString().Trim()}{row["CodigoClient"].ToString().Trim()}{row["CodigoCancha"].ToString().Trim()}{row["Pagado"].ToString().Trim()}{row["Cancelada"].ToString().Trim()}";
+
+                default: throw new Exception("Tabla no reconocida");
             }
         }
 

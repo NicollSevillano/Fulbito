@@ -62,6 +62,7 @@ namespace GUI
 
                 BeCliente nuevoCliente = new BeCliente(txtDni.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text);
                 blCliente.Alta(nuevoCliente);
+                new DigitoVerificador().RecalcularTablaVertical("Cliente");
                 lCliente = blCliente.Consulta();
                 Refrescar();
                 MessageBox.Show("Usuario agregado correctamente.");
@@ -87,6 +88,7 @@ namespace GUI
                     int id = Convert.ToInt32(d.Cells[0].Value);
                     blCliente.Baja(id);
                 }
+                new DigitoVerificador().RecalcularTablaVertical("Cliente");
                 lCliente = blCliente.Consulta();
                 Refrescar();
                 MessageBox.Show("Usuario eliminado correctamente.");
@@ -152,6 +154,7 @@ namespace GUI
                 clienteModificar.Direccion = txtDireccion.Text;
 
                 blCliente.Modificacion(clienteModificar);
+                new DigitoVerificador().RecalcularTablaVertical("Cliente");
                 lCliente = blCliente.Consulta();
                 Refrescar();
                 MessageBox.Show("Usuario modificado correctamente.");

@@ -65,6 +65,7 @@ namespace GUI
                         textBox5.Text
                     );
                     bllCancha.Alta(nuevaCancha);
+                    new DigitoVerificador().RecalcularTablaVertical("Cancha");
                     lCancha = bllCancha.Consulta();
                     RefrescarCancha();
                     LogBitacora.AgregarEvento("Agregar cancha", 1, SessionManager.getInstance.usuario, "Canchas");
@@ -103,6 +104,7 @@ namespace GUI
                     blReserva.Baja(int.Parse(r.id));
                 }
                 bllCancha.Baja(int.Parse(_cancha.id));
+                new DigitoVerificador().RecalcularTablaVertical("Cancha");
                 lCancha = bllCancha.Consulta();
                 LogBitacora.AgregarEvento("Eliminar cancha", 2, SessionManager.getInstance.usuario, "Cancha");
                 MessageBox.Show("Cancha eliminada");
@@ -147,6 +149,7 @@ namespace GUI
                     modificarCancha.Observaciones = textBox5.Text;
 
                     bllCancha.Modificacion(modificarCancha);
+                    new DigitoVerificador().RecalcularTablaVertical("Cancha");
                     lCancha = bllCancha.Consulta();
                     RefrescarCancha();
                     MessageBox.Show("Cancha modificada");

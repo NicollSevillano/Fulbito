@@ -97,6 +97,15 @@ namespace GUI
                 }
             }
         }
+
+        private void verificarIntegridadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var inconsistencias = new Inconsistencia())
+            {
+                inconsistencias.ShowDialog();
+            }
+        }
+
         private void registrarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -121,7 +130,6 @@ namespace GUI
             SessionManager.LogOut();
             this.Close();
         }
-        //verificar
         public void Actualizar(string pIdioma)
         {
             Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);

@@ -8,16 +8,17 @@ using System.Text;
 
 namespace Servicios
 {
-    public class Seguridad
+    public static class Seguridad
     {
-        public static string EncryptSHA256(string pString)
+        public static string HashMd5(string input)
         {
-            using (SHA256 sha256Hash = SHA256.Create())
+            using (var md5 = MD5.Create())
             {
-                byte[] sourceBytes = Encoding.UTF8.GetBytes(pString);
-                byte[] hashBytes = sha256Hash.ComputeHash(sourceBytes);
-                return Convert.ToBase64String(hashBytes);
+                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
             }
         }
     }
+
 }

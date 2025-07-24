@@ -1,38 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\",
+  "WorkspaceRootPath": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|c:\\users\\nssev\\onedrive\\escritorio\\fulbito\\gui\\gui\\bitacoracambios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\bitacoracambios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|c:\\users\\nssev\\onedrive\\escritorio\\prueba\\fulbito\\gui\\gui\\inconsistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\inconsistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|c:\\users\\nssev\\onedrive\\escritorio\\prueba\\fulbito\\gui\\servicios\\digitoverificador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|solutionrelative:servicios\\digitoverificador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\be\\beinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|solutionrelative:be\\beinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1C95DBF-0701-4180-8DEB-7DC4975D8E2C}|Dal\\Dal.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\dal\\dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1C95DBF-0701-4180-8DEB-7DC4975D8E2C}|Dal\\Dal.csproj|solutionrelative:dal\\dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\canchasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|c:\\users\\nssev\\onedrive\\escritorio\\prueba\\fulbito\\gui\\gui\\canchasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\canchasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B55F35A-23BE-4B92-829B-42E33355AFA1}|Controles\\Controles.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\controles\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B55F35A-23BE-4B92-829B-42E33355AFA1}|Controles\\Controles.csproj|solutionrelative:controles\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|c:\\users\\nssev\\onedrive\\escritorio\\prueba\\fulbito\\gui\\gui\\greservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\greservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\alquilarinsumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\alquilarinsumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|c:\\users\\nssev\\onedrive\\escritorio\\prueba\\fulbito\\gui\\gui\\gregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\gregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B55F35A-23BE-4B92-829B-42E33355AFA1}|Controles\\Controles.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\controles\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B55F35A-23BE-4B92-829B-42E33355AFA1}|Controles\\Controles.csproj|solutionrelative:controles\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|c:\\users\\nssev\\onedrive\\escritorio\\prueba\\fulbito\\gui\\servicios\\seguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|solutionrelative:servicios\\seguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|c:\\users\\nssev\\onedrive\\escritorio\\prueba\\fulbito\\gui\\servicios\\encriptar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|solutionrelative:servicios\\encriptar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|c:\\users\\nssev\\onedrive\\escritorio\\prueba\\fulbito\\gui\\gui\\canchasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\canchasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,95 +59,118 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BitacoraCambios.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\BitacoraCambios.cs",
-              "RelativeDocumentMoniker": "GUI\\BitacoraCambios.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\BitacoraCambios.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\BitacoraCambios.cs [Dise\u00F1o]",
+              "Title": "Inconsistencia.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\Inconsistencia.cs",
+              "RelativeDocumentMoniker": "GUI\\Inconsistencia.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\Inconsistencia.cs",
+              "RelativeToolTip": "GUI\\Inconsistencia.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAUwGAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T23:41:00.948Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BeInsumo.cs",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Be\\BeInsumo.cs",
-              "RelativeDocumentMoniker": "Be\\BeInsumo.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Be\\BeInsumo.cs",
-              "RelativeToolTip": "Be\\BeInsumo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T23:36:07.305Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CanchasForm.cs",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\CanchasForm.cs",
-              "RelativeDocumentMoniker": "GUI\\CanchasForm.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\CanchasForm.cs",
-              "RelativeToolTip": "GUI\\CanchasForm.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAIAxwB4AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T22:02:30.884Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Insumos.cs",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\Insumos.cs",
-              "RelativeDocumentMoniker": "GUI\\Insumos.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\Insumos.cs",
-              "RelativeToolTip": "GUI\\Insumos.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAawBIAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T22:01:32.87Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Stock.cs",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Controles\\Stock.cs",
-              "RelativeDocumentMoniker": "Controles\\Stock.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Controles\\Stock.cs",
-              "RelativeToolTip": "Controles\\Stock.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAcwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T21:22:41.057Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Stock.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Controles\\Stock.cs",
-              "RelativeDocumentMoniker": "Controles\\Stock.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Controles\\Stock.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Controles\\Stock.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T21:22:37.771Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Insumos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\Insumos.cs",
-              "RelativeDocumentMoniker": "GUI\\Insumos.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\Insumos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\Insumos.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T21:20:50.557Z"
+              "WhenOpened": "2025-07-24T00:06:47.086Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AlquilarInsumos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\AlquilarInsumos.cs",
-              "RelativeDocumentMoniker": "GUI\\AlquilarInsumos.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\AlquilarInsumos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\AlquilarInsumos.cs [Dise\u00F1o]",
+              "Title": "Seguridad.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\Servicios\\Seguridad.cs",
+              "RelativeDocumentMoniker": "Servicios\\Seguridad.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\Servicios\\Seguridad.cs",
+              "RelativeToolTip": "Servicios\\Seguridad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T21:20:06.211Z"
+              "WhenOpened": "2025-07-23T23:52:20.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Encriptar.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\Servicios\\Encriptar.cs",
+              "RelativeDocumentMoniker": "Servicios\\Encriptar.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\Servicios\\Encriptar.cs",
+              "RelativeToolTip": "Servicios\\Encriptar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T23:50:42.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DigitoVerificador.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\Servicios\\DigitoVerificador.cs",
+              "RelativeDocumentMoniker": "Servicios\\DigitoVerificador.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\Servicios\\DigitoVerificador.cs",
+              "RelativeToolTip": "Servicios\\DigitoVerificador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T23:48:49.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dao.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\Dal\\Dao.cs",
+              "RelativeDocumentMoniker": "Dal\\Dao.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\Dal\\Dao.cs",
+              "RelativeToolTip": "Dal\\Dao.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAUwFUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T21:19:15.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GRegistrarCliente.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\GRegistrarCliente.cs",
+              "RelativeDocumentMoniker": "GUI\\GRegistrarCliente.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\GRegistrarCliente.cs",
+              "RelativeToolTip": "GUI\\GRegistrarCliente.cs",
+              "ViewState": "AgIAABEBAAAAAAAAAAAAwDMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T23:37:46.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GReservas.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\GReservas.cs",
+              "RelativeDocumentMoniker": "GUI\\GReservas.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\GReservas.cs",
+              "RelativeToolTip": "GUI\\GReservas.cs",
+              "ViewState": "AgIAAIYBAAAAAAAAAAAkwKkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T23:37:35.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CanchasForm.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\CanchasForm.cs",
+              "RelativeDocumentMoniker": "GUI\\CanchasForm.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\CanchasForm.cs",
+              "RelativeToolTip": "GUI\\CanchasForm.cs",
+              "ViewState": "AgIAANsAAAAAAAAAAAAkwP4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T23:37:23.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CanchasForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\CanchasForm.cs",
+              "RelativeDocumentMoniker": "GUI\\CanchasForm.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Prueba\\Fulbito\\GUI\\GUI\\CanchasForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\CanchasForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T23:37:21.793Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

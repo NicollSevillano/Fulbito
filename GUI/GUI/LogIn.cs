@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controles;
 using Be;
@@ -13,7 +11,6 @@ using Bll;
 using ServicioClase;
 using Servicios;
 using Mapper;
-using Microsoft.VisualBasic.ApplicationServices;
 using Interface;
 
 namespace GUI
@@ -35,12 +32,6 @@ namespace GUI
             lUsuario = bUsuario.Consulta();
             LanguageManager.Iniciarlizar();
             LanguageManager.Suscribir(this);
-            //foreach (BelUsuario usuario in lUsuario)
-            //{
-            //    string hashedPassword = Encriptar.Encrypt(usuario.Contraseña);
-            //    usuario.Contraseña = hashedPassword;
-            //    bUsuario.Modificacion(usuario);
-            //}
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -48,49 +39,94 @@ namespace GUI
             lUsuario = bUsuario.Consulta();
             string usuario = txtUsuario.Text;
             string contraseña = txtContraseña.Text;
-            
+
             if (lUsuario.Exists(x => x.Usuario == usuario))
             {
                 BelUsuario _usuario = lUsuario.Find(x => x.Usuario == usuario);
-                bool error = false;
-                if (error)
+
+                if (_usuario.Bloqueado)
                 {
-                    if (_usuario.Intentos >= 3 && Encriptar.Encrypt(_usuario.Contraseña) != _usuario.Contraseña)
+                    MessageBox.Show("Cuenta bloqueada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string passEncriptada = Encriptar.Encrypt(contraseña);
+                if (passEncriptada != _usuario.Contraseña)
+                {
+                    _usuario.Intentos++;
+                    bUsuario.Modificacion(_usuario);
+
+                    if (_usuario.Intentos >= 3)
                     {
                         _usuario.Bloqueado = true;
-                        _usuario.Intentos = 0;
                         bUsuario.Modificacion(_usuario);
-                        throw new Exception("Usuario bloqueado");
+                        MessageBox.Show("Cuenta bloqueada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    string aux = Encriptar.Encrypt(contraseña);
-                    if (aux != _usuario.Contraseña)
+                    else
                     {
-                        _usuario.Intentos++;
-                        bUsuario.Modificacion(_usuario);
-                        throw new Exception("Contraseña incorrecta");
+                        MessageBox.Show("Contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    return;
+                }
+
+                _usuario.Intentos = 0;
+                bUsuario.Modificacion(_usuario);
+
+                bool hayInconsistencia = !IntegridadOk();
+                bool esAdmin = _usuario.Perfil != null && _usuario.Perfil.Nombre.Equals("Administrador", StringComparison.OrdinalIgnoreCase);
+
+                if (hayInconsistencia && !esAdmin)
+                {
+                    MessageBox.Show("Se ha detectado una inconsistencia en la BD, comuníquese con el Administrador.",
+                        "Inconsistencia de BD", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtContraseña.Clear();
+                    return;
+                }
+
+                if (hayInconsistencia && esAdmin)
+                {
+                    using (var incForm = new Inconsistencia())
+                    {
+                        incForm.ShowDialog();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Inicio correcto");
-                    Login();
-                    txtUsuario.Clear();
-                    txtContraseña.Clear();
-                }
-                void Login()
-                {
-                    MenuPrincipalForm mp = new MenuPrincipalForm();
-                    SessionManager.LogIn(_usuario);
-                    mp.smanager = SessionManager.getInstance;
-                    _usuario.Intentos = 0;
-                    bUsuario.Modificacion(_usuario);
-                    this.Hide();
-                    LogBitacora.AgregarEvento("Inicio de sesión", 1, _usuario, "LogIn");
-                    mp.ShowDialog();
-                    this.Show();
-                }
+
+                MessageBox.Show("Inicio correcto");
+                Login(_usuario);
+                txtUsuario.Clear();
+                txtContraseña.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Usuario no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Login(BelUsuario _usuario)
+        {
+            MenuPrincipalForm mp = new MenuPrincipalForm();
+            SessionManager.LogIn(_usuario);
+            mp.smanager = SessionManager.getInstance;
+            LogBitacora.AgregarEvento("Inicio de sesión", 1, _usuario, "LogIn");
+            this.Hide();
+            mp.ShowDialog();
+            this.Show();
+        }
+
+        private bool IntegridadOk()
+        {
+            DigitoVerificador dv = new DigitoVerificador();
+            string[] tablas = { "Cliente", "Cancha", "Reserva" };
+
+            foreach (var tabla in tablas)
+            {
+                var errores = dv.VerificarTabla(tabla);
+                if (errores.Count > 0)
+                    return false;
+            }
+            return true;
+        }
+
         private void pMostrar_Click(object sender, EventArgs e)
         {
             mostrar = !mostrar;
