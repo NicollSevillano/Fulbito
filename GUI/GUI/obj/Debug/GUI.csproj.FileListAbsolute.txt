@@ -385,3 +385,4 @@ C:\Users\nssev\OneDrive\Escritorio\Prueba\Fulbito\GUI\GUI\obj\Debug\GUI.csproj.C
 C:\Users\nssev\OneDrive\Escritorio\Prueba\Fulbito\GUI\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\Users\nssev\OneDrive\Escritorio\Prueba\Fulbito\GUI\GUI\obj\Debug\GUI.exe
 C:\Users\nssev\OneDrive\Escritorio\Prueba\Fulbito\GUI\GUI\obj\Debug\GUI.pdb
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.BitacoraCambiosForm.resources

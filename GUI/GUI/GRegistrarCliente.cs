@@ -8,16 +8,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Xml.Serialization;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Xml;
-using Newtonsoft.Json;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.Xml.Serialization;
 
 namespace GUI
 {
@@ -42,6 +37,7 @@ namespace GUI
             lCliente = blCliente.Consulta();
             Refrescar();
         }
+
         private bool Cargartxt()
         {
             return string.IsNullOrWhiteSpace(txtDni.Text) ||
@@ -88,6 +84,7 @@ namespace GUI
                     int id = Convert.ToInt32(d.Cells[0].Value);
                     blCliente.Baja(id);
                 }
+
                 new DigitoVerificador().RecalcularTablaVertical("Cliente");
                 lCliente = blCliente.Consulta();
                 Refrescar();
@@ -96,29 +93,6 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void Refrescar()
-        {
-            dgvCliente.Rows.Clear();
-            foreach (BeCliente item in lCliente)
-            {
-                dgvCliente.Rows.Add(item.id, item.DNI, item.Nombre, item.Telefono, item.Direccion);
-            }
-        }
-
-        private void dgvCliente_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                //DataGridViewRow row = dgvCliente.SelectedRows[0];
-                //txtDni.Text = row.Cells[1].Value.ToString();
-                //txtNombre.Text = row.Cells[2].Value.ToString();
-                //txtTelefono.Text = row.Cells[3].Value.ToString();
-            }
-            catch 
-            {
-
             }
         }
 
@@ -164,6 +138,26 @@ namespace GUI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Refrescar()
+        {
+            dgvCliente.Rows.Clear();
+            foreach (BeCliente item in lCliente)
+            {
+                dgvCliente.Rows.Add(item.id, item.DNI, item.Nombre, item.Telefono, item.Direccion);
+            }
+        }
+
+        private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCliente.SelectedRows.Count == 0) return;
+            DataGridViewRow row = dgvCliente.SelectedRows[0];
+            txtDni.Text = row.Cells[1].Value.ToString();
+            txtNombre.Text = row.Cells[2].Value.ToString();
+            txtTelefono.Text = row.Cells[3].Value.ToString();
+            txtDireccion.Text = row.Cells[4].Value.ToString();
+        }
+
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -188,28 +182,17 @@ namespace GUI
             this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "GRegistrarClienteForm").Texto;
         }
 
-        private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvCliente.SelectedRows.Count == 0) return;
-            DataGridViewRow row = dgvCliente.SelectedRows[0];
-            txtDni.Text = row.Cells[1].Value.ToString();
-            txtNombre.Text = row.Cells[2].Value.ToString();
-            txtTelefono.Text = row.Cells[3].Value.ToString();
-            txtDireccion.Text = row.Cells[4].Value.ToString();
-        }
         private void btnSerializar_Click(object sender, EventArgs e)
         {
             try
             {
                 listArchivoDeserializado.Items.Clear();
-                
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = $"{cmbSerializacion.SelectedItem} Files|*.{cmbSerializacion.SelectedItem.ToString().ToLower()}";
-                if(saveFileDialog.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string formato = cmbSerializacion.SelectedItem.ToString();
-
                     switch (formato)
                     {
                         case "XML":
@@ -226,7 +209,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al serialziar: {ex.Message}");
+                MessageBox.Show($"Error al serializar: {ex.Message}");
             }
         }
 
@@ -234,7 +217,7 @@ namespace GUI
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = $"{cmbSerializacion.SelectedItem} Files|*.{cmbSerializacion.SelectedItem.ToString().ToLower()}";
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string formato = cmbSerializacion.SelectedItem.ToString();
                 List<BeCliente> cliente = null;
@@ -253,47 +236,50 @@ namespace GUI
                 MostrarDeserializado(cliente);
             }
         }
+
         private void SerializarXML(List<BeCliente> pCliente, string pPath)
         {
-            using(FileStream fs = new FileStream(pPath, FileMode.Create))
+            using (FileStream fs = new FileStream(pPath, FileMode.Create))
             {
-                XmlSerializer serilizar = new XmlSerializer(typeof(List<BeCliente>));
-                serilizar.Serialize(fs, pCliente);
+                XmlSerializer serializar = new XmlSerializer(typeof(List<BeCliente>));
+                serializar.Serialize(fs, pCliente);
             }
         }
+
         private void SerializarJson(List<BeCliente> pCliente, string pPath)
         {
             string json = JsonConvert.SerializeObject(pCliente, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(pPath, json);
         }
+
         private List<BeCliente> DeserializarXML(string pPath)
         {
-            using(FileStream fs = new FileStream(pPath, FileMode.Open))
+            using (FileStream fs = new FileStream(pPath, FileMode.Open))
             {
                 XmlSerializer serializar = new XmlSerializer(typeof(List<BeCliente>));
                 return (List<BeCliente>)serializar.Deserialize(fs);
             }
         }
+
         private List<BeCliente> DeserializarJson(string pPath)
         {
             string json = File.ReadAllText(pPath);
             return JsonConvert.DeserializeObject<List<BeCliente>>(json);
         }
+
         private void MostrarSerializado(string path)
         {
             listArchivoSerializado.Items.Clear();
-
             string[] lineas = File.ReadAllLines(path);
-
             foreach (string linea in lineas)
             {
                 listArchivoSerializado.Items.Add(linea);
             }
         }
+
         private void MostrarDeserializado(List<BeCliente> pLCliente)
         {
             listArchivoDeserializado.Items.Clear();
-
             foreach (BeCliente cliente in pLCliente)
             {
                 listArchivoDeserializado.Items.Add($"DNI: {cliente.DNI}");

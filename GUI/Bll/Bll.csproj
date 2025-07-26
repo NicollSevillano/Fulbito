@@ -52,6 +52,7 @@
     <Compile Include="BllCliente.cs" />
     <Compile Include="BllFactura.cs" />
     <Compile Include="BllHorarios.cs" />
+    <Compile Include="BllInsumo.cs" />
     <Compile Include="BllReserva.cs" />
     <Compile Include="BllUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

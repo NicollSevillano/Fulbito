@@ -54,6 +54,7 @@
     <Compile Include="MapperCliente.cs" />
     <Compile Include="MapperFactura.cs" />
     <Compile Include="MapperHorarios.cs" />
+    <Compile Include="MapperInsumo.cs" />
     <Compile Include="MapperReserva.cs" />
     <Compile Include="MapperUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

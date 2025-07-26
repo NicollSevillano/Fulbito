@@ -144,15 +144,16 @@
             // eventosToolStripMenuItem
             // 
             this.eventosToolStripMenuItem.Name = "eventosToolStripMenuItem";
-            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
+            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.eventosToolStripMenuItem.Text = "Eventos";
             this.eventosToolStripMenuItem.Click += new System.EventHandler(this.eventosToolStripMenuItem_Click);
             // 
             // cambiosToolStripMenuItem
             // 
             this.cambiosToolStripMenuItem.Name = "cambiosToolStripMenuItem";
-            this.cambiosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
+            this.cambiosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.cambiosToolStripMenuItem.Text = "Cambios";
+            this.cambiosToolStripMenuItem.Click += new System.EventHandler(this.cambiosToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 

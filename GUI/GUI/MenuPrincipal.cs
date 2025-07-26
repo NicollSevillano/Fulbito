@@ -32,6 +32,7 @@ namespace GUI
         BackUpForm backrestore;
         HorasReservas hReservas;
         AlquilarInsumos alquilarInsumos;
+        BitacoraCambiosForm _bitacoraCambios;
         InsumosForm insumos;
         public MenuPrincipalForm()
         {
@@ -63,6 +64,7 @@ namespace GUI
             hReservas = new HorasReservas();
             alquilarInsumos = new AlquilarInsumos();
             insumos = new InsumosForm();
+            _bitacoraCambios = new BitacoraCambiosForm();
         }
         private void habilitarControles()
         {
@@ -201,6 +203,13 @@ namespace GUI
         {
             this.Hide();
             insumos.ShowDialog();
+            this.Show();
+        }
+
+        private void cambiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            _bitacoraCambios.ShowDialog();
             this.Show();
         }
     }

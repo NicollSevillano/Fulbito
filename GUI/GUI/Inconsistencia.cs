@@ -1,18 +1,14 @@
 ﻿using Servicios;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class Inconsistencia : Form
     {
+        private bool reparada = false;
+
         public Inconsistencia()
         {
             InitializeComponent();
@@ -29,23 +25,19 @@ namespace GUI
             }
         }
 
-        bool reparada = false;
-
         public void CargarInconsistencias()
         {
-            DigitoVerificador dv = new DigitoVerificador();
             StringBuilder sb = new StringBuilder();
             string[] tablas = { "Cliente", "Cancha", "Reserva" };
+            DigitoVerificador dv = new DigitoVerificador();
 
             foreach (var tabla in tablas)
             {
-                var inconsistencias = dv.VerificarTabla(tabla);
-                if (inconsistencias.Count == 0)
-                    sb.AppendLine($"Tabla: {tabla}, Integridad OK");
-                else
-                    foreach (var msg in inconsistencias)
-                        sb.AppendLine($"Tabla: {tabla}, {msg}");
+                var errores = dv.VerificarTabla(tabla); // 👈 método correcto
+                foreach (var err in errores)
+                    sb.AppendLine($"Tabla: {tabla}, {err}");
             }
+
             textBox1.Text = sb.ToString();
         }
 
@@ -53,29 +45,25 @@ namespace GUI
         {
             try
             {
-                DigitoVerificador dv = new DigitoVerificador();
                 string[] tablas = { "Cliente", "Cancha", "Reserva" };
+                DigitoVerificador dv = new DigitoVerificador();
 
                 foreach (var tabla in tablas)
-                {
-                    dv.RecalcularTablas(tabla);
                     dv.RecalcularTablaVertical(tabla);
-                }
 
                 StringBuilder sb = new StringBuilder();
                 bool hayErrores = false;
+
                 foreach (var tabla in tablas)
                 {
-                    var inconsistencias = dv.VerificarTabla(tabla);
-                    if (inconsistencias.Count == 0)
-                        sb.AppendLine($"Tabla: {tabla}, Integridad OK");
-                    else
+                    var errores = dv.VerificarTabla(tabla); 
+                    foreach (var err in errores)
                     {
                         hayErrores = true;
-                        foreach (var msg in inconsistencias)
-                            sb.AppendLine($"Tabla: {tabla}, {msg}");
+                        sb.AppendLine($"Tabla: {tabla}, {err}");
                     }
                 }
+
                 textBox1.Text = sb.ToString();
 
                 if (!hayErrores)
@@ -96,5 +84,4 @@ namespace GUI
             }
         }
     }
-
 }

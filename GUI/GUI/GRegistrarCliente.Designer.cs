@@ -78,7 +78,6 @@
             this.dgvCliente.Size = new System.Drawing.Size(609, 344);
             this.dgvCliente.TabIndex = 0;
             this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
-            this.dgvCliente.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_RowEnter);
             // 
             // labTitulo
             // 

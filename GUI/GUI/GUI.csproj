@@ -214,6 +214,9 @@
     <EmbeddedResource Include="BackUpForm.resx">
       <DependentUpon>BackUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BitacoraCambios.resx">
+      <DependentUpon>BitacoraCambios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BitacoraEventos.resx">
       <DependentUpon>BitacoraEventos.cs</DependentUpon>
     </EmbeddedResource>
