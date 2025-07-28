@@ -1,0 +1,33 @@
+# Archivos de usuario de Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Carpetas de compilación comunes
+bin/
+obj/
+
+# Excepto los paquetes NuGet
+!packages/
+!*.nupkg
+
+# Ignorar solo los XML generados (donde aparecen los warnings)
+**/bin/Debug/*.xml
+
+# Archivos de sistema innecesarios
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Archivos temporales o de log
+*.tmp
+*.log
+*.bak
+*.cache
+
+# Archivos de configuración de IDEs
+.vs/
+.vscode/
+.idea/

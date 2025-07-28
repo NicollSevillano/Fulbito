@@ -80,9 +80,9 @@ namespace GUI
             cmbCliente.DataSource = null;
 
             var listaConPlaceholder = new List<BeCliente>
-                {
-                    new BeCliente { id = "", Nombre = "Seleccione un cliente..." }
-                };
+            {
+                new BeCliente { id = "", Nombre = "Seleccione un cliente..." }
+            };
             listaConPlaceholder.AddRange(lCliente);
 
             cmbCliente.DisplayMember = "Nombre";
@@ -91,7 +91,6 @@ namespace GUI
 
             cmbCliente.SelectedIndex = 0;
         }
-
 
         private void cmbInsumo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -176,7 +175,6 @@ namespace GUI
             ActualizarTotalEstimado();
         }
 
-
         private void ActualizarTotalEstimado()
         {
             decimal total = CalcularTotalInsumos();
@@ -238,7 +236,8 @@ namespace GUI
             {
                 Cliente = cliente,
                 Horas = horas,
-                Total = total
+                Total = total,
+                Fecha = DateTime.Now
             };
 
             try

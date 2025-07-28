@@ -56,6 +56,7 @@
             this.labPerfilMp = new System.Windows.Forms.Label();
             this.comboIdioma1 = new Controles.ComboIdioma();
             this.btnSalirm = new System.Windows.Forms.Button();
+            this.reporteInteligenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +128,8 @@
             this.usuariosToolStripMenuItem,
             this.canchasToolStripMenuItem,
             this.insumosToolStripMenuItem,
-            this.backUpToolStripMenuItem});
+            this.backUpToolStripMenuItem,
+            this.reporteInteligenteToolStripMenuItem});
             this.administradorToolStripMenuItem.Name = "administradorToolStripMenuItem";
             this.administradorToolStripMenuItem.Size = new System.Drawing.Size(121, 23);
             this.administradorToolStripMenuItem.Text = "Administrador";
@@ -138,33 +140,33 @@
             this.eventosToolStripMenuItem,
             this.cambiosToolStripMenuItem});
             this.bitácoraToolStripMenuItem.Name = "bitácoraToolStripMenuItem";
-            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
             this.bitácoraToolStripMenuItem.Text = "Bitácora";
             // 
             // eventosToolStripMenuItem
             // 
             this.eventosToolStripMenuItem.Name = "eventosToolStripMenuItem";
-            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.eventosToolStripMenuItem.Text = "Eventos";
             this.eventosToolStripMenuItem.Click += new System.EventHandler(this.eventosToolStripMenuItem_Click);
             // 
             // cambiosToolStripMenuItem
             // 
             this.cambiosToolStripMenuItem.Name = "cambiosToolStripMenuItem";
-            this.cambiosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.cambiosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.cambiosToolStripMenuItem.Text = "Cambios";
             this.cambiosToolStripMenuItem.Click += new System.EventHandler(this.cambiosToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -173,7 +175,7 @@
             this.canchasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarCanchaToolStripMenuItem});
             this.canchasToolStripMenuItem.Name = "canchasToolStripMenuItem";
-            this.canchasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.canchasToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
             this.canchasToolStripMenuItem.Text = "Canchas";
             // 
             // registrarCanchaToolStripMenuItem
@@ -186,14 +188,14 @@
             // insumosToolStripMenuItem
             // 
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
-            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
             this.insumosToolStripMenuItem.Text = "Insumos";
             this.insumosToolStripMenuItem.Click += new System.EventHandler(this.insumosToolStripMenuItem_Click);
             // 
             // backUpToolStripMenuItem
             // 
             this.backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
-            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
             this.backUpToolStripMenuItem.Text = "BackUp";
             this.backUpToolStripMenuItem.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
             // 
@@ -208,7 +210,7 @@
             // insumosToolStripMenuItem1
             // 
             this.insumosToolStripMenuItem1.Name = "insumosToolStripMenuItem1";
-            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(135, 24);
+            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.insumosToolStripMenuItem1.Text = "Insumos";
             this.insumosToolStripMenuItem1.Click += new System.EventHandler(this.insumosToolStripMenuItem1_Click);
             // 
@@ -286,6 +288,13 @@
             this.btnSalirm.UseVisualStyleBackColor = true;
             this.btnSalirm.Click += new System.EventHandler(this.btnSalirm_Click);
             // 
+            // reporteInteligenteToolStripMenuItem
+            // 
+            this.reporteInteligenteToolStripMenuItem.Name = "reporteInteligenteToolStripMenuItem";
+            this.reporteInteligenteToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
+            this.reporteInteligenteToolStripMenuItem.Text = "Reporte Inteligente";
+            this.reporteInteligenteToolStripMenuItem.Click += new System.EventHandler(this.reporteInteligenteToolStripMenuItem_Click);
+            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,5 +351,6 @@
         private System.Windows.Forms.ToolStripMenuItem reservasHechasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alquilerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reporteInteligenteToolStripMenuItem;
     }
 }

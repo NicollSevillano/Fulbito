@@ -26,6 +26,7 @@ namespace Mapper
                 cmd.Parameters.AddWithValue("@CodigoCliente", clienteId);
                 cmd.Parameters.AddWithValue("@Horas", pObject.Horas);
                 cmd.Parameters.AddWithValue("@Total", pObject.Total);
+                cmd.Parameters.AddWithValue("@Fecha", pObject.Fecha); 
 
                 SqlParameter outputId = new SqlParameter("@NuevoID", SqlDbType.Int)
                 {
@@ -58,12 +59,14 @@ namespace Mapper
             {
                 BeAlquiler alquiler = new BeAlquiler
                 {
-                    id = fila["0"].ToString(),
-                    Horas = Convert.ToInt32(fila["2"]),
-                    Total = Convert.ToDecimal(fila["3"]),
+                    id = fila["CodigoAlquiler"].ToString(),
+                    Horas = Convert.ToInt32(fila["Horas"]),
+                    Total = Convert.ToDecimal(fila["Total"]),
+                    Fecha = Convert.ToDateTime(fila["Fecha"]),
                     Cliente = new BeCliente
                     {
-                        Nombre = fila["1"].ToString()
+                        id = fila["CodigoCliente"].ToString(),
+                        Nombre = fila["Nombre"].ToString()
                     }
                 };
 

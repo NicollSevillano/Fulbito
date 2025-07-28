@@ -34,6 +34,7 @@ namespace GUI
         AlquilarInsumos alquilarInsumos;
         BitacoraCambiosForm _bitacoraCambios;
         InsumosForm insumos;
+        ReporteInteligente inteligente;
         public MenuPrincipalForm()
         {
             InitializeComponent();
@@ -65,6 +66,7 @@ namespace GUI
             alquilarInsumos = new AlquilarInsumos();
             insumos = new InsumosForm();
             _bitacoraCambios = new BitacoraCambiosForm();
+            inteligente = new ReporteInteligente();
         }
         private void habilitarControles()
         {
@@ -199,6 +201,12 @@ namespace GUI
         private void cambiosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _bitacoraCambios.ShowDialog();
+            this.Show();
+        }
+
+        private void reporteInteligenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            inteligente.ShowDialog();
             this.Show();
         }
     }
