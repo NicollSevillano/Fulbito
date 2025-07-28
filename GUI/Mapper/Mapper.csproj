@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackUpRestoreMapper.cs" />
+    <Compile Include="MapperAlquiler.cs" />
     <Compile Include="MapperCancha.cs" />
     <Compile Include="MapperCliente.cs" />
     <Compile Include="MapperFactura.cs" />

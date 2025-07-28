@@ -26,6 +26,7 @@ namespace Mapper
             arraylist.Add(new SqlParameter("@Proveedor", SqlDbType.NVarChar) { Value = pObject.Proveedor });
             arraylist.Add(new SqlParameter("@Estado", SqlDbType.NVarChar) { Value = pObject.Estado });
             arraylist.Add(new SqlParameter("@Observaciones", SqlDbType.NVarChar) { Value = pObject.Observaciones });
+            arraylist.Add(new SqlParameter("@Precio", SqlDbType.Decimal) { Value = pObject.Precio });
 
             string usuario = SessionManager.getInstance?.usuario?.Usuario ?? "Desconocido";
             arraylist.Add(new SqlParameter("@Usuario", SqlDbType.NVarChar) { Value = usuario });
@@ -84,6 +85,7 @@ namespace Mapper
             arraylist.Add(new SqlParameter("@Proveedor", SqlDbType.NVarChar) { Value = pObject.Proveedor });
             arraylist.Add(new SqlParameter("@Estado", SqlDbType.NVarChar) { Value = pObject.Estado });
             arraylist.Add(new SqlParameter("@Observaciones", SqlDbType.NVarChar) { Value = pObject.Observaciones });
+            arraylist.Add(new SqlParameter("@Precio", SqlDbType.Decimal) { Value = pObject.Precio });
 
             string usuario = SessionManager.getInstance?.usuario?.Usuario ?? "Desconocido";
             arraylist.Add(new SqlParameter("@Usuario", SqlDbType.NVarChar) { Value = usuario });

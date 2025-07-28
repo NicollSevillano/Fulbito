@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Controles
@@ -16,13 +9,23 @@ namespace Controles
         {
             InitializeComponent();
         }
+
         private int _stock;
+
+        public event EventHandler CantidadCambiada;
+
+        public int CantidadSeleccionada
+        {
+            get { return (int)numericUpDown1.Value; }
+            set { numericUpDown1.Value = value; }
+        }
 
         private void Stock_Load(object sender, EventArgs e)
         {
             numericUpDown1.Minimum = 0;
             numericUpDown1.Value = _stock;
             VerificarBotonMenos();
+            numericUpDown1.ValueChanged += NumericUpDown1_ValueChanged;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,6 +47,11 @@ namespace Controles
         {
             button2.Enabled = numericUpDown1.Value > numericUpDown1.Minimum;
         }
-    }
 
+        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            VerificarBotonMenos();
+            CantidadCambiada?.Invoke(this, EventArgs.Empty);
+        }
+    }
 }

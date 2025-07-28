@@ -190,6 +190,11 @@
     <Compile Include="PerfilesForm.Designer.cs">
       <DependentUpon>PerfilesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ReportReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,14 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="GUsuarios.resx">
       <DependentUpon>GUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,6 +346,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo4.png" />
+    <None Include="Resources\logo3.png" />
+    <None Include="Resources\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Img\Conos.jpg" />
+    <Content Include="Img\Conostortuga.jpg" />
+    <Content Include="Img\pecheras.jpg" />
+    <Content Include="Img\pelotas5.jpg" />
+    <Content Include="Img\pelotas7.jpg" />
+    <Content Include="Img\redes.jpg" />
+    <Content Include="Img\silbatos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

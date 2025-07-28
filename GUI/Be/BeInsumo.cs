@@ -10,10 +10,12 @@ namespace Be
     public class BeInsumo : IEntity
     {
         public BeInsumo() { }
-        public BeInsumo(string pNombre, int pCantidad, int pCantidadActual, string pProveedor, string pEstado, string pObservaciones)
+        public BeInsumo(string pNombre, int pCantidad, int pCantidadActual, string pProveedor, string pEstado, string pObservaciones,
+                        decimal pPrecio)
         {
             Nombre = pNombre; Cantidad = pCantidad; cantidadActual = pCantidadActual;
             Proveedor = pProveedor; Estado = pEstado; Observaciones = pObservaciones;
+            Precio = pPrecio;
         }
         public BeInsumo(object[] array)
         {
@@ -24,6 +26,7 @@ namespace Be
             Proveedor = array[4].ToString();
             Estado = array[5].ToString();
             Observaciones = array[6].ToString();
+            Precio = Convert.ToDecimal(array[7]);
         }
 
         public string id { get; set; }
@@ -33,5 +36,6 @@ namespace Be
         public string Proveedor { get; set; }
         public string Estado { get; set; }
         public string Observaciones { get; set; }
+        public decimal Precio { get; set; }
     }
 }

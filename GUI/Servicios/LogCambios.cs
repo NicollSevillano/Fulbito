@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
-using Servicios; // para acceder a SessionManager
+using Servicios; 
 
 namespace Servicios
 {
@@ -42,11 +42,6 @@ namespace Servicios
             SqlParameter p2 = new SqlParameter("@CodigoInsumo", SqlDbType.Int);
             p2.Value = codigoInsumo;
             parametros.Add(p2);
-
-            string usuario = SessionManager.getInstance?.usuario?.Usuario ?? "Desconocido";
-            SqlParameter p3 = new SqlParameter("@Usuario", SqlDbType.NVarChar);
-            p3.Value = usuario;
-            parametros.Add(p3);
 
             dao.Escribir("sp_Activar_Cambio", parametros);
         }

@@ -332,7 +332,7 @@ namespace GUI
         private void btnCobrar_Click(object sender, EventArgs e)
         {
             if (dgvReservas.SelectedRows.Count == 0) { MessageBox.Show("Tiene que seleccionar una reserva"); return; }
-            CobrarReservaForm cobrarReserva = new CobrarReservaForm(LlamarReserva());
+            CobrarForm cobrarReserva = new CobrarForm(LlamarReserva());
             LanguageManager.Suscribir(cobrarReserva);
             cobrarReserva.Hide();
             LogBitacora.AgregarEvento("Pagar reserva", 3, SessionManager.getInstance.usuario, "Cobrar reserva");
@@ -392,7 +392,7 @@ namespace GUI
                 MessageBox.Show("Tiene que seleccionar una reserva");
                 return;
             }
-            CobrarReservaForm cobrarReserva = new CobrarReservaForm(LlamarReserva())
+            CobrarForm cobrarReserva = new CobrarForm(LlamarReserva())
             {
                 Owner = this
             };

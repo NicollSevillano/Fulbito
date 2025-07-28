@@ -110,25 +110,21 @@ namespace GUI
 
         private void registrarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             registrarCliente.ShowDialog();
             this.Show();
         }
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             reservas.ShowDialog();
             this.Show();
         }
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             usuarios.ShowDialog();
             this.Show();
         }
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+        {          
             SessionManager.LogOut();
             this.Close();
         }
@@ -166,49 +162,42 @@ namespace GUI
 
         private void eventosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             _bEventos.ShowDialog();
             this.Show();
         }
 
         private void registrarCanchaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             _canchas.ShowDialog();
             this.Show();
         }
 
         private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             backrestore.ShowDialog();
             this.Show();
         }
 
         private void reservasHechasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             hReservas.ShowDialog();
             this.Show();
         }
 
         private void insumosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             alquilarInsumos.ShowDialog();
             this.Show();
         }
 
         private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             insumos.ShowDialog();
             this.Show();
         }
 
         private void cambiosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             _bitacoraCambios.ShowDialog();
             this.Show();
         }

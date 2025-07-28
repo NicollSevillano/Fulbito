@@ -29,280 +29,204 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlquilarInsumos));
-            this.label1 = new System.Windows.Forms.Label();
-            this.stock1 = new Controles.Stock();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.stock2 = new Controles.Stock();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.stock3 = new Controles.Stock();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.stock4 = new Controles.Stock();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.stock5 = new Controles.Stock();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.stock6 = new Controles.Stock();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.stock7 = new Controles.Stock();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.stock8 = new Controles.Stock();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.stock9 = new Controles.Stock();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.labTitulo = new System.Windows.Forms.Label();
+            this.txtInfoInsumo = new System.Windows.Forms.TextBox();
+            this.btnAlquilar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.labInfo = new System.Windows.Forms.Label();
+            this.labCliente = new System.Windows.Forms.Label();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.labInsumo = new System.Windows.Forms.Label();
+            this.cmbInsumo = new System.Windows.Forms.ComboBox();
+            this.pbInsumo = new System.Windows.Forms.PictureBox();
+            this.btnAgregarInsumo = new System.Windows.Forms.Button();
+            this.stock1 = new Controles.Stock();
+            this.labHoras = new System.Windows.Forms.Label();
+            this.nuHoras = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInsumo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuHoras)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Selecciona los insumos a alquilar";
+            this.labTitulo.AutoSize = true;
+            this.labTitulo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTitulo.Location = new System.Drawing.Point(12, 9);
+            this.labTitulo.Name = "labTitulo";
+            this.labTitulo.Size = new System.Drawing.Size(236, 19);
+            this.labTitulo.TabIndex = 1;
+            this.labTitulo.Text = "Selecciona los insumos a alquilar";
             // 
-            // stock1
+            // txtInfoInsumo
             // 
-            this.stock1.Location = new System.Drawing.Point(28, 206);
-            this.stock1.Name = "stock1";
-            this.stock1.Size = new System.Drawing.Size(173, 36);
-            this.stock1.TabIndex = 2;
+            this.txtInfoInsumo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfoInsumo.Location = new System.Drawing.Point(335, 49);
+            this.txtInfoInsumo.Multiline = true;
+            this.txtInfoInsumo.Name = "txtInfoInsumo";
+            this.txtInfoInsumo.ReadOnly = true;
+            this.txtInfoInsumo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtInfoInsumo.Size = new System.Drawing.Size(266, 220);
+            this.txtInfoInsumo.TabIndex = 20;
             // 
-            // pictureBox1
+            // btnAlquilar
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(28, 72);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 128);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(266, 72);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(173, 128);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // stock2
-            // 
-            this.stock2.Location = new System.Drawing.Point(266, 206);
-            this.stock2.Name = "stock2";
-            this.stock2.Size = new System.Drawing.Size(173, 36);
-            this.stock2.TabIndex = 4;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(496, 72);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(173, 128);
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
-            // stock3
-            // 
-            this.stock3.Location = new System.Drawing.Point(496, 206);
-            this.stock3.Name = "stock3";
-            this.stock3.Size = new System.Drawing.Size(173, 36);
-            this.stock3.TabIndex = 6;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(28, 273);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(173, 128);
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
-            // 
-            // stock4
-            // 
-            this.stock4.Location = new System.Drawing.Point(28, 407);
-            this.stock4.Name = "stock4";
-            this.stock4.Size = new System.Drawing.Size(173, 36);
-            this.stock4.TabIndex = 8;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Location = new System.Drawing.Point(266, 273);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(173, 128);
-            this.pictureBox5.TabIndex = 11;
-            this.pictureBox5.TabStop = false;
-            // 
-            // stock5
-            // 
-            this.stock5.Location = new System.Drawing.Point(266, 407);
-            this.stock5.Name = "stock5";
-            this.stock5.Size = new System.Drawing.Size(173, 36);
-            this.stock5.TabIndex = 10;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Location = new System.Drawing.Point(496, 273);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(173, 128);
-            this.pictureBox6.TabIndex = 13;
-            this.pictureBox6.TabStop = false;
-            // 
-            // stock6
-            // 
-            this.stock6.Location = new System.Drawing.Point(496, 407);
-            this.stock6.Name = "stock6";
-            this.stock6.Size = new System.Drawing.Size(173, 36);
-            this.stock6.TabIndex = 12;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Location = new System.Drawing.Point(28, 475);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(173, 128);
-            this.pictureBox7.TabIndex = 15;
-            this.pictureBox7.TabStop = false;
-            // 
-            // stock7
-            // 
-            this.stock7.Location = new System.Drawing.Point(28, 609);
-            this.stock7.Name = "stock7";
-            this.stock7.Size = new System.Drawing.Size(173, 36);
-            this.stock7.TabIndex = 14;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Location = new System.Drawing.Point(266, 475);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(173, 128);
-            this.pictureBox8.TabIndex = 17;
-            this.pictureBox8.TabStop = false;
-            // 
-            // stock8
-            // 
-            this.stock8.Location = new System.Drawing.Point(266, 609);
-            this.stock8.Name = "stock8";
-            this.stock8.Size = new System.Drawing.Size(173, 36);
-            this.stock8.TabIndex = 16;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Location = new System.Drawing.Point(496, 475);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(173, 128);
-            this.pictureBox9.TabIndex = 19;
-            this.pictureBox9.TabStop = false;
-            // 
-            // stock9
-            // 
-            this.stock9.Location = new System.Drawing.Point(496, 609);
-            this.stock9.Name = "stock9";
-            this.stock9.Size = new System.Drawing.Size(173, 36);
-            this.stock9.TabIndex = 18;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(705, 72);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 285);
-            this.textBox1.TabIndex = 20;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(819, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 43);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAlquilar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlquilar.Location = new System.Drawing.Point(496, 366);
+            this.btnAlquilar.Name = "btnAlquilar";
+            this.btnAlquilar.Size = new System.Drawing.Size(105, 34);
+            this.btnAlquilar.TabIndex = 21;
+            this.btnAlquilar.Text = "Alquilar";
+            this.btnAlquilar.UseVisualStyleBackColor = true;
+            this.btnAlquilar.Click += new System.EventHandler(this.btnAlquilar_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(819, 433);
+            this.button2.Location = new System.Drawing.Point(515, 406);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 43);
+            this.button2.Size = new System.Drawing.Size(82, 36);
             this.button2.TabIndex = 22;
-            this.button2.Text = "button2";
+            this.button2.Text = "Volver";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // labInfo
+            // 
+            this.labInfo.AutoSize = true;
+            this.labInfo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labInfo.Location = new System.Drawing.Point(335, 27);
+            this.labInfo.Name = "labInfo";
+            this.labInfo.Size = new System.Drawing.Size(125, 19);
+            this.labInfo.TabIndex = 35;
+            this.labInfo.Text = "Ver información";
+            // 
+            // labCliente
+            // 
+            this.labCliente.AutoSize = true;
+            this.labCliente.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labCliente.Location = new System.Drawing.Point(335, 278);
+            this.labCliente.Name = "labCliente";
+            this.labCliente.Size = new System.Drawing.Size(58, 19);
+            this.labCliente.TabIndex = 36;
+            this.labCliente.Text = "Cliente";
+            // 
+            // cmbCliente
+            // 
+            this.cmbCliente.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(418, 275);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(183, 24);
+            this.cmbCliente.TabIndex = 37;
+            // 
+            // labInsumo
+            // 
+            this.labInsumo.AutoSize = true;
+            this.labInsumo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labInsumo.Location = new System.Drawing.Point(12, 52);
+            this.labInsumo.Name = "labInsumo";
+            this.labInsumo.Size = new System.Drawing.Size(61, 19);
+            this.labInsumo.TabIndex = 38;
+            this.labInsumo.Text = "Insumo";
+            // 
+            // cmbInsumo
+            // 
+            this.cmbInsumo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbInsumo.FormattingEnabled = true;
+            this.cmbInsumo.Location = new System.Drawing.Point(94, 49);
+            this.cmbInsumo.Name = "cmbInsumo";
+            this.cmbInsumo.Size = new System.Drawing.Size(139, 27);
+            this.cmbInsumo.TabIndex = 39;
+            // 
+            // pbInsumo
+            // 
+            this.pbInsumo.Location = new System.Drawing.Point(16, 92);
+            this.pbInsumo.Name = "pbInsumo";
+            this.pbInsumo.Size = new System.Drawing.Size(300, 259);
+            this.pbInsumo.TabIndex = 41;
+            this.pbInsumo.TabStop = false;
+            // 
+            // btnAgregarInsumo
+            // 
+            this.btnAgregarInsumo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarInsumo.Location = new System.Drawing.Point(219, 381);
+            this.btnAgregarInsumo.Name = "btnAgregarInsumo";
+            this.btnAgregarInsumo.Size = new System.Drawing.Size(97, 34);
+            this.btnAgregarInsumo.TabIndex = 43;
+            this.btnAgregarInsumo.Text = "Agregar";
+            this.btnAgregarInsumo.UseVisualStyleBackColor = true;
+            this.btnAgregarInsumo.Click += new System.EventHandler(this.btnAgregarInsumo_Click);
+            // 
+            // stock1
+            // 
+            this.stock1.CantidadSeleccionada = 0;
+            this.stock1.Location = new System.Drawing.Point(16, 373);
+            this.stock1.Name = "stock1";
+            this.stock1.Size = new System.Drawing.Size(161, 50);
+            this.stock1.TabIndex = 42;
+            // 
+            // labHoras
+            // 
+            this.labHoras.AutoSize = true;
+            this.labHoras.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labHoras.Location = new System.Drawing.Point(335, 316);
+            this.labHoras.Name = "labHoras";
+            this.labHoras.Size = new System.Drawing.Size(51, 19);
+            this.labHoras.TabIndex = 44;
+            this.labHoras.Text = "Horas";
+            // 
+            // nuHoras
+            // 
+            this.nuHoras.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuHoras.Location = new System.Drawing.Point(431, 314);
+            this.nuHoras.Name = "nuHoras";
+            this.nuHoras.Size = new System.Drawing.Size(66, 27);
+            this.nuHoras.TabIndex = 45;
             // 
             // AlquilarInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
-            this.ClientSize = new System.Drawing.Size(952, 659);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.stock9);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.stock8);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.stock7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.stock6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.stock5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.stock4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.stock3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.stock2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(613, 454);
+            this.Controls.Add(this.nuHoras);
+            this.Controls.Add(this.labHoras);
+            this.Controls.Add(this.btnAgregarInsumo);
             this.Controls.Add(this.stock1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pbInsumo);
+            this.Controls.Add(this.cmbInsumo);
+            this.Controls.Add(this.labInsumo);
+            this.Controls.Add(this.cmbCliente);
+            this.Controls.Add(this.labCliente);
+            this.Controls.Add(this.labInfo);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAlquilar);
+            this.Controls.Add(this.txtInfoInsumo);
+            this.Controls.Add(this.labTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AlquilarInsumos";
             this.Text = "AlquilarInsumos";
             this.Load += new System.EventHandler(this.AlquilarInsumos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInsumo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuHoras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private Controles.Stock stock1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private Controles.Stock stock2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private Controles.Stock stock3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private Controles.Stock stock4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private Controles.Stock stock5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private Controles.Stock stock6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private Controles.Stock stock7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private Controles.Stock stock8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private Controles.Stock stock9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labTitulo;
+        private System.Windows.Forms.TextBox txtInfoInsumo;
+        private System.Windows.Forms.Button btnAlquilar;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labInfo;
+        private System.Windows.Forms.Label labCliente;
+        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.Label labInsumo;
+        private System.Windows.Forms.ComboBox cmbInsumo;
+        private System.Windows.Forms.PictureBox pbInsumo;
+        private Controles.Stock stock1;
+        private System.Windows.Forms.Button btnAgregarInsumo;
+        private System.Windows.Forms.Label labHoras;
+        private System.Windows.Forms.NumericUpDown nuHoras;
     }
 }

@@ -1,64 +1,94 @@
 ﻿using Be;
-using Bll;
 using Interface;
 using Mapper;
 using ServicioClase;
 using Servicios;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class CobrarReservaForm : Form, ITraducible
+    public partial class CobrarForm : Form, ITraducible
     {
-        BllReserva bllReserva;
-        BeReserva bReserva;
-        TarjetaForm tarjeta;
-        MapperReserva mreserva;
-        
-        public CobrarReservaForm(BeReserva reserva)
+        private BeReserva reserva;
+        private BeAlquiler alquiler;
+        private bool esReserva;
+        private TarjetaForm tarjeta;
+        private MapperReserva mreserva = new MapperReserva();
+        private List<InsumoResumen> insumos = new List<InsumoResumen>();
+
+        public CobrarForm(BeReserva _reserva)
         {
             InitializeComponent();
-            bReserva = reserva;
-            bllReserva = new BllReserva();
+            reserva = _reserva;
+            esReserva = true;
             LanguageManager.Suscribir(this);
-            mreserva = new MapperReserva();
-            
+            this.Load += CobrarForm_Load;
         }
-        public void Actualizar(string pIdioma)
+
+        public CobrarForm(BeAlquiler _alquiler, List<InsumoResumen> _insumos)
         {
-            Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
-            lbClienteCobrar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "lbClienteCobrar").Texto;
-            gpPago.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "gpPago").Texto;
-            rbEfectivo.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "rbEfectivo").Texto;
-            rbTransferencia.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "rbTransferencia").Texto;
-            rbDebito.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "rbDebito").Texto;
-            btncPagar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btncPagar").Texto;
-            this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "CobrarReservaForm").Texto;
+            InitializeComponent();
+            alquiler = _alquiler;
+            insumos = _insumos ?? new List<InsumoResumen>();
+            esReserva = false;
+            LanguageManager.Suscribir(this);
+            this.Load += CobrarForm_Load;
         }
-        private void CobrarReservaForm_Load(object sender, EventArgs e)
+
+        private void CobrarForm_Load(object sender, EventArgs e)
         {
-            listbCobrar.Items.Clear();
-            lbNombreCobrar.Text = bReserva.Cliente.Nombre;
             tarjeta = new TarjetaForm();
-            listbox();
+            lbNombreCobrar.Text = esReserva ? reserva.Cliente.Nombre : alquiler.Cliente.Nombre;
+
+            txtCobrar.Clear();
+
+            if (esReserva)
+            {
+                txtCobrar.AppendText($"Cancha: {reserva.Cancha.Nombre}\r\n");
+                txtCobrar.AppendText($"Fecha: {reserva.Fecha:dd/MM/yyyy}\r\n");
+                txtCobrar.AppendText($"Hora: {reserva.Hora}\r\n");
+                txtCobrar.AppendText($"Precio por 1h: ${reserva.Cancha.Precio:N0}\r\n");
+            }
+            else
+            {
+                txtCobrar.AppendText($"Cliente: {alquiler.Cliente.Nombre}\r\n");
+                txtCobrar.AppendText($"Horas: {alquiler.Horas}\r\n");
+                txtCobrar.AppendText($"Insumos:\r\n\r\n");
+
+                foreach (var insumo in insumos)
+                {
+                    decimal precioUnitario = insumo.Subtotal / insumo.Cantidad;
+                    decimal adicional = alquiler.Horas > 1 ? (alquiler.Horas - 1) * 2000 : 0;
+                    decimal baseUnitario = precioUnitario - adicional;
+
+                    txtCobrar.AppendText($"- {insumo.Nombre}\r\n");
+                    txtCobrar.AppendText($"  Precio base: ${baseUnitario:N0}\r\n");
+
+                    if (adicional > 0)
+                        txtCobrar.AppendText($"  Adicional por {alquiler.Horas - 1}h extra: +${adicional:N0}/unidad\r\n");
+
+                    txtCobrar.AppendText($"  x{insumo.Cantidad} = ${insumo.Subtotal:N0}\r\n");
+                    txtCobrar.AppendText("\r\n");
+                }
+
+                txtCobrar.AppendText($"Total: ${alquiler.Total:N0}\r\n");
+            }
         }
-        private void listbox()
+
+        public void Actualizar(string idioma)
         {
-            listbCobrar.Items.Clear();
-            listbCobrar.Items.Add($"{bReserva.Cancha.Nombre}");
-            listbCobrar.Items.Add($"{bReserva.Fecha.ToString("dd/MM/yyyy")}");
-            listbCobrar.Items.Add($"{bReserva.Hora}");
-            listbCobrar.Items.Add($"El precio por 1h es:");
-            listbCobrar.Items.Add($"${bReserva.Cancha.Precio}");
+            var i = LanguageManager.lIdioma.Find(x => x.id == idioma);
+            lbClienteCobrar.Text = i.lEtiqueta.Find(x => x.ControlT == "lbClienteCobrar").Texto;
+            gpPago.Text = i.lEtiqueta.Find(x => x.ControlT == "gpPago").Texto;
+            rbEfectivo.Text = i.lEtiqueta.Find(x => x.ControlT == "rbEfectivo").Texto;
+            rbTransferencia.Text = i.lEtiqueta.Find(x => x.ControlT == "rbTransferencia").Texto;
+            rbDebito.Text = i.lEtiqueta.Find(x => x.ControlT == "rbDebito").Texto;
+            btncPagar.Text = i.lEtiqueta.Find(x => x.ControlT == "btncPagar").Texto;
+            this.Text = i.lEtiqueta.Find(x => x.ControlT == "CobrarReservaForm").Texto;
         }
+
         private void btncPagar_Click(object sender, EventArgs e)
         {
             if (!(rbEfectivo.Checked || rbTransferencia.Checked || rbDebito.Checked))
@@ -67,45 +97,33 @@ namespace GUI
                 return;
             }
 
-            DialogResult resultado = MessageBox.Show("¿Pago realizado?", "Confirmar", MessageBoxButtons.OKCancel);
-            if (resultado == DialogResult.OK)
+            DialogResult result = MessageBox.Show("¿Pago realizado?", "Confirmar", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
             {
-                mreserva.ActualizarPago(bReserva.id, true);
-
-                MessageBox.Show("Reserva confirmada");
-                LogBitacora.AgregarEvento("Pago de reserva", 3, SessionManager.getInstance.usuario, "Cobrar reserva");
-                FacturaReporte.Reporte(bReserva);
-
-                if (Owner is GReservasForm formReservas)
+                if (esReserva)
                 {
-                    formReservas.Refrescar();
+                    mreserva.ActualizarPago(reserva.id, true);
+                    FacturaReporte.Reporte(reserva);
+                    LogBitacora.AgregarEvento("Pago de reserva", 3, SessionManager.getInstance.usuario, "Cobrar reserva");
                 }
+                else
+                {
+                    FacturaReporte.Reporte(alquiler, insumos);
+                    LogBitacora.AgregarEvento("Pago de alquiler", 3, SessionManager.getInstance.usuario, "Cobrar alquiler");
+                }
+
+                MessageBox.Show("Pago registrado con éxito", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (Owner is GReservasForm fr) fr.Refrescar();
 
                 this.Close();
             }
-            else
-            {
-                MessageBox.Show("Por favor, pagar la reserva");
-            }
         }
 
-        private string Alias()
-        {
-            string[] alias = { "alias1", "alias2", "alias3" }; 
-            Random random = new Random();
-            int index = random.Next(alias.Length);
-            return alias[index];
-        }
-
-        private string Cbu()
-        {
-            Random rnd = new Random();
-            return rnd.Next(10000000, 99999999).ToString() + rnd.Next(10000000, 99999999).ToString();
-        }
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            LogBitacora.AgregarEvento("Salir de cobrar", 1, SessionManager.getInstance.usuario, "Cobrar");
             this.Close();
-            LogBitacora.AgregarEvento("Salir de cobrar reserva", 1, SessionManager.getInstance.usuario, "Cobrar");
         }
     }
 }

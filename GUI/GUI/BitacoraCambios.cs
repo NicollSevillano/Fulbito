@@ -19,12 +19,14 @@ namespace GUI
 
         List<BelUsuario> lUsuario;
         BllUsuario bllUsuario;
+        BllInsumo bllInsumo;
 
         private void BitacoraCambiosForm_Load(object sender, EventArgs e)
         {
             bllUsuario = new BllUsuario();
-            lUsuario = bllUsuario.Consulta();
+            bllInsumo = new BllInsumo();
 
+            lUsuario = bllUsuario.Consulta();
             MostrarUsuarios();
             RefrescarBitacoraCambios();
         }
@@ -126,24 +128,32 @@ namespace GUI
 
                 int idCambio = Convert.ToInt32(row.Cells[0].Value);
                 int codigoInsumo = Convert.ToInt32(row.Cells[1].Value);
-                bool yaActivo = Convert.ToBoolean(row.Cells["Activo"].Value);
-
-                if (yaActivo)
-                {
-                    MessageBox.Show("Este cambio ya está activo.");
-                    return;
-                }
 
                 LogCambios.ActivarCambio(idCambio, codigoInsumo);
 
                 RefrescarBitacoraCambios();
+                ActualizarGrillaInsumos();
 
-                string usuario = SessionManager.getInstance?.usuario?.Usuario ?? "Desconocido";
-                MessageBox.Show($"Cambio activado correctamente por el usuario: {usuario}");
+                MessageBox.Show("Cambio activado correctamente.");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al activar cambio: " + ex.Message);
+            }
+        }
+
+        private void ActualizarGrillaInsumos()
+        {
+            try
+            {
+                if (Application.OpenForms["InsumosForm"] is InsumosForm insumosForm)
+                {
+                    insumosForm.RefreshDataExternally();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo actualizar los insumos: " + ex.Message);
             }
         }
 

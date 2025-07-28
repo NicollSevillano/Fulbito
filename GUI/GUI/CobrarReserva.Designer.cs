@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class CobrarReservaForm
+    partial class CobrarForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CobrarReservaForm));
-            this.listbCobrar = new System.Windows.Forms.ListBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CobrarForm));
             this.lbClienteCobrar = new System.Windows.Forms.Label();
             this.lbNombreCobrar = new System.Windows.Forms.Label();
             this.rbEfectivo = new System.Windows.Forms.RadioButton();
@@ -40,19 +39,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.comboIdioma1 = new Controles.ComboIdioma();
+            this.txtCobrar = new System.Windows.Forms.TextBox();
             this.gpPago.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listbCobrar
-            // 
-            this.listbCobrar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listbCobrar.FormattingEnabled = true;
-            this.listbCobrar.ItemHeight = 19;
-            this.listbCobrar.Location = new System.Drawing.Point(12, 52);
-            this.listbCobrar.Name = "listbCobrar";
-            this.listbCobrar.Size = new System.Drawing.Size(207, 251);
-            this.listbCobrar.TabIndex = 0;
             // 
             // lbClienteCobrar
             // 
@@ -158,24 +148,35 @@
             this.comboIdioma1.Size = new System.Drawing.Size(116, 25);
             this.comboIdioma1.TabIndex = 10;
             // 
-            // CobrarReservaForm
+            // txtCobrar
+            // 
+            this.txtCobrar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCobrar.Location = new System.Drawing.Point(16, 52);
+            this.txtCobrar.Multiline = true;
+            this.txtCobrar.Name = "txtCobrar";
+            this.txtCobrar.ReadOnly = true;
+            this.txtCobrar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtCobrar.Size = new System.Drawing.Size(213, 251);
+            this.txtCobrar.TabIndex = 11;
+            // 
+            // CobrarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(500, 319);
+            this.Controls.Add(this.txtCobrar);
             this.Controls.Add(this.comboIdioma1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btncPagar);
             this.Controls.Add(this.lbNombreCobrar);
             this.Controls.Add(this.lbClienteCobrar);
-            this.Controls.Add(this.listbCobrar);
             this.Controls.Add(this.gpPago);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CobrarReservaForm";
-            this.Text = "Cobrar reserva";
-            this.Load += new System.EventHandler(this.CobrarReservaForm_Load);
+            this.Name = "CobrarForm";
+            this.Text = "Cobrar ";
+            this.Load += new System.EventHandler(this.CobrarForm_Load);
             this.gpPago.ResumeLayout(false);
             this.gpPago.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -185,8 +186,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listbCobrar;
         private System.Windows.Forms.Label lbClienteCobrar;
         private System.Windows.Forms.Label lbNombreCobrar;
         private System.Windows.Forms.RadioButton rbEfectivo;
@@ -197,5 +196,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnVolver;
         private Controles.ComboIdioma comboIdioma1;
+        private System.Windows.Forms.TextBox txtCobrar;
     }
 }

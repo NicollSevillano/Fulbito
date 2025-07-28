@@ -30,7 +30,6 @@ namespace GUI
         {
             bllInsumo = new BllInsumo();
             lInsumo = bllInsumo.Consulta();
-            cmbEstadoInsumo.DropDownStyle = ComboBoxStyle.DropDownList;
             Refrescar();
             CargarProveedores();
         }
@@ -41,7 +40,7 @@ namespace GUI
             foreach (BeInsumo item in lInsumo)
             {
                 string estado = CalcularEstado(item.Cantidad, item.cantidadActual);
-                dgvInsumos.Rows.Add(item.id, item.Nombre, item.Cantidad, item.cantidadActual, item.Proveedor, estado, item.Observaciones);
+                dgvInsumos.Rows.Add(item.id, item.Nombre, item.Cantidad, item.cantidadActual, item.Proveedor, estado, item.Observaciones, item.Precio);
             }
         }
 
@@ -73,8 +72,9 @@ namespace GUI
                 int cantidad = int.Parse(txtCantidadInsumo.Text);
                 int cantidadActual = int.Parse(txtCantidadActualInsumo.Text);
                 string estado = CalcularEstado(cantidad, cantidadActual);
+                decimal precio = decimal.Parse(txtPrecio.Text);
+                var nuevo = new BeInsumo(txtNombreInsumo.Text, cantidad, cantidadActual, txtProveedorInsumo.Text, estado, txtObservacioneInsumo.Text, precio);
 
-                var nuevo = new BeInsumo(txtNombreInsumo.Text, cantidad, cantidadActual, txtProveedorInsumo.Text, estado, txtObservacioneInsumo.Text);
                 bllInsumo.Alta(nuevo);
 
                 lInsumo = bllInsumo.Consulta();
@@ -126,14 +126,16 @@ namespace GUI
                 int _cantidadActual = int.Parse(Interaction.InputBox("Cantidad actual:", "Modificando insumo...", aux.cantidadActual.ToString()));
                 string _proveedor = Interaction.InputBox("Proveedor:", "Modificando insumos...", aux.Proveedor);
                 string _observaciones = Interaction.InputBox("Observaciones", "Modificando insumo...", aux.Observaciones);
+                decimal _precio = decimal.Parse(Interaction.InputBox("Precio", "Modificando insumo...", aux.Precio.ToString()));
 
                 aux.Nombre = _nombre;
                 aux.cantidadActual = _cantidadActual;
                 aux.Proveedor = _proveedor;
                 aux.Observaciones = _observaciones;
                 aux.Estado = CalcularEstado(aux.Cantidad, _cantidadActual);
+                aux.Precio = _precio;
 
-                bllInsumo.Modificacion(aux); // ✅ Corrección aquí: solo se pasa el objeto
+                bllInsumo.Modificacion(aux);
                 lInsumo = bllInsumo.Consulta();
                 Refrescar();
 
@@ -155,6 +157,7 @@ namespace GUI
             txtCantidadActualInsumo.Text = row.Cells[3].Value.ToString();
             txtProveedorInsumo.Text = row.Cells[4].Value.ToString();
             txtObservacioneInsumo.Text = row.Cells[6].Value.ToString();
+            txtPrecio.Text = row.Cells[7].Value.ToString();
             txtCantidadInsumo.Enabled = false;
         }
 
@@ -254,5 +257,11 @@ namespace GUI
                 dgvInsumos.Rows.Add(i.id, i.Nombre, i.Cantidad, i.cantidadActual, i.Proveedor, estado, i.Observaciones);
             }
         }
+        public void RefreshDataExternally()
+        {
+            lInsumo = bllInsumo.Consulta();
+            Refrescar();
+        }
+
     }
 }

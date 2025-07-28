@@ -34,3 +34,15 @@ C:\Users\nssev\OneDrive\Escritorio\Prueba\Fulbito\GUI\Dal\obj\Debug\Dal.csproj.C
 C:\Users\nssev\OneDrive\Escritorio\Prueba\Fulbito\GUI\Dal\obj\Debug\Dal.csproj.Up2Date
 C:\Users\nssev\OneDrive\Escritorio\Prueba\Fulbito\GUI\Dal\obj\Debug\Dal.dll
 C:\Users\nssev\OneDrive\Escritorio\Prueba\Fulbito\GUI\Dal\obj\Debug\Dal.pdb
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\bin\Debug\Dal.dll.config
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\bin\Debug\Dal.dll
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\bin\Debug\Dal.pdb
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\bin\Debug\itextsharp.dll
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\bin\Debug\itextsharp.xml
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\obj\Debug\Dal.csproj.AssemblyReference.cache
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\obj\Debug\Dal.csproj.CoreCompileInputs.cache
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\obj\Debug\Dal.csproj.Up2Date
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\obj\Debug\Dal.dll
+C:\Users\Nicoll\Desktop\Fulbito\GUI\Dal\obj\Debug\Dal.pdb

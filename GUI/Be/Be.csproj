@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BeAlquilar.cs" />
+    <Compile Include="InsumoResumen.cs" />
     <Compile Include="BeCancha.cs" />
     <Compile Include="BeFactura.cs" />
     <Compile Include="BeHorarios.cs" />

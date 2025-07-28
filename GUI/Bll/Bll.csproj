@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BllAlquiler.cs" />
     <Compile Include="BllCancha.cs" />
     <Compile Include="BllCliente.cs" />
     <Compile Include="BllFactura.cs" />
