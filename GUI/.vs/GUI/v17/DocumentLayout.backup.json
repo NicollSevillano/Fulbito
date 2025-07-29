@@ -1,30 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\",
+  "WorkspaceRootPath": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D107F4C8-89CC-BEA8-D3D7-CA6B7733353D}|Elementos de la soluci\u00F3n{D107F4C8-89CC-BEA8-D3D7-CA6B7733353D}|C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{D107F4C8-89CC-BEA8-D3D7-CA6B7733353D}|Elementos de la soluci\u00F3n{D107F4C8-89CC-BEA8-D3D7-CA6B7733353D}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\be\\bealquilar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|solutionrelative:be\\bealquilar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\gui\\gui\\reporteinteligente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\reporteinteligente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\gui\\alquilarinsumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\alquilarinsumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\alquilarinsumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\gui\\reporteinteligente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\reporteinteligente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\servicios\\facturareporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|solutionrelative:servicios\\facturareporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\gui\\alquilarinsumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\alquilarinsumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\insumos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,79 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-28T17:50:28.127Z",
+              "Title": "BeAlquilar.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Be\\BeAlquilar.cs",
+              "RelativeDocumentMoniker": "Be\\BeAlquilar.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Be\\BeAlquilar.cs",
+              "RelativeToolTip": "Be\\BeAlquilar.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA+wCgAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T00:11:27.731Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AlquilarInsumos.cs",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\AlquilarInsumos.cs",
-              "RelativeDocumentMoniker": "GUI\\AlquilarInsumos.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\AlquilarInsumos.cs",
-              "RelativeToolTip": "GUI\\AlquilarInsumos.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAqwBMBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T17:22:53.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AlquilarInsumos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\AlquilarInsumos.cs",
-              "RelativeDocumentMoniker": "GUI\\AlquilarInsumos.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\AlquilarInsumos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\AlquilarInsumos.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T17:22:52.249Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ReporteInteligente.cs",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\ReporteInteligente.cs",
-              "RelativeDocumentMoniker": "GUI\\ReporteInteligente.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\ReporteInteligente.cs",
-              "RelativeToolTip": "GUI\\ReporteInteligente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEBAAAAAAAAAAAAAA==",
+              "Title": "AlquilarInsumos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\AlquilarInsumos.cs",
+              "RelativeDocumentMoniker": "GUI\\AlquilarInsumos.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\AlquilarInsumos.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "GUI\\AlquilarInsumos.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T14:23:58.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-28T23:42:45.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Insumos.cs",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\Insumos.cs",
+              "RelativeDocumentMoniker": "GUI\\Insumos.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\Insumos.cs",
+              "RelativeToolTip": "GUI\\Insumos.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAvwEMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T22:43:30.579Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ReporteInteligente.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\ReporteInteligente.cs",
-              "RelativeDocumentMoniker": "GUI\\ReporteInteligente.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\ReporteInteligente.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\ReporteInteligente.cs [Dise\u00F1o]",
+              "Title": "Insumos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\Insumos.cs",
+              "RelativeDocumentMoniker": "GUI\\Insumos.cs",
+              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\GUI\\Insumos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\Insumos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T14:20:16.338Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FacturaReporte.cs",
-              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\Servicios\\FacturaReporte.cs",
-              "RelativeDocumentMoniker": "Servicios\\FacturaReporte.cs",
-              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\Servicios\\FacturaReporte.cs",
-              "RelativeToolTip": "Servicios\\FacturaReporte.cs",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAzwJUAAACFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T04:56:08.15Z"
+              "WhenOpened": "2025-07-28T22:43:29.631Z"
             }
           ]
         }

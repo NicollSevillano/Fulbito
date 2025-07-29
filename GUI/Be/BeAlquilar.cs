@@ -38,5 +38,6 @@ namespace Be
         public int Horas { get; set; }
         public decimal Total { get; set; }
         public DateTime Fecha { get; set; }
+        public List<AlquilerInsumoDetalle> Detalle { get; set; } = new List<AlquilerInsumoDetalle>();
     }
 }

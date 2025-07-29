@@ -33,11 +33,14 @@ namespace GUI
             MostrarEnGrilla(listaAlquileres);
             MostrarGraficoGanancias(listaAlquileres);
             MostrarHistoricoClientes(listaAlquileres);
-            MostrarGraficoTopClientes(clientesHistorico.Take(3).ToList());
+            MostrarGraficoTopClientes(clientesHistorico);
 
             cmbFormato.Items.Add("Excel");
             cmbFormato.Items.Add("PDF");
             cmbFormato.SelectedIndex = 0;
+
+            dgvClientes.ClearSelection();
+            dgvAlquileres.ClearSelection();
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -51,14 +54,15 @@ namespace GUI
 
             MostrarEnGrilla(filtrados);
             MostrarGraficoGanancias(filtrados);
+            MostrarGraficoTopClientes(clientesHistorico);
             MostrarHistoricoClientes(filtrados);
-            MostrarGraficoTopClientes(clientesHistorico.Take(3).ToList());
         }
 
         private void MostrarEnGrilla(List<BeAlquiler> alquileres)
         {
             dgvAlquileres.Rows.Clear();
-            foreach (var a in alquileres)
+
+            foreach (var a in alquileres.OrderByDescending(a => a.Fecha)) 
             {
                 dgvAlquileres.Rows.Add(a.id, a.Cliente?.Nombre, a.Fecha.ToString("dd/MM/yyyy HH:mm"), $"${a.Total:N0}");
             }
@@ -126,9 +130,24 @@ namespace GUI
 
         private void MostrarGraficoTopClientes(List<BeClienteHistorico> lista)
         {
+            var cultura = new System.Globalization.CultureInfo("es-ES");
+
+            if (lista == null || lista.Count == 0)
+                return;
+
+            var ultimoMes = lista
+                .Select(c => DateTime.ParseExact("01 " + c.Mes, "dd MMMM yyyy", cultura))
+                .Max();
+
             var top = lista
-                .GroupBy(c => c.Nombre)
-                .Select(g => new { Cliente = g.Key, Total = g.Sum(x => x.Total) })
+                .Where(c => DateTime.ParseExact("01 " + c.Mes, "dd MMMM yyyy", cultura) == ultimoMes)
+                .GroupBy(c => c.Id)
+                .Select(g => new
+                {
+                    Cliente = g.First().Nombre,
+                    Total = g.Sum(x => x.Total),
+                    Frecuencia = g.Sum(x => x.Frecuencia)
+                })
                 .OrderByDescending(x => x.Total)
                 .Take(3)
                 .ToList();
@@ -236,17 +255,28 @@ namespace GUI
                 var writer = PdfWriter.GetInstance(doc, fs);
                 doc.Open();
 
-                string logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "logo.png");
+                string logoPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\GUI\Resources\logo.png"));
                 if (File.Exists(logoPath))
                 {
                     var logo = iTextSharp.text.Image.GetInstance(logoPath);
-                    logo.SetAbsolutePosition(150, 250);
-                    logo.ScaleAbsolute(300, 300);
-                    logo.Alignment = Element.ALIGN_CENTER;
-                    logo.RotationDegrees = 45;
-                    logo.Transparency = new int[] { 0x0F, 0x10 };
-                    doc.Add(logo);
+
+                    logo.ScaleAbsolute(200, 200);
+
+                    float x = (PageSize.A4.Width - logo.ScaledWidth) / 2;
+                    float y = (PageSize.A4.Height - logo.ScaledHeight) / 2;
+                    logo.SetAbsolutePosition(x, y);
+
+                    PdfContentByte canvas = writer.DirectContentUnder;
+                    PdfGState gState = new PdfGState
+                    {
+                        FillOpacity = 0.3f 
+                    };
+                    canvas.SaveState();
+                    canvas.SetGState(gState);
+                    canvas.AddImage(logo);
+                    canvas.RestoreState();
                 }
+
 
                 var titulo = new Paragraph($"Reporte de Alquileres - Desde {desde:dd/MM/yyyy} hasta {hasta:dd/MM/yyyy}",
                     FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14))

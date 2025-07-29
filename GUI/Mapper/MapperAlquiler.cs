@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace Mapper
 {
@@ -19,35 +20,73 @@ namespace Mapper
                 throw new ArgumentException("ID de cliente inválido");
 
             using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=SistemaF;Integrated Security=True"))
-            using (SqlCommand cmd = new SqlCommand("sp_Alta_Alquiler", conn))
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@CodigoCliente", clienteId);
-                cmd.Parameters.AddWithValue("@Horas", pObject.Horas);
-                cmd.Parameters.AddWithValue("@Total", pObject.Total);
-                cmd.Parameters.AddWithValue("@Fecha", pObject.Fecha); 
-
-                SqlParameter outputId = new SqlParameter("@NuevoID", SqlDbType.Int)
-                {
-                    Direction = ParameterDirection.Output
-                };
-                cmd.Parameters.Add(outputId);
-
                 conn.Open();
-                cmd.ExecuteNonQuery();
 
-                if (outputId.Value == DBNull.Value || outputId.Value == null)
-                    throw new Exception("No se pudo obtener el ID del nuevo alquiler");
+                using (SqlCommand cmd = new SqlCommand("sp_Alta_AlquilerCompleto", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                pObject.id = outputId.Value.ToString();
+                    cmd.Parameters.AddWithValue("@CodigoCliente", clienteId);
+                    cmd.Parameters.AddWithValue("@Horas", pObject.Horas);
+                    cmd.Parameters.AddWithValue("@Total", pObject.Total);
+                    cmd.Parameters.AddWithValue("@Fecha", pObject.Fecha);
+
+                    DataTable detalleTable = new DataTable();
+                    detalleTable.Columns.Add("CodigoInsumo", typeof(int));
+                    detalleTable.Columns.Add("Cantidad", typeof(int));
+
+                    foreach (var detalle in pObject.Detalle)
+                    {
+                        detalleTable.Rows.Add(detalle.CodigoInsumo, detalle.Cantidad);
+                    }
+
+                    SqlParameter tvp = new SqlParameter("@InsumosDetalle", SqlDbType.Structured)
+                    {
+                        TypeName = "dbo.T_InsumoDetalle",
+                        Value = detalleTable
+                    };
+                    cmd.Parameters.Add(tvp);
+
+                    SqlParameter outputId = new SqlParameter("@NuevoID", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(outputId);
+
+                    cmd.ExecuteNonQuery();
+
+                    if (outputId.Value != DBNull.Value)
+                        pObject.id = outputId.Value.ToString();
+                }
             }
         }
-
         public void Baja(int pId)
         {
             throw new NotImplementedException();
         }
+        public BeCliente ObtenerPorId(int id)
+        {
+            var parametros = new ArrayList
+            {
+                new SqlParameter("@id", id)
+            };
+
+            DataTable tabla = dao.Leer("sp_ObtenerClientePorId", parametros);
+
+            if (tabla.Rows.Count == 0) return null;
+
+            DataRow fila = tabla.Rows[0];
+            return new BeCliente
+            {
+                id = fila["id"].ToString(),
+                DNI = fila["DNI"].ToString(),
+                Nombre = fila["Nombre"].ToString(),
+                Telefono = fila["Telefono"].ToString(),
+                Direccion = fila["Direccion"].ToString()
+            };
+        }
+
 
         public List<BeAlquiler> Consulta()
         {

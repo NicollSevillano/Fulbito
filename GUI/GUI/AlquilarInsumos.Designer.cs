@@ -42,9 +42,10 @@
             this.btnAgregarInsumo = new System.Windows.Forms.Button();
             this.stock1 = new Controles.Stock();
             this.labHoras = new System.Windows.Forms.Label();
-            this.nuHoras = new System.Windows.Forms.NumericUpDown();
+            this.nudHoras = new System.Windows.Forms.NumericUpDown();
+            this.labTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbInsumo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuHoras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHoras)).BeginInit();
             this.SuspendLayout();
             // 
             // labTitulo
@@ -65,13 +66,13 @@
             this.txtInfoInsumo.Name = "txtInfoInsumo";
             this.txtInfoInsumo.ReadOnly = true;
             this.txtInfoInsumo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtInfoInsumo.Size = new System.Drawing.Size(266, 220);
+            this.txtInfoInsumo.Size = new System.Drawing.Size(325, 220);
             this.txtInfoInsumo.TabIndex = 20;
             // 
             // btnAlquilar
             // 
             this.btnAlquilar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlquilar.Location = new System.Drawing.Point(496, 366);
+            this.btnAlquilar.Location = new System.Drawing.Point(559, 366);
             this.btnAlquilar.Name = "btnAlquilar";
             this.btnAlquilar.Size = new System.Drawing.Size(105, 34);
             this.btnAlquilar.TabIndex = 21;
@@ -82,7 +83,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(515, 406);
+            this.button2.Location = new System.Drawing.Point(578, 406);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 36);
             this.button2.TabIndex = 22;
@@ -103,7 +104,7 @@
             // 
             this.labCliente.AutoSize = true;
             this.labCliente.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCliente.Location = new System.Drawing.Point(335, 278);
+            this.labCliente.Location = new System.Drawing.Point(335, 287);
             this.labCliente.Name = "labCliente";
             this.labCliente.Size = new System.Drawing.Size(58, 19);
             this.labCliente.TabIndex = 36;
@@ -113,7 +114,7 @@
             // 
             this.cmbCliente.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(418, 275);
+            this.cmbCliente.Location = new System.Drawing.Point(418, 284);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(183, 24);
             this.cmbCliente.TabIndex = 37;
@@ -148,7 +149,7 @@
             // btnAgregarInsumo
             // 
             this.btnAgregarInsumo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarInsumo.Location = new System.Drawing.Point(219, 381);
+            this.btnAgregarInsumo.Location = new System.Drawing.Point(219, 383);
             this.btnAgregarInsumo.Name = "btnAgregarInsumo";
             this.btnAgregarInsumo.Size = new System.Drawing.Size(97, 34);
             this.btnAgregarInsumo.TabIndex = 43;
@@ -159,7 +160,7 @@
             // stock1
             // 
             this.stock1.CantidadSeleccionada = 0;
-            this.stock1.Location = new System.Drawing.Point(16, 373);
+            this.stock1.Location = new System.Drawing.Point(16, 375);
             this.stock1.Name = "stock1";
             this.stock1.Size = new System.Drawing.Size(161, 50);
             this.stock1.TabIndex = 42;
@@ -168,27 +169,38 @@
             // 
             this.labHoras.AutoSize = true;
             this.labHoras.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labHoras.Location = new System.Drawing.Point(335, 316);
+            this.labHoras.Location = new System.Drawing.Point(335, 318);
             this.labHoras.Name = "labHoras";
             this.labHoras.Size = new System.Drawing.Size(51, 19);
             this.labHoras.TabIndex = 44;
             this.labHoras.Text = "Horas";
             // 
-            // nuHoras
+            // nudHoras
             // 
-            this.nuHoras.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuHoras.Location = new System.Drawing.Point(431, 314);
-            this.nuHoras.Name = "nuHoras";
-            this.nuHoras.Size = new System.Drawing.Size(66, 27);
-            this.nuHoras.TabIndex = 45;
+            this.nudHoras.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudHoras.Location = new System.Drawing.Point(431, 314);
+            this.nudHoras.Name = "nudHoras";
+            this.nudHoras.Size = new System.Drawing.Size(66, 27);
+            this.nudHoras.TabIndex = 45;
+            // 
+            // labTotal
+            // 
+            this.labTotal.AutoSize = true;
+            this.labTotal.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTotal.Location = new System.Drawing.Point(335, 353);
+            this.labTotal.Name = "labTotal";
+            this.labTotal.Size = new System.Drawing.Size(67, 19);
+            this.labTotal.TabIndex = 46;
+            this.labTotal.Text = "labTotal";
             // 
             // AlquilarInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
-            this.ClientSize = new System.Drawing.Size(613, 454);
-            this.Controls.Add(this.nuHoras);
+            this.ClientSize = new System.Drawing.Size(672, 454);
+            this.Controls.Add(this.labTotal);
+            this.Controls.Add(this.nudHoras);
             this.Controls.Add(this.labHoras);
             this.Controls.Add(this.btnAgregarInsumo);
             this.Controls.Add(this.stock1);
@@ -207,7 +219,7 @@
             this.Text = "AlquilarInsumos";
             this.Load += new System.EventHandler(this.AlquilarInsumos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbInsumo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuHoras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHoras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +239,7 @@
         private Controles.Stock stock1;
         private System.Windows.Forms.Button btnAgregarInsumo;
         private System.Windows.Forms.Label labHoras;
-        private System.Windows.Forms.NumericUpDown nuHoras;
+        private System.Windows.Forms.NumericUpDown nudHoras;
+        private System.Windows.Forms.Label labTotal;
     }
 }

@@ -153,14 +153,21 @@ namespace Servicios
             {
                 var img = iTextSharp.text.Image.GetInstance(logoPath);
                 img.ScaleToFit(width * 0.5f, imageHeight);
+
                 float x = (width - img.ScaledWidth) / 2;
                 float y = 25f;
-
                 img.SetAbsolutePosition(x, y);
 
-                PdfContentByte cb = writer.DirectContent;
+                PdfGState gState = new PdfGState();
+                gState.FillOpacity = 0.3f; 
+
+                PdfContentByte cb = writer.DirectContentUnder;
+                cb.SaveState();
+                cb.SetGState(gState);
                 cb.AddImage(img);
+                cb.RestoreState();
             }
         }
+
     }
 }

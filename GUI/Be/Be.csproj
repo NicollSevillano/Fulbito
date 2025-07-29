@@ -99,6 +99,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlquilerInsumoDetalle.cs" />
     <Compile Include="BeAlquilar.cs" />
     <Compile Include="BeClienteHistorico.cs" />
     <Compile Include="InsumoResumen.cs" />

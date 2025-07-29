@@ -19,38 +19,9 @@ namespace GUI
 
         Dictionary<string, int> resumenInsumos = new Dictionary<string, int>();
 
-        private NumericUpDown nudHoras;
-        private Label lblTotal;
-
         public AlquilarInsumos()
         {
             InitializeComponent();
-            InicializarControlesPersonalizados();
-        }
-
-        private void InicializarControlesPersonalizados()
-        {
-            nudHoras = new NumericUpDown
-            {
-                Name = "nudHoras",
-                Minimum = 1,
-                Maximum = 24,
-                Value = 1,
-                Location = new Point(450, 180),
-                Size = new Size(60, 20)
-            };
-            nudHoras.ValueChanged += nudHoras_ValueChanged;
-            this.Controls.Add(nudHoras);
-
-            lblTotal = new Label
-            {
-                Name = "lblTotal",
-                Text = "Total estimado: $0",
-                Location = new Point(420, 220),
-                AutoSize = true,
-                Font = new Font("Arial", 10, FontStyle.Bold)
-            };
-            this.Controls.Add(lblTotal);
         }
 
         private void AlquilarInsumos_Load(object sender, EventArgs e)
@@ -62,7 +33,13 @@ namespace GUI
 
             CargarComboInsumos();
             CargarComboClientes();
-            ActualizarTotalEstimado();
+
+            nudHoras.Minimum = 1;
+            nudHoras.Maximum = 24;
+            nudHoras.Value = 1;
+            nudHoras.ValueChanged += nudHoras_ValueChanged;
+
+            labTotal.Text = "Total estimado: $0";
         }
 
         private void CargarComboInsumos()
@@ -164,9 +141,8 @@ namespace GUI
                     txtInfoInsumo.AppendText($"{nombre}\r\n");
                     txtInfoInsumo.AppendText($"Precio por hora: ${precioBase:N0}\r\n");
                     if (adicional > 0)
-                    {
                         txtInfoInsumo.AppendText($"Adicional por {horas - 1}h extra: +${adicional:N0}/unidad\r\n");
-                    }
+
                     txtInfoInsumo.AppendText($"x{cantidad} unidades = ${total:N0}\r\n");
                     txtInfoInsumo.AppendText($"----------------------------\r\n");
                 }
@@ -178,7 +154,7 @@ namespace GUI
         private void ActualizarTotalEstimado()
         {
             decimal total = CalcularTotalInsumos();
-            lblTotal.Text = $"Total estimado: ${total:N0}";
+            labTotal.Text = $"Total estimado: ${total:N0}";
         }
 
         private decimal CalcularTotalInsumos()
@@ -240,6 +216,21 @@ namespace GUI
                 Fecha = DateTime.Now
             };
 
+            alquiler.Detalle = new List<AlquilerInsumoDetalle>();
+
+            foreach (var item in resumenInsumos)
+            {
+                BeInsumo insumo = lInsumo.FirstOrDefault(i => i.Nombre == item.Key);
+                if (insumo != null)
+                {
+                    alquiler.Detalle.Add(new AlquilerInsumoDetalle
+                    {
+                        CodigoInsumo = int.Parse(insumo.id),
+                        Cantidad = item.Value
+                    });
+                }
+            }
+
             try
             {
                 BllAlquiler bllAlquiler = new BllAlquiler();
@@ -282,7 +273,7 @@ namespace GUI
             cmbInsumo.SelectedIndex = -1;
             pbInsumo.Image = null;
             nudHoras.Value = 1;
-            lblTotal.Text = "Total estimado: $0";
+            labTotal.Text = "Total estimado: $0";
         }
     }
 }
