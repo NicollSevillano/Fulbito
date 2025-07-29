@@ -34,6 +34,7 @@ namespace GUI
             insumos = _insumos ?? new List<InsumoResumen>();
             esReserva = false;
             LanguageManager.Suscribir(this);
+            this.Actualizar(SessionManager.getInstance.usuario.IdiomaId.ToString());
             this.Load += CobrarForm_Load;
         }
 
@@ -74,19 +75,22 @@ namespace GUI
                 }
 
                 txtCobrar.AppendText($"Total: ${alquiler.Total:N0}\r\n");
+                LanguageManager.Suscribir(this);
+                LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
             }
         }
 
         public void Actualizar(string idioma)
         {
-            var i = LanguageManager.lIdioma.Find(x => x.id == idioma);
+            Idioma i = LanguageManager.lIdioma.Find(x => x.id == idioma);
+            this.Text = i.lEtiqueta.Find(x => x.ControlT == "CobrarForm").Texto;
             lbClienteCobrar.Text = i.lEtiqueta.Find(x => x.ControlT == "lbClienteCobrar").Texto;
             gpPago.Text = i.lEtiqueta.Find(x => x.ControlT == "gpPago").Texto;
             rbEfectivo.Text = i.lEtiqueta.Find(x => x.ControlT == "rbEfectivo").Texto;
             rbTransferencia.Text = i.lEtiqueta.Find(x => x.ControlT == "rbTransferencia").Texto;
             rbDebito.Text = i.lEtiqueta.Find(x => x.ControlT == "rbDebito").Texto;
             btncPagar.Text = i.lEtiqueta.Find(x => x.ControlT == "btncPagar").Texto;
-            this.Text = i.lEtiqueta.Find(x => x.ControlT == "CobrarReservaForm").Texto;
+            btnVolver.Text = i.lEtiqueta.Find(x => x.ControlT == "btnVolver").Texto;
         }
 
         private void btncPagar_Click(object sender, EventArgs e)

@@ -1,38 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using Mapper;
-using System.Threading.Tasks;
+﻿using Interface;
+using Servicios;
+using System;
 using System.Windows.Forms;
+using Mapper;
 
 namespace GUI
 {
-    public partial class BackUpForm : Form
+    public partial class BackUpForm : Form, ITraducible
     {
         private BackUpRestoreMapper backrestore = new BackUpRestoreMapper();
+
         public BackUpForm()
         {
             InitializeComponent();
         }
 
+        private void BackUpForm_Load(object sender, EventArgs e)
+        {
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            using(FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
-                if(folderDialog.ShowDialog() == DialogResult.OK) { txtBackUp.Text = folderDialog.SelectedPath; }
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtBackUp.Text = folderDialog.SelectedPath;
+                }
             }
         }
 
         private void pictureBoxRestore_Click(object sender, EventArgs e)
         {
-            using(OpenFileDialog openFileDialog = new OpenFileDialog())
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "SQL Backup Files (*.bak)|*.bak";
-                if(openFileDialog.ShowDialog() == DialogResult.OK) { txtRestore.Text = openFileDialog.FileName; }
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtRestore.Text = openFileDialog.FileName;
+                }
             }
         }
 
@@ -69,7 +77,7 @@ namespace GUI
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al restaurar la bas base de datos:{ex.Message}");
+                    MessageBox.Show($"Error al restaurar la base de datos: {ex.Message}");
                 }
             }
             else
@@ -78,9 +86,23 @@ namespace GUI
             }
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void btnVolverBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void Actualizar(string pIdioma)
+        {
+            var idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+
+            if (idioma == null) return;
+
+            this.Text = idioma.lEtiqueta.Find(x => x.ControlT == "BackUpForm")?.Texto ?? this.Text;
+            labRespaldo.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labRespaldo")?.Texto ?? labRespaldo.Text;
+            btnBackUp.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnBackUp")?.Texto ?? btnBackUp.Text;
+            lblRestaurar.Text = idioma.lEtiqueta.Find(x => x.ControlT == "lblRestaurar")?.Texto ?? lblRestaurar.Text;
+            btnRestore.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnRestore")?.Texto ?? btnRestore.Text;
+            btnVolverBack.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnVolverBack")?.Texto ?? btnVolverBack.Text;
         }
     }
 }

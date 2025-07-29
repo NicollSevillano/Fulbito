@@ -23,47 +23,14 @@ namespace Mapper
             string storeAlta = "sp_Usuario_Alta";
             arrayList = new ArrayList();
 
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@DNI";
-            p1.Value = pObject.DNI;
-            p1.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p1);
-
-            SqlParameter p2 = new SqlParameter();
-            p2.ParameterName = "@Nombre";
-            p2.Value = pObject.Nombre;
-            p2.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p2);
-
-            SqlParameter p3 = new SqlParameter();
-            p3.ParameterName = "@Apellido";
-            p3.Value = pObject.Apellido;
-            p3.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p3);
-
-            SqlParameter p4 = new SqlParameter();
-            p4.ParameterName = "@Email";
-            p4.Value = pObject.Email;
-            p4.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p4);
-
-            SqlParameter p5 = new SqlParameter();
-            p5.ParameterName = "@Rol";
-            p5.Value = pObject.Perfil.id;
-            p5.SqlDbType = SqlDbType.Int;
-            arrayList.Add(p5);
-
-            SqlParameter p6 = new SqlParameter();
-            p6.ParameterName = "@Usuario";
-            p6.Value = pObject.Usuario;
-            p6.SqlDbType = SqlDbType.VarChar;
-            arrayList.Add(p6);
-
-            SqlParameter p7 = new SqlParameter();
-            p7.ParameterName = "@Contraseña";
-            p7.Value = pObject.Contraseña;
-            p7.SqlDbType = SqlDbType.VarChar;
-            arrayList.Add(p7);
+            arrayList.Add(new SqlParameter("@DNI", pObject.DNI));
+            arrayList.Add(new SqlParameter("@Nombre", pObject.Nombre));
+            arrayList.Add(new SqlParameter("@Apellido", pObject.Apellido));
+            arrayList.Add(new SqlParameter("@Email", pObject.Email));
+            arrayList.Add(new SqlParameter("@Rol", pObject.Perfil.id));
+            arrayList.Add(new SqlParameter("@Usuario", pObject.Usuario));
+            arrayList.Add(new SqlParameter("@Contraseña", pObject.Contraseña));
+            arrayList.Add(new SqlParameter("@IdiomaId", pObject.IdiomaId)); 
 
             dao.Escribir(storeAlta, arrayList);
         }
@@ -93,74 +60,28 @@ namespace Mapper
             string storeModificar = "sp_Usuario_Modificar";
             arrayList = new ArrayList();
 
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@CodigoUsuario";
-            p1.Value = pObject.id;
-            p1.SqlDbType = SqlDbType.Int;
-            arrayList.Add(p1);
+            arrayList.Add(new SqlParameter("@CodigoUsuario", pObject.id));
+            arrayList.Add(new SqlParameter("@DNI", pObject.DNI));
+            arrayList.Add(new SqlParameter("@Nombre", pObject.Nombre));
+            arrayList.Add(new SqlParameter("@Apellido", pObject.Apellido));
+            arrayList.Add(new SqlParameter("@Email", pObject.Email));
+            arrayList.Add(new SqlParameter("@Rol", pObject.Perfil.id));
+            arrayList.Add(new SqlParameter("@Usuario", pObject.Usuario));
+            arrayList.Add(new SqlParameter("@Contraseña", pObject.Contraseña));
+            arrayList.Add(new SqlParameter("@Bloqueado", pObject.Bloqueado));
+            arrayList.Add(new SqlParameter("@Activo", pObject.Activo));
 
-            SqlParameter p2 = new SqlParameter();
-            p2.ParameterName = "@DNI";
-            p2.Value = pObject.DNI;
-            p2.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p2);
+            var pIntentos = new SqlParameter("@Intentos", SqlDbType.Int); 
+            pIntentos.Value = pObject.Intentos;
+            arrayList.Add(pIntentos);
 
-            SqlParameter p3 = new SqlParameter();
-            p3.ParameterName = "@Nombre";
-            p3.Value = pObject.Nombre;
-            p3.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p3);
-
-            SqlParameter p4 = new SqlParameter();
-            p4.ParameterName = "@Apellido";
-            p4.Value = pObject.Apellido;
-            p4.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p4);
-
-            SqlParameter p5 = new SqlParameter();
-            p5.ParameterName = "@Email";
-            p5.Value = pObject.Email;
-            p5.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p5);
-
-            SqlParameter p6 = new SqlParameter();
-            p6.ParameterName = "@Rol";
-            p6.Value = pObject.Perfil.id;
-            p6.SqlDbType = SqlDbType.Int;
-            arrayList.Add(p6);
-
-            SqlParameter p7 = new SqlParameter();
-            p7.ParameterName = "@Usuario";
-            p7.Value = pObject.Usuario;
-            p7.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p7);
-
-            SqlParameter p8 = new SqlParameter();
-            p8.ParameterName = "@Contraseña";
-            p8.Value = pObject.Contraseña;
-            p8.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p8);
-
-            SqlParameter p9 = new SqlParameter();
-            p9.ParameterName = "@Bloqueado";
-            p9.Value = pObject.Bloqueado;
-            p9.SqlDbType = SqlDbType.Bit;
-            arrayList.Add(p9);
-
-            SqlParameter p10 = new SqlParameter();
-            p10.ParameterName = "@Activo";
-            p10.Value = pObject.Activo;
-            p10.SqlDbType = SqlDbType.Bit;
-            arrayList.Add(p10); 
-            
-            SqlParameter p11 = new SqlParameter();
-            p11.ParameterName = "@Intentos";
-            p11.Value = pObject.Intentos;
-            p11.SqlDbType = SqlDbType.Bit;
-            arrayList.Add(p11);
+            var pIdioma = new SqlParameter("@IdiomaId", SqlDbType.Int); 
+            pIdioma.Value = pObject.IdiomaId;
+            arrayList.Add(pIdioma);
 
             dao.Escribir(storeModificar, arrayList);
         }
+
         public void Desbloquear(BelUsuario pCU)
         {
             string storeDesbloquear = "sp_Desbloquear_Usuario";

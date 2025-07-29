@@ -1,5 +1,7 @@
 ﻿using Be;
 using Bll;
+using Interface;
+using ServicioClase;
 using Servicios;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class BitacoraEventosform : Form
+    public partial class BitacoraEventosform : Form, ITraducible
     {
         public BitacoraEventosform()
         {
@@ -30,6 +32,7 @@ namespace GUI
             lUsuario = bllUsuario.Consulta();
             MostrarUsuarios();
             RefrecarBitacoraEvento();
+            LanguageManager.Suscribir(this);
         }
         private void btnFiltrarBEvento_Click(object sender, EventArgs e)
         {
@@ -119,6 +122,27 @@ namespace GUI
                 txtNombreBE.Text = usu.Nombre;
                 txtApellidoBE.Text = usu.Apellido;
             }
+        }
+
+        public void Actualizar(string pIdioma)
+        {
+            Idioma idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+            this.Text = idioma.lEtiqueta.Find(x => x.ControlT == "BitacoraEventosform").Texto;
+            labBitacoraEventos.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labBitacoraEventos").Texto;
+            LabNombre.Text = idioma.lEtiqueta.Find(x => x.ControlT == "LabNombre").Texto;
+            labApellido.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labApellido").Texto;
+            LabBeventosfechaInicio.Text = idioma.lEtiqueta.Find(x => x.ControlT == "LabBeventosfechaInicio").Texto;
+            LabBeventosfechaFinal.Text = idioma.lEtiqueta.Find(x => x.ControlT == "LabBeventosfechaFinal").Texto;
+            LabBeventosUsuario.Text = idioma.lEtiqueta.Find(x => x.ControlT == "LabBeventosUsuario").Texto;
+            btnFiltrarBEvento.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnFiltrarBEvento").Texto;
+            btnImprimir.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnImprimir").Texto;
+            btnLimpiar.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnLimpiar").Texto;
+            btnVolverbEventos.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnVolverbEventos").Texto;
+
+            dgvBitacoraEventos.Columns["FechaBitacoraE"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "FechaBitacoraE").Texto;
+            dgvBitacoraEventos.Columns["TextoBitacoraE"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "TextoBitacoraE").Texto;
+            dgvBitacoraEventos.Columns["CriticidadBitacoraE"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "CriticidadBitacoraE").Texto;
+            dgvBitacoraEventos.Columns["UsuarioBitacoraE"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "UsuarioBitacoraE").Texto;
         }
     }
 }

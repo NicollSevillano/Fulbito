@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BitacoraEventosform));
             this.dgvBitacoraEventos = new System.Windows.Forms.DataGridView();
-            this.IdBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TextoBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CriticidadBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UsuarioBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModuloBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LabBeventosfechaInicio = new System.Windows.Forms.Label();
             this.LabBeventosfechaFinal = new System.Windows.Forms.Label();
             this.LabBeventosUsuario = new System.Windows.Forms.Label();
@@ -54,6 +49,11 @@
             this.labApellido = new System.Windows.Forms.Label();
             this.txtNombreBE = new System.Windows.Forms.TextBox();
             this.txtApellidoBE = new System.Windows.Forms.TextBox();
+            this.IdBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TextoBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CriticidadBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsuarioBitacoraE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacoraEventos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCriticidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,14 +64,21 @@
             this.dgvBitacoraEventos.AllowUserToAddRows = false;
             this.dgvBitacoraEventos.AllowUserToDeleteRows = false;
             this.dgvBitacoraEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBitacoraEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBitacoraEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBitacoraEventos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdBitacoraE,
             this.FechaBitacoraE,
             this.TextoBitacoraE,
             this.CriticidadBitacoraE,
-            this.UsuarioBitacoraE,
-            this.ModuloBitacoraE});
+            this.UsuarioBitacoraE});
             this.dgvBitacoraEventos.Location = new System.Drawing.Point(12, 44);
             this.dgvBitacoraEventos.Name = "dgvBitacoraEventos";
             this.dgvBitacoraEventos.ReadOnly = true;
@@ -79,42 +86,6 @@
             this.dgvBitacoraEventos.Size = new System.Drawing.Size(702, 236);
             this.dgvBitacoraEventos.TabIndex = 0;
             this.dgvBitacoraEventos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBitacoraEventos_RowEnter);
-            // 
-            // IdBitacoraE
-            // 
-            this.IdBitacoraE.HeaderText = "Id";
-            this.IdBitacoraE.Name = "IdBitacoraE";
-            this.IdBitacoraE.ReadOnly = true;
-            // 
-            // FechaBitacoraE
-            // 
-            this.FechaBitacoraE.HeaderText = "Fecha y Hora";
-            this.FechaBitacoraE.Name = "FechaBitacoraE";
-            this.FechaBitacoraE.ReadOnly = true;
-            // 
-            // TextoBitacoraE
-            // 
-            this.TextoBitacoraE.HeaderText = "Texto";
-            this.TextoBitacoraE.Name = "TextoBitacoraE";
-            this.TextoBitacoraE.ReadOnly = true;
-            // 
-            // CriticidadBitacoraE
-            // 
-            this.CriticidadBitacoraE.HeaderText = "Criticidad";
-            this.CriticidadBitacoraE.Name = "CriticidadBitacoraE";
-            this.CriticidadBitacoraE.ReadOnly = true;
-            // 
-            // UsuarioBitacoraE
-            // 
-            this.UsuarioBitacoraE.HeaderText = "Usuario";
-            this.UsuarioBitacoraE.Name = "UsuarioBitacoraE";
-            this.UsuarioBitacoraE.ReadOnly = true;
-            // 
-            // ModuloBitacoraE
-            // 
-            this.ModuloBitacoraE.HeaderText = "Modulo";
-            this.ModuloBitacoraE.Name = "ModuloBitacoraE";
-            this.ModuloBitacoraE.ReadOnly = true;
             // 
             // LabBeventosfechaInicio
             // 
@@ -293,6 +264,36 @@
             this.txtApellidoBE.Size = new System.Drawing.Size(153, 20);
             this.txtApellidoBE.TabIndex = 18;
             // 
+            // IdBitacoraE
+            // 
+            this.IdBitacoraE.HeaderText = "Id";
+            this.IdBitacoraE.Name = "IdBitacoraE";
+            this.IdBitacoraE.ReadOnly = true;
+            // 
+            // FechaBitacoraE
+            // 
+            this.FechaBitacoraE.HeaderText = "Fecha y Hora";
+            this.FechaBitacoraE.Name = "FechaBitacoraE";
+            this.FechaBitacoraE.ReadOnly = true;
+            // 
+            // TextoBitacoraE
+            // 
+            this.TextoBitacoraE.HeaderText = "Texto";
+            this.TextoBitacoraE.Name = "TextoBitacoraE";
+            this.TextoBitacoraE.ReadOnly = true;
+            // 
+            // CriticidadBitacoraE
+            // 
+            this.CriticidadBitacoraE.HeaderText = "Criticidad";
+            this.CriticidadBitacoraE.Name = "CriticidadBitacoraE";
+            this.CriticidadBitacoraE.ReadOnly = true;
+            // 
+            // UsuarioBitacoraE
+            // 
+            this.UsuarioBitacoraE.HeaderText = "Usuario";
+            this.UsuarioBitacoraE.Name = "UsuarioBitacoraE";
+            this.UsuarioBitacoraE.ReadOnly = true;
+            // 
             // BitacoraEventosform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,7 +321,7 @@
             this.Controls.Add(this.dgvBitacoraEventos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BitacoraEventosform";
-            this.Text = "BitacoraEventos";
+            this.Text = "Bitacora de Eventos";
             this.Load += new System.EventHandler(this.BitacoraEventos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacoraEventos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCriticidad)).EndInit();
@@ -356,6 +357,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TextoBitacoraE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CriticidadBitacoraE;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioBitacoraE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ModuloBitacoraE;
     }
 }

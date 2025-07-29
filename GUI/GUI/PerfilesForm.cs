@@ -31,6 +31,7 @@ namespace GUI
             ActualizarPerfiles();
             HabilitarControl();
             LanguageManager.Suscribir(this);
+            this.Actualizar(SessionManager.getInstance.usuario.IdiomaId.ToString());
         }
         private void RegistroReservas_Load(object sender, EventArgs e)
         {

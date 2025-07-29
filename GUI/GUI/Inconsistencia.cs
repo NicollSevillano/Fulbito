@@ -1,11 +1,13 @@
-﻿using Servicios;
+﻿using Interface;
+using ServicioClase;
+using Servicios;
 using System;
 using System.Text;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Inconsistencia : Form
+    public partial class Inconsistencia : Form, ITraducible
     {
         private bool reparada = false;
 
@@ -15,7 +17,11 @@ namespace GUI
             this.FormClosing += Inconsistencia_FormClosing;
             CargarInconsistencias();
         }
-
+        private void Inconsistencia_Load(object sender, EventArgs e)
+        {
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+        }
         private void Inconsistencia_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!reparada)
@@ -33,7 +39,7 @@ namespace GUI
 
             foreach (var tabla in tablas)
             {
-                var errores = dv.VerificarTabla(tabla); // 👈 método correcto
+                var errores = dv.VerificarTabla(tabla); 
                 foreach (var err in errores)
                     sb.AppendLine($"Tabla: {tabla}, {err}");
             }
@@ -82,6 +88,15 @@ namespace GUI
             {
                 MessageBox.Show("Error al recalcular la integridad: " + ex.Message);
             }
+        }
+
+        public void Actualizar(string pIdioma)
+        {
+            Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+            btnRecalcular.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnRecalcular").Texto;
+            btnRestaurarInc.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnRestaurarInc").Texto;
+            lbInconsistencias.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "lbInconsistencias").Texto;
+            this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "Inconsistencia").Texto;
         }
     }
 }

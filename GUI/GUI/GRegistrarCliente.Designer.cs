@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GRegistrarClienteForm));
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.labTitulo = new System.Windows.Forms.Label();
@@ -64,6 +65,14 @@
             this.dgvCliente.AllowUserToAddRows = false;
             this.dgvCliente.AllowUserToDeleteRows = false;
             this.dgvCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaId,
@@ -82,7 +91,7 @@
             // labTitulo
             // 
             this.labTitulo.AutoSize = true;
-            this.labTitulo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTitulo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labTitulo.Location = new System.Drawing.Point(21, 15);
             this.labTitulo.Name = "labTitulo";
             this.labTitulo.Size = new System.Drawing.Size(125, 19);
@@ -143,7 +152,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(194, 201);
+            this.btnAgregar.Location = new System.Drawing.Point(196, 190);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(98, 34);
             this.btnAgregar.TabIndex = 8;
@@ -154,7 +163,7 @@
             // btnBorrar
             // 
             this.btnBorrar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.Location = new System.Drawing.Point(194, 245);
+            this.btnBorrar.Location = new System.Drawing.Point(196, 234);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(98, 34);
             this.btnBorrar.TabIndex = 9;
@@ -165,7 +174,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(194, 289);
+            this.btnModificar.Location = new System.Drawing.Point(196, 278);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(98, 34);
             this.btnModificar.TabIndex = 10;
@@ -176,7 +185,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 211);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 190);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(162, 155);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -186,7 +195,7 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(194, 333);
+            this.btnVolver.Location = new System.Drawing.Point(196, 322);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(98, 34);
             this.btnVolver.TabIndex = 12;
@@ -197,7 +206,7 @@
             // btnSerializar
             // 
             this.btnSerializar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSerializar.Location = new System.Drawing.Point(26, 413);
+            this.btnSerializar.Location = new System.Drawing.Point(27, 407);
             this.btnSerializar.Name = "btnSerializar";
             this.btnSerializar.Size = new System.Drawing.Size(101, 38);
             this.btnSerializar.TabIndex = 13;
@@ -208,7 +217,7 @@
             // btnDeserializar
             // 
             this.btnDeserializar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeserializar.Location = new System.Drawing.Point(495, 413);
+            this.btnDeserializar.Location = new System.Drawing.Point(496, 407);
             this.btnDeserializar.Name = "btnDeserializar";
             this.btnDeserializar.Size = new System.Drawing.Size(101, 38);
             this.btnDeserializar.TabIndex = 14;
@@ -219,23 +228,23 @@
             // listArchivoSerializado
             // 
             this.listArchivoSerializado.FormattingEnabled = true;
-            this.listArchivoSerializado.Location = new System.Drawing.Point(133, 413);
+            this.listArchivoSerializado.Location = new System.Drawing.Point(134, 407);
             this.listArchivoSerializado.Name = "listArchivoSerializado";
-            this.listArchivoSerializado.Size = new System.Drawing.Size(263, 225);
+            this.listArchivoSerializado.Size = new System.Drawing.Size(263, 186);
             this.listArchivoSerializado.TabIndex = 15;
             // 
             // listArchivoDeserializado
             // 
             this.listArchivoDeserializado.FormattingEnabled = true;
-            this.listArchivoDeserializado.Location = new System.Drawing.Point(602, 413);
+            this.listArchivoDeserializado.Location = new System.Drawing.Point(603, 407);
             this.listArchivoDeserializado.Name = "listArchivoDeserializado";
-            this.listArchivoDeserializado.Size = new System.Drawing.Size(263, 225);
+            this.listArchivoDeserializado.Size = new System.Drawing.Size(263, 186);
             this.listArchivoDeserializado.TabIndex = 16;
             // 
             // cmbSerializacion
             // 
             this.cmbSerializacion.FormattingEnabled = true;
-            this.cmbSerializacion.Location = new System.Drawing.Point(172, 386);
+            this.cmbSerializacion.Location = new System.Drawing.Point(173, 371);
             this.cmbSerializacion.Name = "cmbSerializacion";
             this.cmbSerializacion.Size = new System.Drawing.Size(138, 21);
             this.cmbSerializacion.TabIndex = 17;
@@ -244,7 +253,7 @@
             // 
             this.labtipoSerilizar.AutoSize = true;
             this.labtipoSerilizar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labtipoSerilizar.Location = new System.Drawing.Point(13, 388);
+            this.labtipoSerilizar.Location = new System.Drawing.Point(14, 373);
             this.labtipoSerilizar.Name = "labtipoSerilizar";
             this.labtipoSerilizar.Size = new System.Drawing.Size(153, 19);
             this.labtipoSerilizar.TabIndex = 18;
@@ -269,36 +278,36 @@
             // 
             // ColumnaId
             // 
-            this.ColumnaId.FillWeight = 74.52055F;
+            this.ColumnaId.FillWeight = 50.76142F;
             this.ColumnaId.HeaderText = "id";
             this.ColumnaId.Name = "ColumnaId";
             this.ColumnaId.ReadOnly = true;
             // 
             // ColumnaDni
             // 
-            this.ColumnaDni.FillWeight = 76.14212F;
+            this.ColumnaDni.FillWeight = 80.39397F;
             this.ColumnaDni.HeaderText = "DNI";
             this.ColumnaDni.Name = "ColumnaDni";
             this.ColumnaDni.ReadOnly = true;
             // 
             // ColumnaNombre
             // 
-            this.ColumnaNombre.FillWeight = 93.46963F;
+            this.ColumnaNombre.FillWeight = 98.68906F;
             this.ColumnaNombre.HeaderText = "Nombre";
             this.ColumnaNombre.Name = "ColumnaNombre";
             this.ColumnaNombre.ReadOnly = true;
             // 
             // ColumnaTelefono
             // 
-            this.ColumnaTelefono.FillWeight = 90.99099F;
+            this.ColumnaTelefono.FillWeight = 96.07202F;
             this.ColumnaTelefono.HeaderText = "Teléfono";
             this.ColumnaTelefono.Name = "ColumnaTelefono";
             this.ColumnaTelefono.ReadOnly = true;
             // 
             // ColumnaDireccion
             // 
-            this.ColumnaDireccion.FillWeight = 164.8766F;
-            this.ColumnaDireccion.HeaderText = "Direccion";
+            this.ColumnaDireccion.FillWeight = 174.0835F;
+            this.ColumnaDireccion.HeaderText = "Dirección";
             this.ColumnaDireccion.Name = "ColumnaDireccion";
             this.ColumnaDireccion.ReadOnly = true;
             // 
@@ -307,7 +316,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
-            this.ClientSize = new System.Drawing.Size(934, 650);
+            this.ClientSize = new System.Drawing.Size(934, 601);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.labDireccion);
             this.Controls.Add(this.labtipoSerilizar);

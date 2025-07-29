@@ -41,7 +41,6 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboIdioma1 = new Controles.ComboIdioma();
             this.btnModificarperfil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -167,13 +166,6 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // comboIdioma1
-            // 
-            this.comboIdioma1.Location = new System.Drawing.Point(505, 12);
-            this.comboIdioma1.Name = "comboIdioma1";
-            this.comboIdioma1.Size = new System.Drawing.Size(116, 22);
-            this.comboIdioma1.TabIndex = 13;
-            // 
             // btnModificarperfil
             // 
             this.btnModificarperfil.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,7 +184,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(790, 446);
             this.Controls.Add(this.btnModificarperfil);
-            this.Controls.Add(this.comboIdioma1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.treeView1);
@@ -228,7 +219,6 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Controles.ComboIdioma comboIdioma1;
         private System.Windows.Forms.Button btnModificarperfil;
     }
 }

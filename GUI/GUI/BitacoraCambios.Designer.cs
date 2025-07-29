@@ -167,7 +167,7 @@
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDesde.Location = new System.Drawing.Point(147, 322);
+            this.dtpDesde.Location = new System.Drawing.Point(147, 324);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(95, 20);
             this.dtpDesde.TabIndex = 31;
@@ -186,7 +186,7 @@
             // 
             this.LabBcambiosfechaFinal.AutoSize = true;
             this.LabBcambiosfechaFinal.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabBcambiosfechaFinal.Location = new System.Drawing.Point(40, 377);
+            this.LabBcambiosfechaFinal.Location = new System.Drawing.Point(22, 376);
             this.LabBcambiosfechaFinal.Name = "LabBcambiosfechaFinal";
             this.LabBcambiosfechaFinal.Size = new System.Drawing.Size(87, 19);
             this.LabBcambiosfechaFinal.TabIndex = 28;
@@ -196,11 +196,11 @@
             // 
             this.LabBcambiosfechaInicio.AutoSize = true;
             this.LabBcambiosfechaInicio.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabBcambiosfechaInicio.Location = new System.Drawing.Point(40, 324);
+            this.LabBcambiosfechaInicio.Location = new System.Drawing.Point(22, 325);
             this.LabBcambiosfechaInicio.Name = "LabBcambiosfechaInicio";
-            this.LabBcambiosfechaInicio.Size = new System.Drawing.Size(93, 19);
+            this.LabBcambiosfechaInicio.Size = new System.Drawing.Size(115, 19);
             this.LabBcambiosfechaInicio.TabIndex = 27;
-            this.LabBcambiosfechaInicio.Text = "Fecha Inicio";
+            this.LabBcambiosfechaInicio.Text = "Fecha de Inicio";
             // 
             // btnFiltrarBCambios
             // 
@@ -277,7 +277,7 @@
             this.Controls.Add(this.dgvInsumoCambios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BitacoraCambiosForm";
-            this.Text = "BitacoraCambios";
+            this.Text = "Bitacora de Cambios";
             this.Load += new System.EventHandler(this.BitacoraCambiosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumoCambios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

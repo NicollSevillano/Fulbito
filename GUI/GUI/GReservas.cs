@@ -28,7 +28,6 @@ namespace GUI
         BllCliente blCliente;
         PerfilesForm registroReservas;
         GRegistrarClienteForm regisCliente;
-        HorasReservas hReservas;
 
         BllHorarios blHorarios;
         List<BeHorarios> lHora;
@@ -53,6 +52,8 @@ namespace GUI
             blHorarios = new BllHorarios();
             lHora = blHorarios.Consulta();
             Refrescar();
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
         private bool ValidarCliente()
         {
@@ -346,17 +347,29 @@ namespace GUI
             labFecha.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labFecha").Texto;
             labHorario.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labHorario").Texto;
             btnDisponibilidad.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnDisponibilidad").Texto;
+            InfoClienteReseva.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "InfoClienteReseva").Texto;
+            labVerde.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labVerde").Texto;
+            labRojo.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labRojo").Texto;
+            labAmarillo.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labAmarillo").Texto;
             btnRegistrar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnRegistrar").Texto;
-            btnCobrar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnCobrar").Texto;
             btnReservar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnReservar").Texto;
+            btnCobrar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnCobrar").Texto;
+            btnCancelarReserva.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnCancelarReserva").Texto;
+            btnSalirR.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnSalirR").Texto;
+            
             ColumnaIdR.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaIdR").Texto;
             ColumnaCanchaR.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaCanchaR").Texto;
             ColumnaClienteR.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaClienteR").Texto;
             ColumnaFechaR.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaFechaR").Texto;
             ColumnaHorarioR.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaHorarioR").Texto;
-            btnSalirR.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnSalirR").Texto;
+            columnHoraEntrada.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "columnHoraEntrada").Texto;
+            columnHoraSalida.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "columnHoraSalida").Texto;
+            ColumnPagado.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnPagado").Texto;
+            ColumnCancelado.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnCancelado").Texto;
+
             this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "GReservasForm").Texto;
         }
+
         private void btnSalirR_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -412,14 +425,6 @@ namespace GUI
             }
             dgvReservas.DataSource = blReserva.Consulta();
             dgvReservas.Refresh();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            hReservas = new HorasReservas();
-            this.Hide();
-            hReservas.ShowDialog();
-            this.Show();
         }
     }
 }

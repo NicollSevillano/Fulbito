@@ -1,6 +1,8 @@
 ﻿using Be;
 using Bll;
+using Interface;
 using Mapper;
+using ServicioClase;
 using Servicios;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class ControlCanchasform : Form
+    public partial class ControlCanchasform : Form, ITraducible
     {
         List<BeCancha> lCancha;
         BllCancha bllCancha;
@@ -32,6 +34,8 @@ namespace GUI
             lCancha = bllCancha.Consulta();
             mReserva = new MapperReserva();
             RefrescarCancha();
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
         private bool DatosCompletos()
         {
@@ -249,6 +253,32 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            LogBitacora.AgregarEvento("Salir de cambiar clave", 1, SessionManager.getInstance.usuario, "Cambiar clave");
         }
+
+        public void Actualizar(string pIdioma)
+        {
+            Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+            this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "ControlCanchasform").Texto;
+            btnFiltrarEstado.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnFiltrarEstado").Texto;
+            btnEstadoCancha.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnEstadoCancha").Texto;
+            labObservacionesCanchas.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labObservacionesCanchas").Texto;
+            btnObservaciones.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnObservaciones").Texto;
+            labDatosCanchas.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labDatosCanchas").Texto;
+            labTcancha.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labTcancha").Texto;
+            labPrecioCancha.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labPrecioCancha").Texto;
+            labCapacidadCancha.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labCapacidadCancha").Texto;
+            btnAltaCancha.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnAltaCancha").Texto;
+            btnBajaCancha.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnBajaCancha").Texto;
+            btnModificarCancha.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnModificarCancha").Texto;
+            button1.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "button1").Texto;
+
+            dgvCanchas.Columns["TipoCancha"].HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "TipoCancha").Texto;
+            dgvCanchas.Columns["PrecioCancha"].HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "PrecioCancha").Texto;
+            dgvCanchas.Columns["CapacidadCancha"].HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "CapacidadCancha").Texto;
+            dgvCanchas.Columns["EstadoCancha"].HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "EstadoCancha").Texto;
+            dgvCanchas.Columns["ObservacionesCancha"].HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ObservacionesCancha").Texto;
+        }
+
     }
 }

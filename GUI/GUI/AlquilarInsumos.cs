@@ -1,6 +1,9 @@
 ﻿using Be;
 using Bll;
+using Interface;
 using Mapper;
+using ServicioClase;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,7 +13,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class AlquilarInsumos : Form
+    public partial class AlquilarInsumos : Form, ITraducible
     {
         BllInsumo blInsumo;
         List<BeInsumo> lInsumo;
@@ -40,6 +43,9 @@ namespace GUI
             nudHoras.ValueChanged += nudHoras_ValueChanged;
 
             labTotal.Text = "Total estimado: $0";
+
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
 
         private void CargarComboInsumos()
@@ -274,6 +280,26 @@ namespace GUI
             pbInsumo.Image = null;
             nudHoras.Value = 1;
             labTotal.Text = "Total estimado: $0";
+        }
+
+        public void Actualizar(string pIdioma)
+        {
+            Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+            this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "AlquilarInsumos").Texto;
+            labTitulo.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labTitulo").Texto;
+            labInsumo.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labInsumo").Texto;
+            labInfo.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labInfo").Texto;
+            labCliente.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labCliente").Texto;
+            labHoras.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labHoras").Texto;
+            btnAgregarInsumo.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnAgregarInsumo").Texto;
+            btnAlquilar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnAlquilar").Texto;
+            btnVolverAlquilar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnVolverAlquilar").Texto;
+        }
+
+        private void btnVolverAlquilar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LogBitacora.AgregarEvento("Salir de cambiar clave", 1, SessionManager.getInstance.usuario, "Cambiar clave");
         }
     }
 }

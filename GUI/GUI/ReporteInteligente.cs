@@ -1,21 +1,24 @@
 ﻿using Be;
 using Bll;
 using ClosedXML.Excel;
+using Interface;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using LiveCharts;
 using LiveCharts.WinForms;
 using LiveCharts.Wpf;
+using ServicioClase;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 
 namespace GUI
 {
-    public partial class ReporteInteligente : Form
+    public partial class ReporteInteligente : Form, ITraducible
     {
         List<BeAlquiler> listaAlquileres = new List<BeAlquiler>();
         List<BeClienteHistorico> clientesHistorico = new List<BeClienteHistorico>();
@@ -41,6 +44,8 @@ namespace GUI
 
             dgvClientes.ClearSelection();
             dgvAlquileres.ClearSelection();
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -314,6 +319,26 @@ namespace GUI
                 doc.Add(table);
                 doc.Close();
             }
+        }
+        public void Actualizar(string pIdioma)
+        {
+            Idioma idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+            this.Text = idioma.lEtiqueta.Find(x => x.ControlT == "ReporteInteligente").Texto;
+            labCliente.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labCliente").Texto;
+            labDesde.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labDesde").Texto;
+            labHasta.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labHasta").Texto;
+            labHistoricoAlquiler.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labHistoricoAlquiler").Texto;
+            labFormato.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labFormato").Texto;
+            btnReporte.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnReporte").Texto;
+            labHistoricoClientes.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labHistoricoClientes").Texto;
+
+            dgvAlquileres.Columns["columnCliente"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnCliente").Texto;
+            dgvAlquileres.Columns["columnFechaHora"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnFechaHora").Texto;
+            dgvAlquileres.Columns["columnTotal"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnTotal").Texto;
+
+            dgvClientes.Columns["columnClienteC"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnClienteC").Texto;
+            dgvClientes.Columns["columnMesC"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnMesC").Texto;
+            dgvClientes.Columns["columnTotalC"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnTotalC").Texto;
         }
     }
 }

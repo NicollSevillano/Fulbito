@@ -31,6 +31,8 @@ namespace GUI
         {
             bllUsuario = new BllUsuario();
             cClave = new GUsuariosForm();
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
         private bool AgregarTxt()
         {
@@ -70,12 +72,13 @@ namespace GUI
         public void Actualizar(string pIdioma)
         {
             Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+
+            this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "CambiarClaveForm").Texto;
             labCC.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labCC").Texto;
             labContraseñaN.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labContraseñaN").Texto;
             labConfirmarC.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labConfirmarC").Texto;
             btnCambiarC.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnCambiarC").Texto;
             btnSalir.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnSalir").Texto;
-            this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnSalir").Texto;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsumosForm));
             this.dgvInsumos = new System.Windows.Forms.DataGridView();
             this.labInsumos = new System.Windows.Forms.Label();
@@ -51,22 +51,22 @@
             this.btnFiltrarInsumo = new System.Windows.Forms.Button();
             this.labNombre = new System.Windows.Forms.Label();
             this.txtFiltroNombreInsumo = new System.Windows.Forms.TextBox();
-            this.EstadoInsumo = new System.Windows.Forms.Label();
+            this.lbPrecio = new System.Windows.Forms.Label();
             this.btnCambiarEstadoInsumo = new System.Windows.Forms.Button();
             this.LabObservInsumos = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.txtCantidadInsumo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbCantidad = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.IdInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantActualInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProveedorInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ObservacionesInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.IdInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNombreInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCantidadInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCantActualInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnProveedorInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnEstadoInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnObservacionesInsumos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,24 +78,24 @@
             this.dgvInsumos.AllowUserToDeleteRows = false;
             this.dgvInsumos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInsumos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInsumos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInsumos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInsumos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdInsumos,
-            this.NombreInsumos,
-            this.CantidadInsumos,
-            this.CantActualInsumos,
-            this.ProveedorInsumos,
-            this.EstadoInsumos,
-            this.ObservacionesInsumos,
-            this.Column1});
+            this.columnNombreInsumos,
+            this.columnCantidadInsumos,
+            this.columnCantActualInsumos,
+            this.columnProveedorInsumos,
+            this.columnEstadoInsumos,
+            this.columnObservacionesInsumos,
+            this.columnPrecio});
             this.dgvInsumos.Location = new System.Drawing.Point(12, 54);
             this.dgvInsumos.Name = "dgvInsumos";
             this.dgvInsumos.ReadOnly = true;
@@ -297,7 +297,7 @@
             // 
             this.labNombre.AutoSize = true;
             this.labNombre.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labNombre.Location = new System.Drawing.Point(590, 31);
+            this.labNombre.Location = new System.Drawing.Point(590, 16);
             this.labNombre.Name = "labNombre";
             this.labNombre.Size = new System.Drawing.Size(147, 19);
             this.labNombre.TabIndex = 13;
@@ -305,21 +305,21 @@
             // 
             // txtFiltroNombreInsumo
             // 
-            this.txtFiltroNombreInsumo.Location = new System.Drawing.Point(759, 28);
+            this.txtFiltroNombreInsumo.Location = new System.Drawing.Point(759, 13);
             this.txtFiltroNombreInsumo.Name = "txtFiltroNombreInsumo";
             this.txtFiltroNombreInsumo.Size = new System.Drawing.Size(181, 20);
             this.txtFiltroNombreInsumo.TabIndex = 14;
             this.txtFiltroNombreInsumo.TextChanged += new System.EventHandler(this.txtFiltroNombreInsumo_TextChanged);
             // 
-            // EstadoInsumo
+            // lbPrecio
             // 
-            this.EstadoInsumo.AutoSize = true;
-            this.EstadoInsumo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EstadoInsumo.Location = new System.Drawing.Point(27, 429);
-            this.EstadoInsumo.Name = "EstadoInsumo";
-            this.EstadoInsumo.Size = new System.Drawing.Size(53, 19);
-            this.EstadoInsumo.TabIndex = 35;
-            this.EstadoInsumo.Text = "Precio";
+            this.lbPrecio.AutoSize = true;
+            this.lbPrecio.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrecio.Location = new System.Drawing.Point(27, 429);
+            this.lbPrecio.Name = "lbPrecio";
+            this.lbPrecio.Size = new System.Drawing.Size(53, 19);
+            this.lbPrecio.TabIndex = 35;
+            this.lbPrecio.Text = "Precio";
             // 
             // btnCambiarEstadoInsumo
             // 
@@ -360,15 +360,15 @@
             this.txtCantidadInsumo.Size = new System.Drawing.Size(161, 27);
             this.txtCantidadInsumo.TabIndex = 38;
             // 
-            // label1
+            // lbCantidad
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 309);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 19);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Cantidad";
+            this.lbCantidad.AutoSize = true;
+            this.lbCantidad.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCantidad.Location = new System.Drawing.Point(27, 309);
+            this.lbCantidad.Name = "lbCantidad";
+            this.lbCantidad.Size = new System.Drawing.Size(72, 19);
+            this.lbCantidad.TabIndex = 39;
+            this.lbCantidad.Text = "Cantidad";
             // 
             // pictureBox1
             // 
@@ -380,60 +380,6 @@
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
             // 
-            // IdInsumos
-            // 
-            this.IdInsumos.FillWeight = 35.533F;
-            this.IdInsumos.HeaderText = "ID";
-            this.IdInsumos.Name = "IdInsumos";
-            this.IdInsumos.ReadOnly = true;
-            // 
-            // NombreInsumos
-            // 
-            this.NombreInsumos.FillWeight = 110.7445F;
-            this.NombreInsumos.HeaderText = "Nombre";
-            this.NombreInsumos.Name = "NombreInsumos";
-            this.NombreInsumos.ReadOnly = true;
-            // 
-            // CantidadInsumos
-            // 
-            this.CantidadInsumos.FillWeight = 110.7445F;
-            this.CantidadInsumos.HeaderText = "Cantidad";
-            this.CantidadInsumos.Name = "CantidadInsumos";
-            this.CantidadInsumos.ReadOnly = true;
-            // 
-            // CantActualInsumos
-            // 
-            this.CantActualInsumos.HeaderText = "Cantidad actual";
-            this.CantActualInsumos.Name = "CantActualInsumos";
-            this.CantActualInsumos.ReadOnly = true;
-            // 
-            // ProveedorInsumos
-            // 
-            this.ProveedorInsumos.FillWeight = 110.7445F;
-            this.ProveedorInsumos.HeaderText = "Proveedor";
-            this.ProveedorInsumos.Name = "ProveedorInsumos";
-            this.ProveedorInsumos.ReadOnly = true;
-            // 
-            // EstadoInsumos
-            // 
-            this.EstadoInsumos.FillWeight = 110.7445F;
-            this.EstadoInsumos.HeaderText = "Estado";
-            this.EstadoInsumos.Name = "EstadoInsumos";
-            this.EstadoInsumos.ReadOnly = true;
-            // 
-            // ObservacionesInsumos
-            // 
-            this.ObservacionesInsumos.FillWeight = 110.7445F;
-            this.ObservacionesInsumos.HeaderText = "Observaciones";
-            this.ObservacionesInsumos.Name = "ObservacionesInsumos";
-            this.ObservacionesInsumos.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Precio";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -441,6 +387,60 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(161, 27);
             this.txtPrecio.TabIndex = 41;
+            // 
+            // IdInsumos
+            // 
+            this.IdInsumos.FillWeight = 35.533F;
+            this.IdInsumos.HeaderText = "ID";
+            this.IdInsumos.Name = "IdInsumos";
+            this.IdInsumos.ReadOnly = true;
+            // 
+            // columnNombreInsumos
+            // 
+            this.columnNombreInsumos.FillWeight = 110.7445F;
+            this.columnNombreInsumos.HeaderText = "Nombre";
+            this.columnNombreInsumos.Name = "columnNombreInsumos";
+            this.columnNombreInsumos.ReadOnly = true;
+            // 
+            // columnCantidadInsumos
+            // 
+            this.columnCantidadInsumos.FillWeight = 110.7445F;
+            this.columnCantidadInsumos.HeaderText = "Cantidad";
+            this.columnCantidadInsumos.Name = "columnCantidadInsumos";
+            this.columnCantidadInsumos.ReadOnly = true;
+            // 
+            // columnCantActualInsumos
+            // 
+            this.columnCantActualInsumos.HeaderText = "Cantidad actual";
+            this.columnCantActualInsumos.Name = "columnCantActualInsumos";
+            this.columnCantActualInsumos.ReadOnly = true;
+            // 
+            // columnProveedorInsumos
+            // 
+            this.columnProveedorInsumos.FillWeight = 110.7445F;
+            this.columnProveedorInsumos.HeaderText = "Proveedor";
+            this.columnProveedorInsumos.Name = "columnProveedorInsumos";
+            this.columnProveedorInsumos.ReadOnly = true;
+            // 
+            // columnEstadoInsumos
+            // 
+            this.columnEstadoInsumos.FillWeight = 110.7445F;
+            this.columnEstadoInsumos.HeaderText = "Estado";
+            this.columnEstadoInsumos.Name = "columnEstadoInsumos";
+            this.columnEstadoInsumos.ReadOnly = true;
+            // 
+            // columnObservacionesInsumos
+            // 
+            this.columnObservacionesInsumos.FillWeight = 110.7445F;
+            this.columnObservacionesInsumos.HeaderText = "Observaciones";
+            this.columnObservacionesInsumos.Name = "columnObservacionesInsumos";
+            this.columnObservacionesInsumos.ReadOnly = true;
+            // 
+            // columnPrecio
+            // 
+            this.columnPrecio.HeaderText = "Precio";
+            this.columnPrecio.Name = "columnPrecio";
+            this.columnPrecio.ReadOnly = true;
             // 
             // InsumosForm
             // 
@@ -450,12 +450,12 @@
             this.ClientSize = new System.Drawing.Size(952, 606);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbCantidad);
             this.Controls.Add(this.txtCantidadInsumo);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.LabObservInsumos);
             this.Controls.Add(this.btnCambiarEstadoInsumo);
-            this.Controls.Add(this.EstadoInsumo);
+            this.Controls.Add(this.lbPrecio);
             this.Controls.Add(this.labNombre);
             this.Controls.Add(this.txtObservacioneInsumo);
             this.Controls.Add(this.txtFiltroNombreInsumo);
@@ -504,7 +504,7 @@
         private System.Windows.Forms.Button btnFiltrarInsumo;
         private System.Windows.Forms.Label labNombre;
         private System.Windows.Forms.TextBox txtFiltroNombreInsumo;
-        private System.Windows.Forms.Label EstadoInsumo;
+        private System.Windows.Forms.Label lbPrecio;
         private System.Windows.Forms.Button btnCambiarEstadoInsumo;
         private System.Windows.Forms.Label LabObservInsumos;
         private System.Windows.Forms.Button btnVolver;
@@ -512,16 +512,16 @@
         private System.Windows.Forms.RadioButton rbFiltroEstado;
         private System.Windows.Forms.RadioButton rbFiltroProveedor;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbCantidad;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantActualInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnNombreInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCantidadInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnCantActualInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnProveedorInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnEstadoInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnObservacionesInsumos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnPrecio;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Be;
 using Bll;
 using Interface;
+using ServicioClase;
 using Servicios;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class BitacoraCambiosForm : Form
+    public partial class BitacoraCambiosForm : Form, ITraducible
     {
         public BitacoraCambiosForm()
         {
@@ -29,6 +30,8 @@ namespace GUI
             lUsuario = bllUsuario.Consulta();
             MostrarUsuarios();
             RefrescarBitacoraCambios();
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
 
         private void RefrescarBitacoraCambios()
@@ -166,6 +169,27 @@ namespace GUI
         private void btnVolverbCambios_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void Actualizar(string pIdioma)
+        {
+            Idioma idioma = LanguageManager.idioma(Convert.ToInt32(pIdioma));
+
+            this.Text = idioma.lEtiqueta.Find(x => x.ControlT == "BitacoraCambiosForm").Texto;
+            LabBcambiosfechaInicio.Text = idioma.lEtiqueta.Find(x => x.ControlT == "LabBcambiosfechaInicio").Texto;
+            LabBcambiosfechaFinal.Text = idioma.lEtiqueta.Find(x => x.ControlT == "LabBcambiosfechaFinal").Texto;
+            btnFiltrarBCambios.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnFiltrarBCambios").Texto;
+            btnActivarCambios.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnActivarCambios").Texto;
+            btnLimpiarCambios.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnLimpiarCambios").Texto;
+            btnVolverbCambios.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnVolverbCambios").Texto;
+
+            dgvInsumoCambios.Columns["CodInsumo_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "CodInsumo_BitacoraCambios").Texto;
+            dgvInsumoCambios.Columns["Fecha_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "Fecha_BitacoraCambios").Texto;
+            dgvInsumoCambios.Columns["Nombre_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "Nombre_BitacoraCambios").Texto;
+            dgvInsumoCambios.Columns["Existe_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "Existe_BitacoraCambios").Texto;
+            dgvInsumoCambios.Columns["Descrip_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "Descrip_BitacoraCambios").Texto;
+            dgvInsumoCambios.Columns["Usuario_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "Usuario_BitacoraCambios").Texto;
+            dgvInsumoCambios.Columns["UsuarioAct_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "UsuarioAct_BitacoraCambios").Texto;
         }
     }
 }

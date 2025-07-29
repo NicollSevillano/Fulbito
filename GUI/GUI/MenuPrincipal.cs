@@ -30,44 +30,61 @@ namespace GUI
         BitacoraEventosform _bEventos;
         ControlCanchasform _canchas;
         BackUpForm backrestore;
-        HorasReservas hReservas;
         AlquilarInsumos alquilarInsumos;
         BitacoraCambiosForm _bitacoraCambios;
         InsumosForm insumos;
         ReporteInteligente inteligente;
+        Ayudaform ayuda;
         public MenuPrincipalForm()
         {
             InitializeComponent();
         }
-
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            habilitarControles();
             _usuario = new BelUsuario();
             bUsuario = new BllUsuario();
             lUsuario = bUsuario.Consulta();
+
+            // Suscribirse primero
+            LanguageManager.Suscribir(this);
+
+            // Actualizar idioma antes de crear los formularios
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+
             reservas = new GReservasForm();
             registrarCliente = new GRegistrarClienteForm();
             usuarios = new GUsuariosForm();
             cambiarClave = new CambiarClaveForm();
             tarjeta = new TarjetaForm();
             _bEventos = new BitacoraEventosform();
+            _canchas = new ControlCanchasform();
+            backrestore = new BackUpForm();
+            alquilarInsumos = new AlquilarInsumos();
+            insumos = new InsumosForm();
+            _bitacoraCambios = new BitacoraCambiosForm();
+            inteligente = new ReporteInteligente();
+            ayuda = new Ayudaform();
+
             LanguageManager.Suscribir(reservas);
             LanguageManager.Suscribir(registrarCliente);
             LanguageManager.Suscribir(usuarios);
             LanguageManager.Suscribir(cambiarClave);
             LanguageManager.Suscribir(tarjeta);
+            LanguageManager.Suscribir(_bEventos);
+            LanguageManager.Suscribir(_canchas);
+            LanguageManager.Suscribir(backrestore);
+            LanguageManager.Suscribir(alquilarInsumos);
+            LanguageManager.Suscribir(insumos);
+            LanguageManager.Suscribir(_bitacoraCambios);
+            LanguageManager.Suscribir(inteligente);
+            LanguageManager.Suscribir(ayuda);
+
             labUsuarioMp.Text = smanager.usuario.Nombre;
             labPerfilMp.Text = smanager.usuario.Perfil.Nombre;
-            LanguageManager.Suscribir(this);
-            _canchas = new ControlCanchasform();
-            backrestore = new BackUpForm();
-            hReservas = new HorasReservas();
-            alquilarInsumos = new AlquilarInsumos();
-            insumos = new InsumosForm();
-            _bitacoraCambios = new BitacoraCambiosForm();
-            inteligente = new ReporteInteligente();
+
+            habilitarControles();
         }
+
         private void habilitarControles()
         {
             List<Permiso> lPermiso = new List<Permiso>();
@@ -133,19 +150,37 @@ namespace GUI
         public void Actualizar(string pIdioma)
         {
             Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+
             labNombreMp.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labNombreMp").Texto;
             labRolMp.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labRolMp").Texto;
+            labPerfilMp.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labPerfilMp").Texto;
+
             administradorToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "administradorToolStripMenuItem").Texto;
             reservaToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "reservaToolStripMenuItem").Texto;
-            clientesToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "clientesToolStripMenuItem").Texto;
             toolStripMenuItem2.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "toolStripMenuItem2").Texto;
+            clientesToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "clientesToolStripMenuItem").Texto;
             registrarClienteToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "registrarClienteToolStripMenuItem").Texto;
+
+            bitácoraToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "bitácoraToolStripMenuItem").Texto;
+            eventosToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "eventosToolStripMenuItem").Texto;
+            cambiosToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "cambiosToolStripMenuItem").Texto;
             usuariosToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "usuariosToolStripMenuItem").Texto;
-            inventarioToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "inventarioToolStripMenuItem").Texto;
+
+            canchasToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "canchasToolStripMenuItem").Texto;
+            registrarCanchaToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "registrarCanchaToolStripMenuItem").Texto;
+
+            insumosToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "insumosToolStripMenuItem").Texto;
+            insumosToolStripMenuItem1.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "insumosToolStripMenuItem1").Texto;
+
+            backUpToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "backUpToolStripMenuItem").Texto;
+            reporteInteligenteToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "reporteInteligenteToolStripMenuItem").Texto;
+
             ayudaToolStripMenuItem.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "ayudaToolStripMenuItem").Texto;
             btnSalirm.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnSalirm").Texto;
+
             this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "MenuPrincipalForm").Texto;
         }
+
 
         private void btnSalirm_Click(object sender, EventArgs e)
         {
@@ -180,11 +215,6 @@ namespace GUI
             this.Show();
         }
 
-        private void reservasHechasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            hReservas.ShowDialog();
-            this.Show();
-        }
 
         private void insumosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -207,6 +237,12 @@ namespace GUI
         private void reporteInteligenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             inteligente.ShowDialog();
+            this.Show();
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ayuda.ShowDialog();
             this.Show();
         }
     }

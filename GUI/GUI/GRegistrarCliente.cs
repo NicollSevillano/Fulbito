@@ -36,6 +36,8 @@ namespace GUI
             reservas = new GReservasForm();
             lCliente = blCliente.Consulta();
             Refrescar();
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
 
         private bool Cargartxt()
@@ -171,14 +173,19 @@ namespace GUI
             labDNI.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labDNI").Texto;
             labNombre.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labNombre").Texto;
             labTelefono.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labTelefono").Texto;
+            labDireccion.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labDireccion").Texto;
             btnAgregar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnAgregar").Texto;
             btnBorrar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnBorrar").Texto;
             btnModificar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnModificar").Texto;
             btnVolver.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnVolver").Texto;
-            ColumnaId.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaId").Texto;
+            labtipoSerilizar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labtipoSerilizar").Texto;
+            btnSerializar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnSerializar").Texto;
+            btnDeserializar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnDeserializar").Texto;
+            
             ColumnaDni.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaDni").Texto;
             ColumnaNombre.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaNombre").Texto;
             ColumnaTelefono.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaTelefono").Texto;
+            ColumnaDireccion.HeaderText = _idioma.lEtiqueta.Find(x => x.ControlT == "ColumnaDireccion").Texto;
             this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "GRegistrarClienteForm").Texto;
         }
 

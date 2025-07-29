@@ -38,6 +38,8 @@ namespace GUI
             RefrescarDgv();
             CargarPerfiles();
             cambiarClave = new CambiarClaveForm();
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
         private bool CargarTxt()
         {
@@ -279,7 +281,6 @@ namespace GUI
             txtContraseña.Clear();
             RefrescarDgv();
         }
-
         public void Actualizar(string pIdioma)
         {
             Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
@@ -296,7 +297,7 @@ namespace GUI
             labRol.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labRol").Texto;
             btnCambiarCU.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnCambiarCU").Texto;
             labFiltrarU.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "labFiltrarU").Texto;
-            cbBloqueadosU.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "cbBloqueadosU").Texto;
+            cbBloqueadosU.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "cbBloqueadosU").Texto; 
             btnDesbloquearU.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnDesbloquearU").Texto;
             btnPerfilU.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnPerfilU").Texto;
             btnSalirU.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnSalirU").Texto;

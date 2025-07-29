@@ -48,7 +48,7 @@
             // 
             this.labCC.AutoSize = true;
             this.labCC.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCC.Location = new System.Drawing.Point(157, 39);
+            this.labCC.Location = new System.Drawing.Point(150, 39);
             this.labCC.Name = "labCC";
             this.labCC.Size = new System.Drawing.Size(161, 29);
             this.labCC.TabIndex = 0;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GReservasForm));
             this.labDni = new System.Windows.Forms.Label();
             this.labCancha = new System.Windows.Forms.Label();
@@ -40,17 +41,24 @@
             this.labFecha = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.dgvReservas = new System.Windows.Forms.DataGridView();
+            this.ColumnaIdR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCanchaR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaClienteR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaHorarioR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCancelado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.btnSalirR = new System.Windows.Forms.Button();
             this.btnCancelarReserva = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnHoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.txtInformacion = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.InfoClienteReseva = new System.Windows.Forms.Label();
             this.labRojo = new System.Windows.Forms.Label();
             this.labVerde = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -58,14 +66,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.labAmarillo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ColumnaIdR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCanchaR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaClienteR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaHorarioR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -125,7 +125,7 @@
             // btnReservar
             // 
             this.btnReservar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservar.Location = new System.Drawing.Point(1116, 95);
+            this.btnReservar.Location = new System.Drawing.Point(1116, 37);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(96, 33);
             this.btnReservar.TabIndex = 10;
@@ -185,8 +185,8 @@
             this.ColumnaClienteR,
             this.ColumnaFechaR,
             this.ColumnaHorarioR,
-            this.Column2,
-            this.Column5});
+            this.ColumnPagado,
+            this.ColumnCancelado});
             this.dgvReservas.Location = new System.Drawing.Point(352, 36);
             this.dgvReservas.Name = "dgvReservas";
             this.dgvReservas.ReadOnly = true;
@@ -194,10 +194,58 @@
             this.dgvReservas.Size = new System.Drawing.Size(717, 229);
             this.dgvReservas.TabIndex = 17;
             // 
+            // ColumnaIdR
+            // 
+            this.ColumnaIdR.FillWeight = 60.9137F;
+            this.ColumnaIdR.HeaderText = "Id";
+            this.ColumnaIdR.Name = "ColumnaIdR";
+            this.ColumnaIdR.ReadOnly = true;
+            // 
+            // ColumnaCanchaR
+            // 
+            this.ColumnaCanchaR.FillWeight = 107.8173F;
+            this.ColumnaCanchaR.HeaderText = "Cancha";
+            this.ColumnaCanchaR.Name = "ColumnaCanchaR";
+            this.ColumnaCanchaR.ReadOnly = true;
+            // 
+            // ColumnaClienteR
+            // 
+            this.ColumnaClienteR.FillWeight = 107.8173F;
+            this.ColumnaClienteR.HeaderText = "Cliente";
+            this.ColumnaClienteR.Name = "ColumnaClienteR";
+            this.ColumnaClienteR.ReadOnly = true;
+            // 
+            // ColumnaFechaR
+            // 
+            this.ColumnaFechaR.FillWeight = 107.8173F;
+            this.ColumnaFechaR.HeaderText = "Fecha";
+            this.ColumnaFechaR.Name = "ColumnaFechaR";
+            this.ColumnaFechaR.ReadOnly = true;
+            // 
+            // ColumnaHorarioR
+            // 
+            this.ColumnaHorarioR.FillWeight = 107.8173F;
+            this.ColumnaHorarioR.HeaderText = "Horario";
+            this.ColumnaHorarioR.Name = "ColumnaHorarioR";
+            this.ColumnaHorarioR.ReadOnly = true;
+            // 
+            // ColumnPagado
+            // 
+            this.ColumnPagado.FillWeight = 107.8173F;
+            this.ColumnPagado.HeaderText = "Pagado";
+            this.ColumnPagado.Name = "ColumnPagado";
+            this.ColumnPagado.ReadOnly = true;
+            // 
+            // ColumnCancelado
+            // 
+            this.ColumnCancelado.HeaderText = "Cancelada";
+            this.ColumnCancelado.Name = "ColumnCancelado";
+            this.ColumnCancelado.ReadOnly = true;
+            // 
             // btnCobrar
             // 
             this.btnCobrar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(1116, 130);
+            this.btnCobrar.Location = new System.Drawing.Point(1116, 72);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(96, 33);
             this.btnCobrar.TabIndex = 23;
@@ -208,7 +256,7 @@
             // btnSalirR
             // 
             this.btnSalirR.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalirR.Location = new System.Drawing.Point(1075, 200);
+            this.btnSalirR.Location = new System.Drawing.Point(1075, 142);
             this.btnSalirR.Name = "btnSalirR";
             this.btnSalirR.Size = new System.Drawing.Size(137, 33);
             this.btnSalirR.TabIndex = 25;
@@ -219,7 +267,7 @@
             // btnCancelarReserva
             // 
             this.btnCancelarReserva.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarReserva.Location = new System.Drawing.Point(1075, 165);
+            this.btnCancelarReserva.Location = new System.Drawing.Point(1075, 107);
             this.btnCancelarReserva.Name = "btnCancelarReserva";
             this.btnCancelarReserva.Size = new System.Drawing.Size(137, 33);
             this.btnCancelarReserva.TabIndex = 26;
@@ -232,11 +280,19 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column3,
-            this.Column4});
+            this.columnHoraEntrada,
+            this.columnHoraSalida});
             this.dataGridView1.Location = new System.Drawing.Point(26, 142);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -246,21 +302,24 @@
             // 
             // Column1
             // 
+            this.Column1.FillWeight = 45.68528F;
             this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
-            // Column3
+            // columnHoraEntrada
             // 
-            this.Column3.HeaderText = "Hora entrada";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.columnHoraEntrada.FillWeight = 127.1574F;
+            this.columnHoraEntrada.HeaderText = "Hora entrada";
+            this.columnHoraEntrada.Name = "columnHoraEntrada";
+            this.columnHoraEntrada.ReadOnly = true;
             // 
-            // Column4
+            // columnHoraSalida
             // 
-            this.Column4.HeaderText = "Hora salida";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.columnHoraSalida.FillWeight = 127.1574F;
+            this.columnHoraSalida.HeaderText = "Hora salida";
+            this.columnHoraSalida.Name = "columnHoraSalida";
+            this.columnHoraSalida.ReadOnly = true;
             // 
             // label1
             // 
@@ -292,15 +351,15 @@
             this.txtInformacion.TabIndex = 32;
             this.txtInformacion.Text = "Seleccione un cliente";
             // 
-            // label2
+            // InfoClienteReseva
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(349, 320);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 18);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Información del cliente";
+            this.InfoClienteReseva.AutoSize = true;
+            this.InfoClienteReseva.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InfoClienteReseva.Location = new System.Drawing.Point(349, 320);
+            this.InfoClienteReseva.Name = "InfoClienteReseva";
+            this.InfoClienteReseva.Size = new System.Drawing.Size(155, 18);
+            this.InfoClienteReseva.TabIndex = 33;
+            this.InfoClienteReseva.Text = "Información del cliente";
             // 
             // labRojo
             // 
@@ -369,71 +428,12 @@
             this.labAmarillo.TabIndex = 41;
             this.labAmarillo.Text = "Amarillo: reserva cancelada";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1075, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 45);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Ver reservas hechas";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // ColumnaIdR
-            // 
-            this.ColumnaIdR.FillWeight = 60.9137F;
-            this.ColumnaIdR.HeaderText = "Id";
-            this.ColumnaIdR.Name = "ColumnaIdR";
-            this.ColumnaIdR.ReadOnly = true;
-            // 
-            // ColumnaCanchaR
-            // 
-            this.ColumnaCanchaR.FillWeight = 107.8173F;
-            this.ColumnaCanchaR.HeaderText = "Cancha";
-            this.ColumnaCanchaR.Name = "ColumnaCanchaR";
-            this.ColumnaCanchaR.ReadOnly = true;
-            // 
-            // ColumnaClienteR
-            // 
-            this.ColumnaClienteR.FillWeight = 107.8173F;
-            this.ColumnaClienteR.HeaderText = "Cliente";
-            this.ColumnaClienteR.Name = "ColumnaClienteR";
-            this.ColumnaClienteR.ReadOnly = true;
-            // 
-            // ColumnaFechaR
-            // 
-            this.ColumnaFechaR.FillWeight = 107.8173F;
-            this.ColumnaFechaR.HeaderText = "Fecha";
-            this.ColumnaFechaR.Name = "ColumnaFechaR";
-            this.ColumnaFechaR.ReadOnly = true;
-            // 
-            // ColumnaHorarioR
-            // 
-            this.ColumnaHorarioR.FillWeight = 107.8173F;
-            this.ColumnaHorarioR.HeaderText = "Horario";
-            this.ColumnaHorarioR.Name = "ColumnaHorarioR";
-            this.ColumnaHorarioR.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 107.8173F;
-            this.Column2.HeaderText = "Pagado";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Cancelada";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
             // GReservasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(1224, 484);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.labAmarillo);
             this.Controls.Add(this.pictureBox2);
@@ -441,7 +441,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labVerde);
             this.Controls.Add(this.labRojo);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.InfoClienteReseva);
             this.Controls.Add(this.txtInformacion);
             this.Controls.Add(this.cmbClientes);
             this.Controls.Add(this.label1);
@@ -493,24 +493,23 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.TextBox txtInformacion;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label InfoClienteReseva;
         private System.Windows.Forms.Label labRojo;
         private System.Windows.Forms.Label labVerde;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label labAmarillo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnHoraEntrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnHoraSalida;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaIdR;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCanchaR;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaClienteR;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFechaR;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaHorarioR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPagado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCancelado;
     }
 }

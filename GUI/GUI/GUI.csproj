@@ -190,12 +190,6 @@
     <Compile Include="CanchasForm.Designer.cs">
       <DependentUpon>CanchasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HorasReservas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HorasReservas.Designer.cs">
-      <DependentUpon>HorasReservas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inconsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,12 +239,6 @@
     <Compile Include="ReporteInteligente.Designer.cs">
       <DependentUpon>ReporteInteligente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Serializar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serializar.Designer.cs">
-      <DependentUpon>Serializar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tarjeta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,9 +275,6 @@
     <EmbeddedResource Include="CanchasForm.resx">
       <DependentUpon>CanchasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HorasReservas.resx">
-      <DependentUpon>HorasReservas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Inconsistencia.resx">
       <DependentUpon>Inconsistencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,9 +302,6 @@
       <DependentUpon>ReporteInteligente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Reserva.rdlc" />
-    <EmbeddedResource Include="Serializar.resx">
-      <DependentUpon>Serializar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Tarjeta.resx">
       <DependentUpon>Tarjeta.cs</DependentUpon>
     </EmbeddedResource>

@@ -2,6 +2,7 @@
 using Bll;
 using Interface;
 using Microsoft.VisualBasic;
+using ServicioClase;
 using Servicios;
 using System;
 using System.Collections.Generic;
@@ -23,15 +24,42 @@ namespace GUI
 
         public void Actualizar(string pIdioma)
         {
-            throw new NotImplementedException();
-        }
+            Idioma idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+            this.Text = idioma.lEtiqueta.Find(x => x.ControlT == "InsumosForm").Texto;
+            labNombre.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labNombre").Texto;
+            labNombreInsumos.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labNombreInsumos").Texto;
+            lbCantidad.Text = idioma.lEtiqueta.Find(x => x.ControlT == "lbCantidad").Texto;
+            labCantidadActualInsumos.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labCantidadActualInsumos").Texto;
+            labProveedor.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labProveedor").Texto;
+            lbPrecio.Text = idioma.lEtiqueta.Find(x => x.ControlT == "lbPrecio").Texto;
+            LabObservInsumos.Text = idioma.lEtiqueta.Find(x => x.ControlT == "LabObservInsumos").Texto;
+            btnAgregarInsumos.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnAgregarInsumos").Texto;
+            btnBorrarInsumos.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnBorrarInsumos").Texto;
+            btnModificarInsumos.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnModificarInsumos").Texto;
+            btnCambiarEstadoInsumo.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnCambiarEstadoInsumo").Texto;
+            groupBox1.Text = idioma.lEtiqueta.Find(x => x.ControlT == "groupBox1").Texto;
+            rbFiltroProveedor.Text = idioma.lEtiqueta.Find(x => x.ControlT == "rbFiltroProveedor").Texto;
+            rbFiltroEstado.Text = idioma.lEtiqueta.Find(x => x.ControlT == "rbFiltroEstado").Texto;
+            btnLimpiar.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnLimpiar").Texto;
+            btnFiltrarInsumo.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnFiltrarInsumo").Texto;
+            btnVolver.Text = idioma.lEtiqueta.Find(x => x.ControlT == "btnVolver").Texto;
 
+            columnNombreInsumos.HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnNombreInsumos").Texto;
+            columnCantidadInsumos.HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnCantidadInsumos").Texto;
+            columnCantActualInsumos.HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnCantActualInsumos").Texto;
+            columnProveedorInsumos.HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnProveedorInsumos").Texto;
+            columnEstadoInsumos.HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnEstadoInsumos").Texto;
+            columnObservacionesInsumos.HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnObservacionesInsumos").Texto;
+            columnPrecio.HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "columnPrecio").Texto;
+        }
         private void InsumosForm_Load(object sender, EventArgs e)
         {
             bllInsumo = new BllInsumo();
             lInsumo = bllInsumo.Consulta();
             Refrescar();
             CargarProveedores();
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
 
         private void Refrescar()

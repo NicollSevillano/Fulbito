@@ -19,6 +19,7 @@ namespace Servicios
         static Dao dao = new Dao();
         static List<ITraducible> lTraducible;
         public static List<Idioma> lIdioma;
+        public static int CodIdiomaActual { get; set; }
         public static void Iniciarlizar()
         {
             lTraducible = new List<ITraducible>();
@@ -78,6 +79,7 @@ namespace Servicios
         }
         public static void Actualizar(int pIdioma)
         {
+            CodIdiomaActual = pIdioma;
             foreach (ITraducible l in lTraducible)
             {
                 l.Actualizar(pIdioma.ToString());

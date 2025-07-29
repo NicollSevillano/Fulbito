@@ -25,7 +25,9 @@ namespace GUI
         
         private void Tarjeta_Load(object sender, EventArgs e)
         {
-            bllReserva = new BllReserva();
+            bllReserva = new BllReserva(); 
+            LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
         }
 
         private void txtnumero_TextChanged(object sender, EventArgs e)
@@ -111,6 +113,7 @@ namespace GUI
             lbTarjeta.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "lbTarjeta").Texto;
             lbMes.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "lbMes").Texto;
             lbAno.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "lbAno").Texto;
+            lbCv.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "lbCv").Texto;
             btnPagarTarjeta.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnPagarTarjeta").Texto;
             this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "Tarjeta").Texto;
         }

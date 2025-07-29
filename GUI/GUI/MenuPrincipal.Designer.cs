@@ -35,17 +35,16 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reservasHechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitácoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.canchasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarCanchaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteInteligenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alquilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,9 +53,7 @@
             this.labUsuarioMp = new System.Windows.Forms.Label();
             this.labRolMp = new System.Windows.Forms.Label();
             this.labPerfilMp = new System.Windows.Forms.Label();
-            this.comboIdioma1 = new Controles.ComboIdioma();
             this.btnSalirm = new System.Windows.Forms.Button();
-            this.reporteInteligenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,8 +82,7 @@
             // 
             this.reservaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
-            this.clientesToolStripMenuItem,
-            this.reservasHechasToolStripMenuItem});
+            this.clientesToolStripMenuItem});
             this.reservaToolStripMenuItem.Name = "reservaToolStripMenuItem";
             this.reservaToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
             this.reservaToolStripMenuItem.Text = "Reserva";
@@ -94,7 +90,7 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(188, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem2.Text = "Reservar";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -103,7 +99,7 @@
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarClienteToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // registrarClienteToolStripMenuItem
@@ -113,18 +109,10 @@
             this.registrarClienteToolStripMenuItem.Text = "Registrar cliente";
             this.registrarClienteToolStripMenuItem.Click += new System.EventHandler(this.registrarClienteToolStripMenuItem_Click);
             // 
-            // reservasHechasToolStripMenuItem
-            // 
-            this.reservasHechasToolStripMenuItem.Name = "reservasHechasToolStripMenuItem";
-            this.reservasHechasToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
-            this.reservasHechasToolStripMenuItem.Text = "Reservas hechas";
-            this.reservasHechasToolStripMenuItem.Click += new System.EventHandler(this.reservasHechasToolStripMenuItem_Click);
-            // 
             // administradorToolStripMenuItem
             // 
             this.administradorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bitácoraToolStripMenuItem,
-            this.inventarioToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.canchasToolStripMenuItem,
             this.insumosToolStripMenuItem,
@@ -156,12 +144,6 @@
             this.cambiosToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.cambiosToolStripMenuItem.Text = "Cambios";
             this.cambiosToolStripMenuItem.Click += new System.EventHandler(this.cambiosToolStripMenuItem_Click);
-            // 
-            // inventarioToolStripMenuItem
-            // 
-            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
-            this.inventarioToolStripMenuItem.Text = "Inventario";
             // 
             // usuariosToolStripMenuItem
             // 
@@ -199,6 +181,13 @@
             this.backUpToolStripMenuItem.Text = "BackUp";
             this.backUpToolStripMenuItem.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
             // 
+            // reporteInteligenteToolStripMenuItem
+            // 
+            this.reporteInteligenteToolStripMenuItem.Name = "reporteInteligenteToolStripMenuItem";
+            this.reporteInteligenteToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
+            this.reporteInteligenteToolStripMenuItem.Text = "Reporte Inteligente";
+            this.reporteInteligenteToolStripMenuItem.Click += new System.EventHandler(this.reporteInteligenteToolStripMenuItem_Click);
+            // 
             // alquilerToolStripMenuItem
             // 
             this.alquilerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -210,7 +199,7 @@
             // insumosToolStripMenuItem1
             // 
             this.insumosToolStripMenuItem1.Name = "insumosToolStripMenuItem1";
-            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(135, 24);
             this.insumosToolStripMenuItem1.Text = "Insumos";
             this.insumosToolStripMenuItem1.Click += new System.EventHandler(this.insumosToolStripMenuItem1_Click);
             // 
@@ -219,6 +208,7 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(66, 23);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -270,13 +260,6 @@
             this.labPerfilMp.TabIndex = 5;
             this.labPerfilMp.Text = "----";
             // 
-            // comboIdioma1
-            // 
-            this.comboIdioma1.Location = new System.Drawing.Point(341, 40);
-            this.comboIdioma1.Name = "comboIdioma1";
-            this.comboIdioma1.Size = new System.Drawing.Size(115, 22);
-            this.comboIdioma1.TabIndex = 6;
-            // 
             // btnSalirm
             // 
             this.btnSalirm.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,13 +271,6 @@
             this.btnSalirm.UseVisualStyleBackColor = true;
             this.btnSalirm.Click += new System.EventHandler(this.btnSalirm_Click);
             // 
-            // reporteInteligenteToolStripMenuItem
-            // 
-            this.reporteInteligenteToolStripMenuItem.Name = "reporteInteligenteToolStripMenuItem";
-            this.reporteInteligenteToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
-            this.reporteInteligenteToolStripMenuItem.Text = "Reporte Inteligente";
-            this.reporteInteligenteToolStripMenuItem.Click += new System.EventHandler(this.reporteInteligenteToolStripMenuItem_Click);
-            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,7 +278,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(468, 377);
             this.Controls.Add(this.btnSalirm);
-            this.Controls.Add(this.comboIdioma1);
             this.Controls.Add(this.labPerfilMp);
             this.Controls.Add(this.labRolMp);
             this.Controls.Add(this.labUsuarioMp);
@@ -331,7 +306,6 @@
         private System.Windows.Forms.ToolStripMenuItem registrarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administradorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
@@ -339,7 +313,6 @@
         private System.Windows.Forms.Label labUsuarioMp;
         private System.Windows.Forms.Label labRolMp;
         private System.Windows.Forms.Label labPerfilMp;
-        private Controles.ComboIdioma comboIdioma1;
         private System.Windows.Forms.Button btnSalirm;
         private System.Windows.Forms.ToolStripMenuItem bitácoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventosToolStripMenuItem;
@@ -348,7 +321,6 @@
         private System.Windows.Forms.ToolStripMenuItem registrarCanchaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backUpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reservasHechasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alquilerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reporteInteligenteToolStripMenuItem;

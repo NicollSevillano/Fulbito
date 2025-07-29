@@ -104,10 +104,16 @@ namespace GUI
 
         private void Login(BelUsuario _usuario)
         {
-            MenuPrincipalForm mp = new MenuPrincipalForm();
             SessionManager.LogIn(_usuario);
+
+            LanguageManager.CodIdiomaActual = _usuario.IdiomaId;
+            LanguageManager.Actualizar(_usuario.IdiomaId);
+
+            MenuPrincipalForm mp = new MenuPrincipalForm();
             mp.smanager = SessionManager.getInstance;
+
             LogBitacora.AgregarEvento("Inicio de sesión", 1, _usuario, "LogIn");
+
             this.Hide();
             mp.ShowDialog();
             this.Show();

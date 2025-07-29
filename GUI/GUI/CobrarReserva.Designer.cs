@@ -38,7 +38,6 @@
             this.btncPagar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.comboIdioma1 = new Controles.ComboIdioma();
             this.txtCobrar = new System.Windows.Forms.TextBox();
             this.gpPago.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -141,13 +140,6 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // comboIdioma1
-            // 
-            this.comboIdioma1.Location = new System.Drawing.Point(372, 12);
-            this.comboIdioma1.Name = "comboIdioma1";
-            this.comboIdioma1.Size = new System.Drawing.Size(116, 25);
-            this.comboIdioma1.TabIndex = 10;
-            // 
             // txtCobrar
             // 
             this.txtCobrar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,7 +158,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(211)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(500, 319);
             this.Controls.Add(this.txtCobrar);
-            this.Controls.Add(this.comboIdioma1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btncPagar);
@@ -195,7 +186,6 @@
         private System.Windows.Forms.Button btncPagar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnVolver;
-        private Controles.ComboIdioma comboIdioma1;
         private System.Windows.Forms.TextBox txtCobrar;
     }
 }

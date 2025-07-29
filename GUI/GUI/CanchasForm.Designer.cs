@@ -257,7 +257,7 @@
             // labObservacionesCanchas
             // 
             this.labObservacionesCanchas.AutoSize = true;
-            this.labObservacionesCanchas.Location = new System.Drawing.Point(6, 105);
+            this.labObservacionesCanchas.Location = new System.Drawing.Point(6, 101);
             this.labObservacionesCanchas.Name = "labObservacionesCanchas";
             this.labObservacionesCanchas.Size = new System.Drawing.Size(115, 19);
             this.labObservacionesCanchas.TabIndex = 25;

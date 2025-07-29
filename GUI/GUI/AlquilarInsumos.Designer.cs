@@ -32,7 +32,7 @@
             this.labTitulo = new System.Windows.Forms.Label();
             this.txtInfoInsumo = new System.Windows.Forms.TextBox();
             this.btnAlquilar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVolverAlquilar = new System.Windows.Forms.Button();
             this.labInfo = new System.Windows.Forms.Label();
             this.labCliente = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
@@ -80,15 +80,16 @@
             this.btnAlquilar.UseVisualStyleBackColor = true;
             this.btnAlquilar.Click += new System.EventHandler(this.btnAlquilar_Click);
             // 
-            // button2
+            // btnVolverAlquilar
             // 
-            this.button2.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(578, 406);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 36);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Volver";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnVolverAlquilar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolverAlquilar.Location = new System.Drawing.Point(578, 406);
+            this.btnVolverAlquilar.Name = "btnVolverAlquilar";
+            this.btnVolverAlquilar.Size = new System.Drawing.Size(82, 36);
+            this.btnVolverAlquilar.TabIndex = 22;
+            this.btnVolverAlquilar.Text = "Volver";
+            this.btnVolverAlquilar.UseVisualStyleBackColor = true;
+            this.btnVolverAlquilar.Click += new System.EventHandler(this.btnVolverAlquilar_Click);
             // 
             // labInfo
             // 
@@ -210,13 +211,13 @@
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.labCliente);
             this.Controls.Add(this.labInfo);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnVolverAlquilar);
             this.Controls.Add(this.btnAlquilar);
             this.Controls.Add(this.txtInfoInsumo);
             this.Controls.Add(this.labTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AlquilarInsumos";
-            this.Text = "AlquilarInsumos";
+            this.Text = "Alquilar Insumos";
             this.Load += new System.EventHandler(this.AlquilarInsumos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbInsumo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHoras)).EndInit();
@@ -229,7 +230,7 @@
         private System.Windows.Forms.Label labTitulo;
         private System.Windows.Forms.TextBox txtInfoInsumo;
         private System.Windows.Forms.Button btnAlquilar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVolverAlquilar;
         private System.Windows.Forms.Label labInfo;
         private System.Windows.Forms.Label labCliente;
         private System.Windows.Forms.ComboBox cmbCliente;
