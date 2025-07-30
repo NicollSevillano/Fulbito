@@ -239,7 +239,6 @@ C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.CambiarClaveFor
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.GRegistrarClienteForm.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.GReservasForm.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.ControlCanchasform.resources
-C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.HorasReservas.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.Inconsistencia.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.InsumosForm.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.InicioSesionForm.resources
@@ -247,7 +246,6 @@ C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.MenuPrincipalFo
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.GUsuariosForm.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.PerfilesForm.resources
-C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.Serializar.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.TarjetaForm.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
@@ -566,3 +564,4 @@ C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\bin\Debug\SixLabors.Fonts.xml
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.CobrarForm.resources
 C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.ReporteInteligente.resources
 C:\Users\Nicoll\Desktop\Fulbito\GUI\GUI\obj\Debug\GUI.Ayudaform.resources
+C:\Users\nssev\OneDrive\Escritorio\Fulbito\GUI\GUI\obj\Debug\GUI.Ayudaform.resources

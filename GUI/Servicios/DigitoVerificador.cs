@@ -22,7 +22,7 @@ namespace Servicios
             StringBuilder sbDVH = new StringBuilder();
             foreach (DataRow row in dtDVH.Rows)
             {
-                string dvhActual = row["DVH"].ToString();
+                string dvhActual = row["DVH"]?.ToString() ?? "";
                 sbDVH.Append(dvhActual);
 
                 if (string.IsNullOrWhiteSpace(dvhActual))
@@ -52,7 +52,7 @@ namespace Servicios
             return errores;
         }
 
-        public void RecalcularTablaVertical(string tableName)
+        public void RecalcularDVV(string tableName)
         {
             string spListarDVH = $"sp_ListarDVH_{tableName}";
             DataTable dtDVH = dao.Leer(spListarDVH);
@@ -67,12 +67,12 @@ namespace Servicios
             string nuevoDVV = GetSHA256Base64(sbDVH.ToString());
 
             var parametros = new ArrayList
-            {
-                new SqlParameter("@Tabla", tableName),
-                new SqlParameter("@DVV", nuevoDVV)
-            };
+        {
+            new SqlParameter("@Tabla", tableName),
+            new SqlParameter("@DVV", nuevoDVV)
+        };
 
-            dao.Escribir("sp_InsertarDVV", parametros);
+            dao.Escribir("sp_InsertarOVerwrite_DVV", parametros);
         }
 
         private string GetSHA256Base64(string input)
@@ -84,4 +84,5 @@ namespace Servicios
             }
         }
     }
+
 }

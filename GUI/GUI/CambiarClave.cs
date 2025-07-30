@@ -32,7 +32,7 @@ namespace GUI
             bllUsuario = new BllUsuario();
             cClave = new GUsuariosForm();
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
         private bool AgregarTxt()
         {

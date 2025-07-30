@@ -59,7 +59,7 @@ namespace GUI
             Refrescar();
             CargarProveedores();
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
 
         private void Refrescar()

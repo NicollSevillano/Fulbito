@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Be;
+using Dal;
+using Interface;
+using Servicios;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Be;
-using Dal;
-using Interface;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Mapper
 {
@@ -17,22 +21,46 @@ namespace Mapper
         public void Alta(BeCancha pObject)
         {
             string spAltaCancha = "sp_Alta_Cancha";
-            arraylist = new ArrayList();
-
-            arraylist.Add(new SqlParameter("@TipoCancha", pObject.Nombre));
-            arraylist.Add(new SqlParameter("@Precio", pObject.Precio));
-            arraylist.Add(new SqlParameter("@Capacidad", pObject.Capacidad));
-            arraylist.Add(new SqlParameter("@Estado", pObject.Estado));
-            arraylist.Add(new SqlParameter("@Observaciones", pObject.Observaciones));
+            arraylist = new ArrayList
+            {
+                new SqlParameter("@TipoCancha", pObject.Nombre),
+                new SqlParameter("@Precio", pObject.Precio),
+                new SqlParameter("@Capacidad", pObject.Capacidad),
+                new SqlParameter("@Estado", pObject.Estado),
+                new SqlParameter("@Observaciones", pObject.Observaciones)
+            };
 
             dao.Escribir(spAltaCancha, arraylist);
+
+            var canchaInsertada = Consulta().LastOrDefault(c =>
+                c.Nombre == pObject.Nombre &&
+                c.Precio == pObject.Precio &&
+                c.Capacidad == pObject.Capacidad &&
+                c.Estado == pObject.Estado &&
+                c.Observaciones == pObject.Observaciones);
+
+            if (canchaInsertada != null)
+            {
+                pObject.id = canchaInsertada.id;
+
+                string concatenado = $"{pObject.id}|{pObject.Nombre}|{pObject.Precio}|{pObject.Capacidad}|{pObject.Estado}|{pObject.Observaciones}";
+                string dvh = HashingHelper.CalcularHash(concatenado);
+
+                ArrayList parametros = new ArrayList
+                {
+                    new SqlParameter("@Tabla", "Cancha"),
+                    new SqlParameter("@Id", int.Parse(pObject.id)),
+                    new SqlParameter("@DVH", dvh)
+                };
+
+                dao.Escribir("sp_Actualizar_DVH", parametros);
+            }
         }
 
         public void Baja(int pId)
         {
             string spBajaCancha = "sp_Baja_Cancha";
-            arraylist = new ArrayList();
-            arraylist.Add(new SqlParameter("@IdCancha", pId));
+            arraylist = new ArrayList { new SqlParameter("@IdCancha", pId) };
             dao.Escribir(spBajaCancha, arraylist);
         }
 
@@ -52,35 +80,62 @@ namespace Mapper
         public void Modificacion(BeCancha pObject)
         {
             string spModificarCancha = "sp_Cancha_Modificar";
-            arraylist = new ArrayList();
-            arraylist.Add(new SqlParameter("@CodigoCancha", int.Parse(pObject.id)));
-            arraylist.Add(new SqlParameter("@TipoCancha", pObject.Nombre));
-            arraylist.Add(new SqlParameter("@Precio", pObject.Precio));
-            arraylist.Add(new SqlParameter("@Capacidad", pObject.Capacidad));
+            arraylist = new ArrayList
+            {
+                new SqlParameter("@CodigoCancha", int.Parse(pObject.id)),
+                new SqlParameter("@TipoCancha", pObject.Nombre),
+                new SqlParameter("@Precio", pObject.Precio),
+                new SqlParameter("@Capacidad", pObject.Capacidad)
+            };
             dao.Escribir(spModificarCancha, arraylist);
+
+            string concatenado = $"{pObject.id}|{pObject.Nombre}|{pObject.Precio}|{pObject.Capacidad}|{pObject.Estado}|{pObject.Observaciones}";
+            string dvh = HashingHelper.CalcularHash(concatenado);
+
+            ArrayList parametros = new ArrayList
+            {
+                new SqlParameter("@Tabla", "Cancha"),
+                new SqlParameter("@Id", int.Parse(pObject.id)),
+                new SqlParameter("@DVH", dvh)
+            };
+
+            dao.Escribir("sp_Actualizar_DVH", parametros);
         }
 
         public void CambiarEstado(int idCancha, string nuevoEstado)
         {
             string sp = "sp_Cambiar_Estado_Cancha";
-            var al = new ArrayList();
-            al.Add(new SqlParameter("@CodigoCancha", idCancha));
-            al.Add(new SqlParameter("@Estado", nuevoEstado));
+            var al = new ArrayList
+            {
+                new SqlParameter("@CodigoCancha", idCancha),
+                new SqlParameter("@Estado", nuevoEstado)
+            };
             dao.Escribir(sp, al);
         }
 
         public void CambiarObservaciones(int idCancha, string nuevasObs)
         {
             string sp = "sp_Cambiar_Observaciones_Cancha";
-            var al = new ArrayList();
-            al.Add(new SqlParameter("@CodigoCancha", idCancha));
-            al.Add(new SqlParameter("@Observaciones", nuevasObs));
+            var al = new ArrayList
+            {
+                new SqlParameter("@CodigoCancha", idCancha),
+                new SqlParameter("@Observaciones", nuevasObs)
+            };
             dao.Escribir(sp, al);
         }
 
         public List<BeCancha> ConsultaCondicional(string pCondicion, string pCondicion2 = null)
         {
             throw new NotImplementedException();
+        }
+        public string CalcularDVH(BeCliente cliente)
+        {
+            string datos = $"{cliente.id}|{cliente.DNI}|{cliente.Nombre}|{cliente.Telefono}|{cliente.Direccion}";
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(datos));
+                return Convert.ToBase64String(hash);
+            }
         }
     }
 }

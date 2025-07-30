@@ -10,12 +10,10 @@ namespace Be
 {
     public class BelUsuario : IEntity
     {
-        public BelUsuario()
-        {
-            IdiomaId = 1;
-        }
+        public BelUsuario() { }
+
         public BelUsuario(string pDNi, string pNombre, string pApellido, string pEmail, Perfil pPerfil, 
-            string pUsuario, string pContraseña, int idiomaId = 1)
+            string pUsuario, string pContraseña, Idioma idiomaId)
         {
             DNI = pDNi;
             Nombre = pNombre;
@@ -42,9 +40,7 @@ namespace Be
             Bloqueado = bool.Parse(array[8].ToString());
             Activo = bool.Parse(array[9].ToString());
             Intentos = int.Parse(array[10].ToString());
-            IdiomaId = (array.Length > 11 && array[11] != DBNull.Value)
-                ? Convert.ToInt32(array[11])
-                : 1;
+            IdiomaId = new Idioma { id = array[11].ToString() };
         }
 
         public string id { get; set; }
@@ -58,6 +54,6 @@ namespace Be
         public bool Bloqueado { get; set; }
         public bool Activo { get; set; }
         public int Intentos { get; set; }
-        public int IdiomaId { get; set; }
+        public Idioma IdiomaId { get; set; }
     }
 }

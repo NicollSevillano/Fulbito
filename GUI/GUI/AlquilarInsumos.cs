@@ -42,10 +42,10 @@ namespace GUI
             nudHoras.Value = 1;
             nudHoras.ValueChanged += nudHoras_ValueChanged;
 
-            labTotal.Text = "Total estimado: $0";
+            labTotal.Text = $"{Traductor.ObtenerTexto("totalEstimado")}: $0";
 
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
 
         private void CargarComboInsumos()
@@ -64,7 +64,7 @@ namespace GUI
 
             var listaConPlaceholder = new List<BeCliente>
             {
-                new BeCliente { id = "", Nombre = "Seleccione un cliente..." }
+                new BeCliente { id = "", Nombre = Traductor.ObtenerTexto("placeholderCliente") }
             };
             listaConPlaceholder.AddRange(lCliente);
 
@@ -100,7 +100,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar la imagen: " + ex.Message);
+                MessageBox.Show(Traductor.ObtenerTexto("errorImagen") + ": " + ex.Message);
                 pbInsumo.Image = null;
             }
         }
@@ -115,7 +115,7 @@ namespace GUI
 
             if (cantidad <= 0)
             {
-                MessageBox.Show("La cantidad debe ser mayor a cero.");
+                MessageBox.Show(Traductor.ObtenerTexto("cantidadMayorCero"));
                 return;
             }
 
@@ -145,11 +145,11 @@ namespace GUI
                     decimal total = precioConAdicional * cantidad;
 
                     txtInfoInsumo.AppendText($"{nombre}\r\n");
-                    txtInfoInsumo.AppendText($"Precio por hora: ${precioBase:N0}\r\n");
+                    txtInfoInsumo.AppendText($"{Traductor.ObtenerTexto("precioHora")}: ${precioBase:N0}\r\n");
                     if (adicional > 0)
-                        txtInfoInsumo.AppendText($"Adicional por {horas - 1}h extra: +${adicional:N0}/unidad\r\n");
+                        txtInfoInsumo.AppendText($"{Traductor.ObtenerTexto("adicionalPorHoras")} {horas - 1}h: +${adicional:N0}/unidad\r\n");
 
-                    txtInfoInsumo.AppendText($"x{cantidad} unidades = ${total:N0}\r\n");
+                    txtInfoInsumo.AppendText($"x{cantidad} = ${total:N0}\r\n");
                     txtInfoInsumo.AppendText($"----------------------------\r\n");
                 }
             }
@@ -160,7 +160,7 @@ namespace GUI
         private void ActualizarTotalEstimado()
         {
             decimal total = CalcularTotalInsumos();
-            labTotal.Text = $"Total estimado: ${total:N0}";
+            labTotal.Text = $"{Traductor.ObtenerTexto("totalEstimado")}: ${total:N0}";
         }
 
         private decimal CalcularTotalInsumos()
@@ -194,21 +194,21 @@ namespace GUI
         {
             if (cmbCliente.SelectedItem == null)
             {
-                MessageBox.Show("Seleccione un cliente antes de continuar.");
+                MessageBox.Show(Traductor.ObtenerTexto("seleccioneCliente"));
                 return;
             }
 
             BeCliente cliente = cmbCliente.SelectedItem as BeCliente;
             if (cliente == null || string.IsNullOrEmpty(cliente.id))
             {
-                MessageBox.Show("Cliente no válido o sin ID.");
+                MessageBox.Show(Traductor.ObtenerTexto("clienteInvalido"));
                 return;
             }
 
             int horas = (int)nudHoras.Value;
             if (horas <= 0)
             {
-                MessageBox.Show("Ingrese una cantidad válida de horas.");
+                MessageBox.Show(Traductor.ObtenerTexto("horasInvalidas"));
                 return;
             }
 
@@ -267,7 +267,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar el alquiler: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Traductor.ObtenerTexto("errorAlRegistrar") + ": " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -279,7 +279,7 @@ namespace GUI
             cmbInsumo.SelectedIndex = -1;
             pbInsumo.Image = null;
             nudHoras.Value = 1;
-            labTotal.Text = "Total estimado: $0";
+            labTotal.Text = $"{Traductor.ObtenerTexto("totalEstimado")}: $0";
         }
 
         public void Actualizar(string pIdioma)
@@ -294,12 +294,14 @@ namespace GUI
             btnAgregarInsumo.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnAgregarInsumo").Texto;
             btnAlquilar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnAlquilar").Texto;
             btnVolverAlquilar.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnVolverAlquilar").Texto;
+
+            ActualizarTotalEstimado();
         }
 
         private void btnVolverAlquilar_Click(object sender, EventArgs e)
         {
             this.Close();
-            LogBitacora.AgregarEvento("Salir de cambiar clave", 1, SessionManager.getInstance.usuario, "Cambiar clave");
+            LogBitacora.AgregarEvento("Salir de Alquiler", 1, SessionManager.getInstance.usuario, "AlquilarInsumos");
         }
     }
 }

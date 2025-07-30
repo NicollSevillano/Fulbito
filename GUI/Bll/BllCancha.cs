@@ -14,11 +14,13 @@ namespace Bll
         public void Alta(BeCancha pObject)
         {
             mCancha.Alta(pObject);
+            new DigitoVerificador().RecalcularDVV("Cancha");
         }
 
         public void Baja(int pId)
         {
             mCancha.Baja(pId);
+            new DigitoVerificador().RecalcularDVV("Cancha");
         }
 
         public List<BeCancha> Consulta()
@@ -34,16 +36,19 @@ namespace Bll
         public void Modificacion(BeCancha pObject)
         {
             mCancha.Modificacion(pObject);
+            new DigitoVerificador().RecalcularDVV("Cancha");
         }
 
         public void CambiarEstado(int pId, string pEstado)
         {
             mCancha.CambiarEstado(pId, pEstado);
+            new DigitoVerificador().RecalcularDVV("Cancha");
         }
 
         public void CambiarObservaciones(int pId, string pObs)
         {
             mCancha.CambiarObservaciones(pId, pObs);
+            new DigitoVerificador().RecalcularDVV("Cancha");
         }
     }
 }

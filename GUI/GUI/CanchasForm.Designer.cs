@@ -51,7 +51,7 @@
             this.groupEstadoObservaciones = new System.Windows.Forms.GroupBox();
             this.labObservacionesCanchas = new System.Windows.Forms.Label();
             this.btnObservaciones = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtObservacionesCancha = new System.Windows.Forms.TextBox();
             this.btnFiltrarEstado = new System.Windows.Forms.Button();
             this.btnEstadoCancha = new System.Windows.Forms.Button();
             this.cmbEstadoCancha = new System.Windows.Forms.ComboBox();
@@ -242,7 +242,7 @@
             // 
             this.groupEstadoObservaciones.Controls.Add(this.labObservacionesCanchas);
             this.groupEstadoObservaciones.Controls.Add(this.btnObservaciones);
-            this.groupEstadoObservaciones.Controls.Add(this.textBox5);
+            this.groupEstadoObservaciones.Controls.Add(this.txtObservacionesCancha);
             this.groupEstadoObservaciones.Controls.Add(this.btnFiltrarEstado);
             this.groupEstadoObservaciones.Controls.Add(this.btnEstadoCancha);
             this.groupEstadoObservaciones.Controls.Add(this.cmbEstadoCancha);
@@ -274,13 +274,13 @@
             this.btnObservaciones.UseVisualStyleBackColor = true;
             this.btnObservaciones.Click += new System.EventHandler(this.btnObservaciones_Click);
             // 
-            // textBox5
+            // txtObservacionesCancha
             // 
-            this.textBox5.Location = new System.Drawing.Point(10, 123);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(235, 175);
-            this.textBox5.TabIndex = 24;
+            this.txtObservacionesCancha.Location = new System.Drawing.Point(10, 123);
+            this.txtObservacionesCancha.Multiline = true;
+            this.txtObservacionesCancha.Name = "txtObservacionesCancha";
+            this.txtObservacionesCancha.Size = new System.Drawing.Size(235, 175);
+            this.txtObservacionesCancha.TabIndex = 24;
             // 
             // btnFiltrarEstado
             // 
@@ -386,7 +386,7 @@
         private System.Windows.Forms.Button btnObservaciones;
         private System.Windows.Forms.Button btnFiltrarEstado;
         private System.Windows.Forms.Label labObservacionesCanchas;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtObservacionesCancha;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCanchas;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCancha;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCancha;

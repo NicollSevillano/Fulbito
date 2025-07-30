@@ -1,5 +1,6 @@
 ﻿using Interface;
 
+
 public class BeCancha : IEntity
 {
     public BeCancha(string pNombre, decimal pPrecio, int pCapacidad, string pEstado, string pObservaciones)

@@ -21,6 +21,7 @@ namespace GUI
         {
             InitializeComponent();
         }
+
         BelUsuario beUsuario;
         BllUsuario bllUsuario;
         List<BelUsuario> lUsuario;
@@ -33,7 +34,9 @@ namespace GUI
             MostrarUsuarios();
             RefrecarBitacoraEvento();
             LanguageManager.Suscribir(this);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
+
         private void btnFiltrarBEvento_Click(object sender, EventArgs e)
         {
             try
@@ -42,7 +45,10 @@ namespace GUI
                 DateTime fechaFinal = dateTimePicker2.Value;
                 string usuario = cmbBitacoraEventosUsuarios.SelectedItem?.ToString();
                 int criticidad = (int)this.numericCriticidad.Value;
-                if (fechaInicio >= fechaFinal) throw new Exception("La fecha Inicial no puede ser menor que la fecha actual");
+
+                if (fechaInicio >= fechaFinal)
+                    throw new Exception(Traductor.ObtenerTexto("errorFechaFiltroEventos"));
+
                 dgvBitacoraEventos.Rows.Clear();
                 DataTable dt = LogBitacora.ConsultaBitacora();
                 foreach (DataRow dr in dt.Rows)
@@ -65,11 +71,12 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void RefrecarBitacoraEvento()
         {
             try
             {
-                dgvBitacoraEventos.Rows.Clear(); 
+                dgvBitacoraEventos.Rows.Clear();
                 DataTable dt = LogBitacora.ConsultaBitacora();
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -78,15 +85,23 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(Traductor.ObtenerTexto("errorCargarBitacoraEventos") + ": " + ex.Message);
             }
         }
+
         public void MostrarUsuarios()
         {
-            List<BelUsuario> lUsuario = bllUsuario.Consulta();
-            foreach (BelUsuario bUsuario in lUsuario)
+            try
             {
-                cmbBitacoraEventosUsuarios.Items.Add(bUsuario.Usuario);
+                List<BelUsuario> lUsuario = bllUsuario.Consulta();
+                foreach (BelUsuario bUsuario in lUsuario)
+                {
+                    cmbBitacoraEventosUsuarios.Items.Add(bUsuario.Usuario);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Traductor.ObtenerTexto("errorMostrarUsuarios") + ": " + ex.Message);
             }
         }
 
@@ -103,6 +118,7 @@ namespace GUI
             numericCriticidad.Value = numericCriticidad.Minimum;
             cmbBitacoraEventosUsuarios.SelectedIndex = -1;
         }
+
         private BelUsuario ObtenerUsuario()
         {
             string _usuario = "";
@@ -115,9 +131,8 @@ namespace GUI
 
         private void dgvBitacoraEventos_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            
             BelUsuario usu = ObtenerUsuario();
-            if(usu != null)
+            if (usu != null)
             {
                 txtNombreBE.Text = usu.Nombre;
                 txtApellidoBE.Text = usu.Apellido;
@@ -127,6 +142,7 @@ namespace GUI
         public void Actualizar(string pIdioma)
         {
             Idioma idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+
             this.Text = idioma.lEtiqueta.Find(x => x.ControlT == "BitacoraEventosform").Texto;
             labBitacoraEventos.Text = idioma.lEtiqueta.Find(x => x.ControlT == "labBitacoraEventos").Texto;
             LabNombre.Text = idioma.lEtiqueta.Find(x => x.ControlT == "LabNombre").Texto;
@@ -145,4 +161,5 @@ namespace GUI
             dgvBitacoraEventos.Columns["UsuarioBitacoraE"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "UsuarioBitacoraE").Texto;
         }
     }
+
 }

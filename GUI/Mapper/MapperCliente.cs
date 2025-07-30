@@ -1,14 +1,16 @@
-﻿using System;
+﻿using Be;
+using Dal;
+using Interface;
+using Servicios;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using Interface;
-using Be;
-using System.Collections;
-using Dal;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace Mapper
 {
@@ -19,50 +21,45 @@ namespace Mapper
 
         public void Alta(BeCliente pObject)
         {
-            string storeACliente = "sp_Cliente_Alta";
-            arrayList = new ArrayList();
+            string store = "sp_Cliente_Alta";
+            arrayList = new ArrayList
+    {
+        new SqlParameter("@DNI", pObject.DNI),
+        new SqlParameter("@Nombre", pObject.Nombre),
+        new SqlParameter("@Telefono", pObject.Telefono),
+        new SqlParameter("@Direccion", pObject.Direccion)
+    };
 
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@DNI";
-            p1.Value = pObject.DNI;
-            p1.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p1);
+            dao.Escribir(store, arrayList);
 
-            SqlParameter p2 = new SqlParameter();
-            p2.ParameterName = "@Nombre";
-            p2.Value = pObject.Nombre;
-            p2.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p2);
+            var clienteInsertado = Consulta().LastOrDefault(c => c.DNI == pObject.DNI && c.Nombre == pObject.Nombre);
+            if (clienteInsertado != null)
+            {
+                pObject.id = clienteInsertado.id;
 
-            SqlParameter p3 = new SqlParameter();
-            p3.ParameterName = "@Telefono";
-            p3.Value = pObject.Telefono;
-            p3.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p3);
+                string concatenado = $"{pObject.id}|{pObject.DNI}|{pObject.Nombre}|{pObject.Telefono}|{pObject.Direccion}";
+                string dvh = HashingHelper.CalcularHash(concatenado);
 
-            SqlParameter p4 = new SqlParameter();
-            p4.ParameterName = "@Direccion";
-            p4.Value = pObject.Direccion;
-            p4.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p4);
-
-            dao.Escribir(storeACliente, arrayList);
+                ArrayList parametros = new ArrayList
+                {
+                    new SqlParameter("@Tabla", "Cliente"),
+                    new SqlParameter("@Id", int.Parse(pObject.id)),
+                    new SqlParameter("@DVH", dvh)
+                };
+                dao.Escribir("sp_Actualizar_DVH", parametros);
+            }
         }
+
 
         public void Baja(int pId)
         {
             string storeBCliente = "sp_Cliente_Baja";
-            arrayList = new ArrayList();
-
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@CodigoCliente";
-            p1.Value = pId;
-            p1.SqlDbType = SqlDbType.Int;
-            arrayList.Add(p1);
-
+            arrayList = new ArrayList { new SqlParameter("@CodigoCliente", pId) };
             dao.Escribir(storeBCliente, arrayList);
-            storeBCliente = "sp_Baja_Reserva";
-            dao.Escribir(storeBCliente, arrayList);
+
+            // Baja lógica en reservas (si aplica)
+            string storeReserva = "sp_Baja_Reserva";
+            dao.Escribir(storeReserva, arrayList);
         }
 
         public List<BeCliente> Consulta()
@@ -86,40 +83,38 @@ namespace Mapper
 
         public void Modificacion(BeCliente pObject)
         {
-            string storeMCliente = "sp_Clinte_Modificar";
-            arrayList = new ArrayList();
+            string store = "sp_Cliente_Modificar";
+            arrayList = new ArrayList
+            {
+                new SqlParameter("@CodigoCliente", int.Parse(pObject.id)),
+                new SqlParameter("@DNI", pObject.DNI),
+                new SqlParameter("@Nombre", pObject.Nombre),
+                new SqlParameter("@Telefono", pObject.Telefono),
+                new SqlParameter("@Direccion", pObject.Direccion)
+            };
 
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@CodigoCliente";
-            p1.Value = pObject.id;
-            p1.SqlDbType = SqlDbType.Int;
-            arrayList.Add(p1);
+            dao.Escribir(store, arrayList);
 
-            SqlParameter p2 = new SqlParameter();
-            p2.ParameterName = "@DNI";
-            p2.Value = pObject.DNI;
-            p2.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p2);
+            string concatenado = $"{pObject.id}|{pObject.DNI}|{pObject.Nombre}|{pObject.Telefono}|{pObject.Direccion}";
+            string dvh = HashingHelper.CalcularHash(concatenado);
 
-            SqlParameter p3 = new SqlParameter();
-            p3.ParameterName = "@Nombre";
-            p3.Value = pObject.Nombre;
-            p3.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p3);
+            ArrayList parametros = new ArrayList
+            {
+                new SqlParameter("@Tabla", "Cliente"),
+                new SqlParameter("@Id", int.Parse(pObject.id)),
+                new SqlParameter("@DVH", dvh)
+            };
+            dao.Escribir("sp_Actualizar_DVH", parametros);
+        }
 
-            SqlParameter p4 = new SqlParameter();
-            p4.ParameterName = "@Telefono";
-            p4.Value = pObject.Telefono;
-            p4.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p4);
-
-            SqlParameter p5 = new SqlParameter();
-            p5.ParameterName = "@Direccion";
-            p5.Value = pObject.Direccion;
-            p5.SqlDbType = SqlDbType.NVarChar;
-            arrayList.Add(p5);
-
-            dao.Escribir(storeMCliente, arrayList);
+        public string CalcularDVH(BeCliente cliente)
+        {
+            string datos = $"{cliente.id}|{cliente.DNI}|{cliente.Nombre}|{cliente.Telefono}|{cliente.Direccion}";
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(datos));
+                return Convert.ToBase64String(hash);
+            }
         }
     }
 }

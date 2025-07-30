@@ -42,7 +42,6 @@ namespace GUI
         {
             tarjeta = new TarjetaForm();
             lbNombreCobrar.Text = esReserva ? reserva.Cliente.Nombre : alquiler.Cliente.Nombre;
-
             txtCobrar.Clear();
 
             if (esReserva)
@@ -70,13 +69,13 @@ namespace GUI
                     if (adicional > 0)
                         txtCobrar.AppendText($"  Adicional por {alquiler.Horas - 1}h extra: +${adicional:N0}/unidad\r\n");
 
-                    txtCobrar.AppendText($"  x{insumo.Cantidad} = ${insumo.Subtotal:N0}\r\n");
-                    txtCobrar.AppendText("\r\n");
+                    txtCobrar.AppendText($"  x{insumo.Cantidad} = ${insumo.Subtotal:N0}\r\n\r\n");
                 }
 
                 txtCobrar.AppendText($"Total: ${alquiler.Total:N0}\r\n");
+
                 LanguageManager.Suscribir(this);
-                LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+                LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
             }
         }
 
@@ -95,13 +94,21 @@ namespace GUI
 
         private void btncPagar_Click(object sender, EventArgs e)
         {
+            Idioma idioma = LanguageManager.lIdioma.Find(x => x.id == LanguageManager.CodIdiomaActual.ToString());
+
+            string mensajeMetodo = idioma.lEtiqueta.Find(x => x.ControlT == "MensajeMetodoPago").Texto;
+            string aviso = idioma.lEtiqueta.Find(x => x.ControlT == "MensajeAviso").Texto;
+            string mensajeConfirmar = idioma.lEtiqueta.Find(x => x.ControlT == "MensajeConfirmarPago").Texto;
+            string mensajeExito = idioma.lEtiqueta.Find(x => x.ControlT == "MensajePagoExito").Texto;
+            string mensajeTituloConfirmacion = idioma.lEtiqueta.Find(x => x.ControlT == "MensajeTituloConfirmacion").Texto;
+
             if (!(rbEfectivo.Checked || rbTransferencia.Checked || rbDebito.Checked))
             {
-                MessageBox.Show("Seleccione un método de pago", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(mensajeMetodo, aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("¿Pago realizado?", "Confirmar", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show(mensajeConfirmar, mensajeTituloConfirmacion, MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
                 if (esReserva)
@@ -116,7 +123,7 @@ namespace GUI
                     LogBitacora.AgregarEvento("Pago de alquiler", 3, SessionManager.getInstance.usuario, "Cobrar alquiler");
                 }
 
-                MessageBox.Show("Pago registrado con éxito", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(mensajeExito, mensajeTituloConfirmacion, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 if (Owner is GReservasForm fr) fr.Refrescar();
 
@@ -131,3 +138,4 @@ namespace GUI
         }
     }
 }
+

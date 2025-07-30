@@ -1,5 +1,6 @@
 ﻿using Controles;
 using Microsoft.VisualBasic.Logging;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,9 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            LanguageManager.Iniciarlizar();
+            LanguageManager.CodIdiomaActual = 1; 
+            LanguageManager.Actualizar(1);
             Application.Run(new InicioSesionForm());
         }
     }

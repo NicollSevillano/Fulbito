@@ -18,7 +18,7 @@ namespace GUI
         private void BackUpForm_Load(object sender, EventArgs e)
         {
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -51,17 +51,17 @@ namespace GUI
                 try
                 {
                     backrestore.RealizarBackUp(txtBackUp.Text);
-                    MessageBox.Show("Backup realizado con éxito");
+                    MessageBox.Show(Traductor.ObtenerTexto("backupExito"));
                     txtBackUp.Text = "";
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al realizar el Backup: {ex.Message}");
+                    MessageBox.Show($"{Traductor.ObtenerTexto("errorBackup")}: {ex.Message}");
                 }
             }
             else
             {
-                MessageBox.Show("Selecciona una ubicación del Backup");
+                MessageBox.Show(Traductor.ObtenerTexto("seleccionarUbicacionBackup"));
             }
         }
 
@@ -72,17 +72,17 @@ namespace GUI
                 try
                 {
                     backrestore.RealizarRestore(txtRestore.Text);
-                    MessageBox.Show("Restauración realizada con éxito");
+                    MessageBox.Show(Traductor.ObtenerTexto("restoreExito"));
                     txtRestore.Text = "";
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al restaurar la base de datos: {ex.Message}");
+                    MessageBox.Show($"{Traductor.ObtenerTexto("errorRestore")}: {ex.Message}");
                 }
             }
             else
             {
-                MessageBox.Show("Selecciona un archivo de restore");
+                MessageBox.Show(Traductor.ObtenerTexto("seleccionarArchivoRestore"));
             }
         }
 

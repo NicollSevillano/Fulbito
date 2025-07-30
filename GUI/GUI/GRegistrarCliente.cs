@@ -37,7 +37,7 @@ namespace GUI
             lCliente = blCliente.Consulta();
             Refrescar();
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
 
         private bool Cargartxt()
@@ -59,8 +59,7 @@ namespace GUI
                 }
 
                 BeCliente nuevoCliente = new BeCliente(txtDni.Text, txtNombre.Text, txtTelefono.Text, txtDireccion.Text);
-                blCliente.Alta(nuevoCliente);
-                new DigitoVerificador().RecalcularTablaVertical("Cliente");
+                blCliente.Alta(nuevoCliente);  
                 lCliente = blCliente.Consulta();
                 Refrescar();
                 MessageBox.Show("Usuario agregado correctamente.");
@@ -84,12 +83,11 @@ namespace GUI
                 foreach (DataGridViewRow d in dgvCliente.SelectedRows)
                 {
                     int id = Convert.ToInt32(d.Cells[0].Value);
-                    blCliente.Baja(id);
+                    blCliente.Baja(id); 
                 }
 
-                new DigitoVerificador().RecalcularTablaVertical("Cliente");
-                lCliente = blCliente.Consulta();
-                Refrescar();
+                lCliente = blCliente.Consulta(); 
+                Refrescar(); 
                 MessageBox.Show("Usuario eliminado correctamente.");
             }
             catch (Exception ex)
@@ -130,9 +128,10 @@ namespace GUI
                 clienteModificar.Direccion = txtDireccion.Text;
 
                 blCliente.Modificacion(clienteModificar);
-                new DigitoVerificador().RecalcularTablaVertical("Cliente");
+
                 lCliente = blCliente.Consulta();
                 Refrescar();
+
                 MessageBox.Show("Usuario modificado correctamente.");
             }
             catch (Exception ex)

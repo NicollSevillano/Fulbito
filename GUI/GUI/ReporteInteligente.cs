@@ -45,7 +45,7 @@ namespace GUI
             dgvClientes.ClearSelection();
             dgvAlquileres.ClearSelection();
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)

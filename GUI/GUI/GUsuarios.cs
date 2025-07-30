@@ -39,7 +39,7 @@ namespace GUI
             CargarPerfiles();
             cambiarClave = new CambiarClaveForm();
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
         private bool CargarTxt()
         {
@@ -79,7 +79,9 @@ namespace GUI
                 else
                 {
                     perfil = PerfilManager.ConsultaPerfil().Find(x => x.Nombre == cmbPerfiles.Text);
-                    bllUsuario.Alta(new BelUsuario(txtDni.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, perfil, txtUsuario.Text, Encriptar.Encrypt(txtContraseña.Text)));
+                    Idioma idioma = SessionManager.getInstance.usuario.IdiomaId;
+
+                    bllUsuario.Alta(new BelUsuario(txtDni.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, perfil, txtUsuario.Text, Encriptar.Encrypt(txtContraseña.Text), idioma));
                     lUsuario = bllUsuario.Consulta();
                     LogBitacora.AgregarEvento("Registrar Usuario", 1, SessionManager.getInstance.usuario, "Usuarios");
                     MessageBox.Show("Usuario agregado");

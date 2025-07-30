@@ -27,7 +27,7 @@ namespace GUI
         {
             bllReserva = new BllReserva(); 
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
 
         private void txtnumero_TextChanged(object sender, EventArgs e)

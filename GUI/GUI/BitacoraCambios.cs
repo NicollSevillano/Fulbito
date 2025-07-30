@@ -13,14 +13,14 @@ namespace GUI
 {
     public partial class BitacoraCambiosForm : Form, ITraducible
     {
+        List<BelUsuario> lUsuario;
+        BllUsuario bllUsuario;
+        BllInsumo bllInsumo;
+
         public BitacoraCambiosForm()
         {
             InitializeComponent();
         }
-
-        List<BelUsuario> lUsuario;
-        BllUsuario bllUsuario;
-        BllInsumo bllInsumo;
 
         private void BitacoraCambiosForm_Load(object sender, EventArgs e)
         {
@@ -30,8 +30,9 @@ namespace GUI
             lUsuario = bllUsuario.Consulta();
             MostrarUsuarios();
             RefrescarBitacoraCambios();
+
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
 
         private void RefrescarBitacoraCambios()
@@ -42,13 +43,11 @@ namespace GUI
                 DataTable dt = LogCambios.ConsultaCambio();
 
                 foreach (DataRow dr in dt.Rows)
-                {
                     dgvInsumoCambios.Rows.Add(dr.ItemArray);
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar la bitácora: " + ex.Message);
+                MessageBox.Show($"{Traductor.ObtenerTexto("errorCargarBitacora")}: {ex.Message}");
             }
         }
 
@@ -60,7 +59,7 @@ namespace GUI
 
                 if (string.IsNullOrEmpty(usuarioSeleccionado))
                 {
-                    MessageBox.Show("Seleccione un usuario para filtrar.");
+                    MessageBox.Show(Traductor.ObtenerTexto("seleccioneUsuario"));
                     return;
                 }
 
@@ -70,13 +69,11 @@ namespace GUI
 
                 dgvInsumoCambios.Rows.Clear();
                 foreach (DataRowView drv in dv)
-                {
                     dgvInsumoCambios.Rows.Add(drv.Row.ItemArray);
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al filtrar cambios: " + ex.Message);
+                MessageBox.Show($"{Traductor.ObtenerTexto("errorFiltrarCambios")}: {ex.Message}");
             }
         }
 
@@ -91,13 +88,11 @@ namespace GUI
 
                 dgvInsumoCambios.Rows.Clear();
                 foreach (DataRow dr in dt.Rows)
-                {
                     dgvInsumoCambios.Rows.Add(dr.ItemArray);
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al filtrar por fecha: " + ex.Message);
+                MessageBox.Show($"{Traductor.ObtenerTexto("errorFiltrarFecha")}: {ex.Message}");
             }
         }
 
@@ -107,13 +102,11 @@ namespace GUI
             {
                 cmbBitacoraEventosUsuarios.Items.Clear();
                 foreach (BelUsuario user in lUsuario)
-                {
                     cmbBitacoraEventosUsuarios.Items.Add(user.Usuario);
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al mostrar usuarios: " + ex.Message);
+                MessageBox.Show($"{Traductor.ObtenerTexto("errorMostrarUsuarios")}: {ex.Message}");
             }
         }
 
@@ -123,12 +116,11 @@ namespace GUI
             {
                 if (dgvInsumoCambios.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Seleccione un cambio a activar.");
+                    MessageBox.Show(Traductor.ObtenerTexto("seleccioneCambioActivar"));
                     return;
                 }
 
                 DataGridViewRow row = dgvInsumoCambios.SelectedRows[0];
-
                 int idCambio = Convert.ToInt32(row.Cells[0].Value);
                 int codigoInsumo = Convert.ToInt32(row.Cells[1].Value);
 
@@ -137,11 +129,11 @@ namespace GUI
                 RefrescarBitacoraCambios();
                 ActualizarGrillaInsumos();
 
-                MessageBox.Show("Cambio activado correctamente.");
+                MessageBox.Show(Traductor.ObtenerTexto("cambioActivado"));
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al activar cambio: " + ex.Message);
+                MessageBox.Show($"{Traductor.ObtenerTexto("errorActivarCambio")}: {ex.Message}");
             }
         }
 
@@ -156,7 +148,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo actualizar los insumos: " + ex.Message);
+                MessageBox.Show($"{Traductor.ObtenerTexto("errorActualizarInsumos")}: {ex.Message}");
             }
         }
 
@@ -189,7 +181,6 @@ namespace GUI
             dgvInsumoCambios.Columns["Existe_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "Existe_BitacoraCambios").Texto;
             dgvInsumoCambios.Columns["Descrip_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "Descrip_BitacoraCambios").Texto;
             dgvInsumoCambios.Columns["Usuario_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "Usuario_BitacoraCambios").Texto;
-            dgvInsumoCambios.Columns["UsuarioAct_BitacoraCambios"].HeaderText = idioma.lEtiqueta.Find(x => x.ControlT == "UsuarioAct_BitacoraCambios").Texto;
         }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using Be;
 using Dal;
 using Interface;
@@ -23,14 +20,14 @@ namespace Mapper
             string storeAlta = "sp_Usuario_Alta";
             arrayList = new ArrayList();
 
-            arrayList.Add(new SqlParameter("@DNI", pObject.DNI));
-            arrayList.Add(new SqlParameter("@Nombre", pObject.Nombre));
-            arrayList.Add(new SqlParameter("@Apellido", pObject.Apellido));
-            arrayList.Add(new SqlParameter("@Email", pObject.Email));
-            arrayList.Add(new SqlParameter("@Rol", pObject.Perfil.id));
-            arrayList.Add(new SqlParameter("@Usuario", pObject.Usuario));
-            arrayList.Add(new SqlParameter("@Contraseña", pObject.Contraseña));
-            arrayList.Add(new SqlParameter("@IdiomaId", pObject.IdiomaId)); 
+            arrayList.Add(new SqlParameter("@DNI", pObject.DNI) { SqlDbType = SqlDbType.NVarChar });
+            arrayList.Add(new SqlParameter("@Nombre", pObject.Nombre) { SqlDbType = SqlDbType.NVarChar });
+            arrayList.Add(new SqlParameter("@Apellido", pObject.Apellido) { SqlDbType = SqlDbType.NVarChar });
+            arrayList.Add(new SqlParameter("@Email", pObject.Email) { SqlDbType = SqlDbType.NVarChar });
+            arrayList.Add(new SqlParameter("@Rol", pObject.Perfil.id) { SqlDbType = SqlDbType.Int });
+            arrayList.Add(new SqlParameter("@Usuario", pObject.Usuario) { SqlDbType = SqlDbType.VarChar });
+            arrayList.Add(new SqlParameter("@Contraseña", pObject.Contraseña) { SqlDbType = SqlDbType.VarChar });
+            arrayList.Add(new SqlParameter("@IdiomaId", pObject.IdiomaId.id) { SqlDbType = SqlDbType.Int });
 
             dao.Escribir(storeAlta, arrayList);
         }
@@ -38,46 +35,32 @@ namespace Mapper
         public void Baja(int pId)
         {
             string storeBaja = "sp_Usuario_Borrar";
-            arrayList = new ArrayList();
-
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@CodigoUsuario";
-            p1.Value = pId;
-            p1.SqlDbType = SqlDbType.Int;
-            arrayList.Add(p1);
+            arrayList = new ArrayList
+            {
+                new SqlParameter("@CodigoUsuario", pId) { SqlDbType = SqlDbType.Int }
+            };
 
             dao.Escribir(storeBaja, arrayList);
-        }
-
-
-        public List<BelUsuario> ConsultaCondicional(string pCondicion, string pCondicion2 = null)
-        {
-            throw new NotImplementedException();
         }
 
         public void Modificacion(BelUsuario pObject)
         {
             string storeModificar = "sp_Usuario_Modificar";
-            arrayList = new ArrayList();
-
-            arrayList.Add(new SqlParameter("@CodigoUsuario", pObject.id));
-            arrayList.Add(new SqlParameter("@DNI", pObject.DNI));
-            arrayList.Add(new SqlParameter("@Nombre", pObject.Nombre));
-            arrayList.Add(new SqlParameter("@Apellido", pObject.Apellido));
-            arrayList.Add(new SqlParameter("@Email", pObject.Email));
-            arrayList.Add(new SqlParameter("@Rol", pObject.Perfil.id));
-            arrayList.Add(new SqlParameter("@Usuario", pObject.Usuario));
-            arrayList.Add(new SqlParameter("@Contraseña", pObject.Contraseña));
-            arrayList.Add(new SqlParameter("@Bloqueado", pObject.Bloqueado));
-            arrayList.Add(new SqlParameter("@Activo", pObject.Activo));
-
-            var pIntentos = new SqlParameter("@Intentos", SqlDbType.Int); 
-            pIntentos.Value = pObject.Intentos;
-            arrayList.Add(pIntentos);
-
-            var pIdioma = new SqlParameter("@IdiomaId", SqlDbType.Int); 
-            pIdioma.Value = pObject.IdiomaId;
-            arrayList.Add(pIdioma);
+            arrayList = new ArrayList
+            {
+                new SqlParameter("@CodigoUsuario", pObject.id) { SqlDbType = SqlDbType.Int },
+                new SqlParameter("@DNI", pObject.DNI) { SqlDbType = SqlDbType.NVarChar },
+                new SqlParameter("@Nombre", pObject.Nombre) { SqlDbType = SqlDbType.NVarChar },
+                new SqlParameter("@Apellido", pObject.Apellido) { SqlDbType = SqlDbType.NVarChar },
+                new SqlParameter("@Email", pObject.Email) { SqlDbType = SqlDbType.NVarChar },
+                new SqlParameter("@Rol", pObject.Perfil.id) { SqlDbType = SqlDbType.Int },
+                new SqlParameter("@Usuario", pObject.Usuario) { SqlDbType = SqlDbType.NVarChar },
+                new SqlParameter("@Contraseña", pObject.Contraseña) { SqlDbType = SqlDbType.NVarChar },
+                new SqlParameter("@Bloqueado", pObject.Bloqueado) { SqlDbType = SqlDbType.Bit },
+                new SqlParameter("@Activo", pObject.Activo) { SqlDbType = SqlDbType.Bit },
+                new SqlParameter("@Intentos", pObject.Intentos) { SqlDbType = SqlDbType.Int },
+                new SqlParameter("@IdiomaId", pObject.IdiomaId.id) { SqlDbType = SqlDbType.Int }
+            };
 
             dao.Escribir(storeModificar, arrayList);
         }
@@ -85,13 +68,10 @@ namespace Mapper
         public void Desbloquear(BelUsuario pCU)
         {
             string storeDesbloquear = "sp_Desbloquear_Usuario";
-            arrayList = new ArrayList();
-
-            SqlParameter p1 = new SqlParameter();
-            p1.ParameterName = "@CodigoUsuario";
-            p1.Value = pCU.id;
-            p1.SqlDbType = SqlDbType.Int;
-            arrayList.Add(p1);
+            arrayList = new ArrayList
+            {
+                new SqlParameter("@CodigoUsuario", pCU.id) { SqlDbType = SqlDbType.Int }
+            };
 
             dao.Escribir(storeDesbloquear, arrayList);
         }
@@ -102,16 +82,28 @@ namespace Mapper
             DataTable dt = dao.Leer(storedProcedure);
             List<BelUsuario> lUsuario = new List<BelUsuario>();
             PerfilManager.IniciarPerfilManager();
+
             foreach (DataRow dr in dt.Rows)
             {
                 if (dr.ItemArray.Length > 5 && dr["Rol"] != null)
                 {
                     BelUsuario aux = new BelUsuario(dr.ItemArray);
+
                     aux.Perfil = PerfilManager.lPerfil?.Find(x => x.id == dr["Rol"].ToString());
+
+                    string idiomaId = dr["IdiomaId"].ToString();
+                    aux.IdiomaId = LanguageManager.lIdioma.Find(x => x.id == idiomaId);
+
                     lUsuario.Add(aux);
                 }
             }
+
             return lUsuario;
+        }
+
+        public List<BelUsuario> ConsultaCondicional(string pCondicion, string pCondicion2 = null)
+        {
+            throw new NotImplementedException();
         }
     }
 }

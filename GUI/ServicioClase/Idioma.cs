@@ -9,6 +9,8 @@ namespace ServicioClase
 {
     public class Idioma : IEntity
     {
+        public Idioma() { }
+
         public string id { get; set; }
 
         public Idioma(string pCodigo, string pNombre)

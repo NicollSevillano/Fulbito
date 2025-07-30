@@ -30,8 +30,9 @@ namespace GUI
         {
             bUsuario = new BllUsuario();
             lUsuario = bUsuario.Consulta();
-            LanguageManager.Iniciarlizar();
+
             LanguageManager.Suscribir(this);
+            this.Actualizar(LanguageManager.CodIdiomaActual.ToString());
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -85,7 +86,7 @@ namespace GUI
 
                 if (hayInconsistencia && esAdmin)
                 {
-                    using (var incForm = new Inconsistencia())
+                    using (var incForm = new Inconsistencia(int.Parse(_usuario.IdiomaId.id)))
                     {
                         incForm.ShowDialog();
                     }
@@ -106,10 +107,11 @@ namespace GUI
         {
             SessionManager.LogIn(_usuario);
 
-            LanguageManager.CodIdiomaActual = _usuario.IdiomaId;
-            LanguageManager.Actualizar(_usuario.IdiomaId);
+            LanguageManager.CodIdiomaActual = int.Parse(_usuario.IdiomaId.id);
+            LanguageManager.Actualizar(int.Parse(_usuario.IdiomaId.id));
 
             MenuPrincipalForm mp = new MenuPrincipalForm();
+            LanguageManager.Suscribir(mp);
             mp.smanager = SessionManager.getInstance;
 
             LogBitacora.AgregarEvento("Inicio de sesión", 1, _usuario, "LogIn");

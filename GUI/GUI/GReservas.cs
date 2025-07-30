@@ -53,7 +53,7 @@ namespace GUI
             lHora = blHorarios.Consulta();
             Refrescar();
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
         private bool ValidarCliente()
         {

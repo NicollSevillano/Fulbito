@@ -11,9 +11,12 @@ namespace Be
     {
         public BeCliente(string pDni, string pNombre, string pTelefono, string direccion)
         {
-            DNI = pDni; Nombre = pNombre; Telefono = pTelefono;
+            DNI = pDni;
+            Nombre = pNombre;
+            Telefono = pTelefono;
             Direccion = direccion;
         }
+
         public BeCliente(object[] array)
         {
             id = array[0].ToString();
@@ -23,11 +26,9 @@ namespace Be
             Direccion = array[4].ToString();
         }
 
-        public BeCliente()
-        {
-        }
+        public BeCliente() { }
 
-        public string id { get ; set ; }
+        public string id { get; set; }
         public string DNI { get; set; }
         public string Nombre { get; set; }
         public string Telefono { get; set; }

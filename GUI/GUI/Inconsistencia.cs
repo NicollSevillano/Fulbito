@@ -10,18 +10,22 @@ namespace GUI
     public partial class Inconsistencia : Form, ITraducible
     {
         private bool reparada = false;
+        private int _idiomaId;
 
-        public Inconsistencia()
+        public Inconsistencia(int idiomaId) 
         {
             InitializeComponent();
+            this._idiomaId = idiomaId;
             this.FormClosing += Inconsistencia_FormClosing;
             CargarInconsistencias();
         }
+
         private void Inconsistencia_Load(object sender, EventArgs e)
         {
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(_idiomaId);
         }
+
         private void Inconsistencia_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!reparada)

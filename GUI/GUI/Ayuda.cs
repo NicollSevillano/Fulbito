@@ -13,6 +13,7 @@ namespace GUI
     public partial class Ayudaform : Form, ITraducible
     {
         private Dictionary<string, string> preguntas = new Dictionary<string, string>();
+        private Label lblTitulo;
 
         public Ayudaform()
         {
@@ -38,19 +39,20 @@ namespace GUI
             txtRespuesta.BorderStyle = BorderStyle.None;
 
             LanguageManager.Suscribir(this);
-            LanguageManager.Actualizar(SessionManager.getInstance.usuario.IdiomaId);
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
 
         private void AgregarTitulo()
         {
-            Label lblTitulo = new Label();
+            lblTitulo = new Label();
             lblTitulo.Name = "lblTituloPreguntas";
-            lblTitulo.Text = "Preguntas Frecuentes";
+            lblTitulo.Text = "Preguntas Frecuentes"; 
             lblTitulo.Font = new Font("Maiandra GD", 10F, FontStyle.Bold | FontStyle.Underline);
             lblTitulo.Location = new Point(5, 5);
             lblTitulo.AutoSize = true;
 
             panelContenedor.Panel1.Controls.Add(lblTitulo);
+
             lstPreguntas.Location = new Point(5, 30);
             lstPreguntas.Size = new Size(panelContenedor.Panel1.Width - 10, panelContenedor.Panel1.Height - 35);
             lstPreguntas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -63,7 +65,7 @@ namespace GUI
 
             try
             {
-                string connectionString = @"Data Source=.;Initial Catalog=SistemaF;Integrated Security=True"; 
+                string connectionString = @"Data Source=.;Initial Catalog=SistemaF;Integrated Security=True";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -91,7 +93,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar preguntas de ayuda: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Traductor.ObtenerTexto("errorCargarAyuda") + ": " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,7 +132,11 @@ namespace GUI
         public void Actualizar(string pIdioma)
         {
             Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
+
             this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "Ayudaform").Texto;
+
+            if (lblTitulo != null)
+                lblTitulo.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "lblTituloPreguntas").Texto;
 
             CargarPreguntasDesdeBase();
         }
@@ -138,7 +144,7 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            LogBitacora.AgregarEvento("Salir de cambiar clave", 1, SessionManager.getInstance.usuario, "Cambiar clave");
+            LogBitacora.AgregarEvento("Salir de ayuda", 1, SessionManager.getInstance.usuario, "Ayuda");
         }
     }
 }
