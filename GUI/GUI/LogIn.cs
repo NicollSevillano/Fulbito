@@ -34,7 +34,6 @@ namespace GUI
             LanguageManager.Suscribir(this);
             this.Actualizar(LanguageManager.CodIdiomaActual.ToString());
         }
-
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             lUsuario = bUsuario.Consulta();
@@ -73,8 +72,14 @@ namespace GUI
                 _usuario.Intentos = 0;
                 bUsuario.Modificacion(_usuario);
 
+                SessionManager.LogIn(_usuario);
+
+                LanguageManager.CodIdiomaActual = int.Parse(_usuario.IdiomaId.id);
+                LanguageManager.Actualizar(int.Parse(_usuario.IdiomaId.id));
+
                 bool hayInconsistencia = !IntegridadOk();
-                bool esAdmin = _usuario.Perfil != null && _usuario.Perfil.Nombre.Equals("Administrador", StringComparison.OrdinalIgnoreCase);
+                bool esAdmin = _usuario.Perfil != null &&
+                               _usuario.Perfil.Nombre.Equals("Administrador", StringComparison.OrdinalIgnoreCase);
 
                 if (hayInconsistencia && !esAdmin)
                 {
@@ -92,8 +97,16 @@ namespace GUI
                     }
                 }
 
-                MessageBox.Show("Inicio correcto");
-                Login(_usuario);
+                LogBitacora.AgregarEvento("Inicio de sesión", 1, _usuario, "LogIn");
+
+                MenuPrincipalForm mp = new MenuPrincipalForm();
+                LanguageManager.Suscribir(mp);
+                mp.smanager = SessionManager.getInstance;
+
+                this.Hide();
+                mp.ShowDialog();
+                this.Show();
+
                 txtUsuario.Clear();
                 txtContraseña.Clear();
             }

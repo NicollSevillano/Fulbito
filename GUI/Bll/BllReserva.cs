@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Be;
+using Interface;
+using Mapper;
+using Servicios;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Be;
-using Interface;
-using Mapper;
 
 namespace Bll
 {
@@ -17,11 +18,13 @@ namespace Bll
         public void Alta(BeReserva pObject)
         {
             mReserva.Alta(pObject);
+            new DigitoVerificador().RecalcularDVV("Reserva");
         }
 
         public void Baja(int pId)
         {
             mReserva.Baja(pId);
+            new DigitoVerificador().RecalcularDVV("Reserva");
         }
 
         public List<BeReserva> Consulta()
@@ -38,14 +41,10 @@ namespace Bll
         {
             throw new NotImplementedException();
         }
-        public void VerificarDisponibilidad(BeCancha pCanchaNombre, DateTime pFecha)
-        {
-            //mReserva.Disponibilidad(pCanchaNombre, pFecha);
-        }
         public void Cancelar(int idReserva)
         {
             mReserva.CancelarReserva(idReserva);
+            new DigitoVerificador().RecalcularDVV("Reserva");
         }
-
     }
 }

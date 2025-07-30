@@ -26,6 +26,7 @@ namespace Be
             Fecha = DateTime.Parse(array[3].ToString());
             Hora = TimeSpan.Parse(array[4].ToString());
             Pagado = bool.Parse(array[5].ToString());
+            DVH = array[6].ToString();
             if (array[7] == DBNull.Value)
                 this.Cancelada = false; 
             else
@@ -38,6 +39,6 @@ namespace Be
         public TimeSpan Hora { get; set; }
         public bool Pagado { get; set; }
         public bool Cancelada { get; set; }
-
+        public string DVH { get; set; }
     }
 }

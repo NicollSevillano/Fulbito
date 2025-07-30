@@ -24,6 +24,7 @@ namespace Be
             Nombre = array[2].ToString();
             Telefono = array[3].ToString();
             Direccion = array[4].ToString();
+            DVH = array[5].ToString();
         }
 
         public BeCliente() { }
@@ -33,5 +34,6 @@ namespace Be
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
+        public string DVH { get; set; }
     }
 }

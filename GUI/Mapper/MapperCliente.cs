@@ -57,7 +57,7 @@ namespace Mapper
             arrayList = new ArrayList { new SqlParameter("@CodigoCliente", pId) };
             dao.Escribir(storeBCliente, arrayList);
 
-            // Baja lógica en reservas (si aplica)
+            //Se eliman todas las reservas asociadas al cliente
             string storeReserva = "sp_Baja_Reserva";
             dao.Escribir(storeReserva, arrayList);
         }
@@ -106,15 +106,19 @@ namespace Mapper
             };
             dao.Escribir("sp_Actualizar_DVH", parametros);
         }
-
-        public string CalcularDVH(BeCliente cliente)
+        public void ActualizarDVH(BeCliente c)
         {
-            string datos = $"{cliente.id}|{cliente.DNI}|{cliente.Nombre}|{cliente.Telefono}|{cliente.Direccion}";
-            using (var sha256 = SHA256.Create())
+            string datos = $"{c.id}|{c.DNI}|{c.Nombre}|{c.Telefono}|{c.Direccion}";
+            string dvh = HashingHelper.CalcularHash(datos);
+
+            ArrayList parametros = new ArrayList
             {
-                byte[] hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(datos));
-                return Convert.ToBase64String(hash);
-            }
+                new SqlParameter("@Tabla", "Cliente"),
+                new SqlParameter("@Id", int.Parse(c.id)),
+                new SqlParameter("@DVH", dvh)
+            };
+
+            dao.Escribir("sp_Actualizar_DVH", parametros);
         }
     }
 }

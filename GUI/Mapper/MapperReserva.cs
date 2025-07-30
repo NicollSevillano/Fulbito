@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Be;
+using Dal;
+using Interface;
+using Servicios;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Be;
-using Dal;
-using Interface;
+using System.Linq;
 
 namespace Mapper
 {
@@ -16,40 +18,65 @@ namespace Mapper
         public void Alta(BeReserva pObject)
         {
             string storeAltaRerva = "sp_Alta_Reserva";
-            ArrayList al = new ArrayList();
-
-            SqlParameter p1 = new SqlParameter("@CodigoCancha", pObject.Cancha.id);
-            p1.SqlDbType = SqlDbType.Int;
-            al.Add(p1);
-
-            SqlParameter p2 = new SqlParameter("@CodigoClient", pObject.Cliente.id);
-            p2.SqlDbType = SqlDbType.Int;
-            al.Add(p2);
-
-            SqlParameter p3 = new SqlParameter("@Fecha", pObject.Fecha);
-            p3.SqlDbType = SqlDbType.DateTime;
-            al.Add(p3);
-
-            SqlParameter p4 = new SqlParameter("@Hora", pObject.Hora);
-            p4.SqlDbType = SqlDbType.Time;
-            al.Add(p4);
-
-            SqlParameter p5 = new SqlParameter("@Pagado", pObject.Pagado);
-            p5.SqlDbType = SqlDbType.Bit;
-            al.Add(p5);
+            ArrayList al = new ArrayList
+            {
+                new SqlParameter("@CodigoCancha", pObject.Cancha.id),
+                new SqlParameter("@CodigoClient", pObject.Cliente.id),
+                new SqlParameter("@Fecha", pObject.Fecha),
+                new SqlParameter("@Hora", pObject.Hora),
+                new SqlParameter("@Pagado", pObject.Pagado)
+            };
 
             dao.Escribir(storeAltaRerva, al);
+
+            var reservaInsertada = Consulta().LastOrDefault(r =>
+                r.Cancha.id == pObject.Cancha.id &&
+                r.Cliente.id == pObject.Cliente.id &&
+                r.Fecha == pObject.Fecha &&
+                r.Hora == pObject.Hora);
+
+            if (reservaInsertada != null)
+            {
+                pObject.id = reservaInsertada.id;
+
+                string datos = $"{pObject.id}|{pObject.Cancha.id}|{pObject.Cliente.id}|{pObject.Fecha:yyyy-MM-ddTHH:mm:ss}|{pObject.Hora:hh\\:mm\\:ss}|{pObject.Pagado}|{pObject.Cancelada}";
+                string dvh = HashingHelper.CalcularHash(datos);
+
+                ArrayList parametros = new ArrayList
+                {
+                    new SqlParameter("@Tabla", "Reserva"),
+                    new SqlParameter("@Id", int.Parse(pObject.id)),
+                    new SqlParameter("@DVH", dvh)
+                };
+
+                dao.Escribir("sp_Actualizar_DVH", parametros);
+            }
         }
 
         public void Baja(int pId)
         {
-            string storeBReserva = "sp_Baja_Reserva";
-            var al = new ArrayList();
+            ArrayList al = new ArrayList
+            {
+                new SqlParameter("@CodigoReserva", pId)
+            };
 
-            SqlParameter p1 = new SqlParameter("@CodigoReserva", pId);
-            p1.SqlDbType = SqlDbType.Int;
-            al.Add(p1);
-            dao.Escribir(storeBReserva, al);
+            dao.Escribir("sp_Baja_Reserva", al);
+
+            var reserva = Consulta().FirstOrDefault(r => r.id == pId.ToString());
+            if (reserva != null)
+            {
+                string datos = $"{reserva.id}|{reserva.Cancha.id}|{reserva.Cliente.id}|{reserva.Fecha:yyyy-MM-ddTHH:mm:ss}|{reserva.Hora:hh\\:mm\\:ss}|{reserva.Pagado}|{reserva.Cancelada}";
+                string dvh = HashingHelper.CalcularHash(datos);
+
+                ArrayList parametros = new ArrayList
+                {
+                    new SqlParameter("@Tabla", "Reserva"),
+                    new SqlParameter("@Id", int.Parse(reserva.id)),
+                    new SqlParameter("@DVH", dvh)
+                };
+
+                dao.Escribir("sp_Actualizar_DVH", parametros);
+            }
         }
 
         public List<BeReserva> Consulta()
@@ -85,7 +112,7 @@ namespace Mapper
 
         public void Modificacion(BeReserva pObject)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); 
         }
 
         public void ActualizarPago(string idReserva, bool pagado)
@@ -98,12 +125,49 @@ namespace Mapper
             };
             dao.Escribir(updatePago, parametros);
         }
+
         public void CancelarReserva(int idReserva)
         {
             string sp = "sp_Cancelar_Reserva";
-            ArrayList parametros = new ArrayList();
-            parametros.Add(new SqlParameter("@CodigoReserva", idReserva));
+            ArrayList parametros = new ArrayList
+            {
+                new SqlParameter("@CodigoReserva", idReserva)
+            };
             dao.Escribir(sp, parametros);
+
+            var reserva = Consulta().FirstOrDefault(r => r.id == idReserva.ToString());
+            if (reserva != null)
+            {
+                reserva.Cancelada = true;
+
+                string datos = $"{reserva.id}|{reserva.Cancha.id}|{reserva.Cliente.id}|{reserva.Fecha:yyyy-MM-ddTHH:mm:ss}|{reserva.Hora:hh\\:mm\\:ss}|{reserva.Pagado}|{reserva.Cancelada}";
+                string dvh = HashingHelper.CalcularHash(datos);
+
+                ArrayList al = new ArrayList
+                {
+                    new SqlParameter("@Tabla", "Reserva"),
+                    new SqlParameter("@Id", idReserva),
+                    new SqlParameter("@DVH", dvh)
+                };
+                dao.Escribir("sp_Actualizar_DVH", al);
+            }
+        }
+        public void ActualizarDVH(BeReserva r)
+        {
+            string idCancha = r.Cancha != null ? r.Cancha.id.ToString() : "0";
+            string idCliente = r.Cliente != null ? r.Cliente.id.ToString() : "0";
+
+            string datos = $"{r.id}|{idCancha}|{idCliente}|{r.Fecha:yyyy-MM-ddTHH:mm:ss}|{r.Hora:hh\\:mm\\:ss}|{r.Pagado}|{r.Cancelada}";
+            string dvh = HashingHelper.CalcularHash(datos);
+
+            ArrayList parametros = new ArrayList
+            {
+                new SqlParameter("@Tabla", "Reserva"),
+                new SqlParameter("@Id", int.Parse(r.id)),
+                new SqlParameter("@DVH", dvh)
+            };
+
+            dao.Escribir("sp_Actualizar_DVH", parametros);
         }
 
     }

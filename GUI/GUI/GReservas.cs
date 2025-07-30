@@ -130,14 +130,9 @@ namespace GUI
             BeCancha bcancha = ObtenerCancha();
             BeCliente bcliente = ObtenerCliente();
 
-            if (bcancha == null)
+            if (bcancha == null || bcliente == null)
             {
-                MessageBox.Show("No se encontró la cancha seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (bcliente == null)
-            {
-                MessageBox.Show("No se encontró el cliente seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al obtener cliente o cancha.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -151,8 +146,7 @@ namespace GUI
                     continue;
                 }
 
-                TimeSpan horarioEntrada;
-                if (!TimeSpan.TryParse(horaCell.ToString(), out horarioEntrada))
+                if (!TimeSpan.TryParse(horaCell.ToString(), out TimeSpan horarioEntrada))
                 {
                     MessageBox.Show("El formato de la hora no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     continue;
@@ -160,8 +154,6 @@ namespace GUI
 
                 BeReserva nuevaReserva = new BeReserva(bcancha, bcliente, dateTimePicker1.Value.Date, horarioEntrada, false);
                 reservas.Add(nuevaReserva);
-                var dv = new DigitoVerificador();
-                dv.RecalcularTablaVertical("Reserva");
             }
 
             if (reservas.Count == 0)
@@ -174,8 +166,10 @@ namespace GUI
             {
                 foreach (BeReserva reserva in reservas)
                 {
-                    blReserva.Alta(reserva);
+                    blReserva.Alta(reserva);  
                 }
+
+                new DigitoVerificador().RecalcularDVV("Reserva"); 
 
                 lReserva = blReserva.Consulta();
                 Refrescar();
@@ -289,7 +283,6 @@ namespace GUI
             }
         }
 
-
         private BeReserva LlamarReserva()
         {
             return lReserva.Find(x => x.id == dgvReservas.SelectedRows[0].Cells[0].Value.ToString());
@@ -328,7 +321,6 @@ namespace GUI
 
             AplicarColoresPagado();
         }
-
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
@@ -390,13 +382,14 @@ namespace GUI
 
             blReserva.Cancelar(id);
 
+            new DigitoVerificador().RecalcularDVV("Reserva"); 
+
             lReserva = blReserva.Consulta();
             Refrescar();
             btnDisponibilidad_Click(null, null);
 
             MessageBox.Show("Reserva cancelada y horario liberado.");
         }
-
 
         private void btnCobrar_Click_1(object sender, EventArgs e)
         {

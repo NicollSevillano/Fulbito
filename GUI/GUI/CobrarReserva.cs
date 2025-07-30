@@ -21,7 +21,7 @@ namespace GUI
         public CobrarForm(BeReserva _reserva)
         {
             InitializeComponent();
-            reserva = _reserva;
+            reserva = _reserva ?? throw new ArgumentNullException(nameof(_reserva));
             esReserva = true;
             LanguageManager.Suscribir(this);
             this.Load += CobrarForm_Load;
@@ -30,22 +30,28 @@ namespace GUI
         public CobrarForm(BeAlquiler _alquiler, List<InsumoResumen> _insumos)
         {
             InitializeComponent();
-            alquiler = _alquiler;
+            alquiler = _alquiler ?? throw new ArgumentNullException(nameof(_alquiler));
             insumos = _insumos ?? new List<InsumoResumen>();
             esReserva = false;
             LanguageManager.Suscribir(this);
-            this.Actualizar(SessionManager.getInstance.usuario.IdiomaId.ToString());
             this.Load += CobrarForm_Load;
         }
 
         private void CobrarForm_Load(object sender, EventArgs e)
         {
             tarjeta = new TarjetaForm();
-            lbNombreCobrar.Text = esReserva ? reserva.Cliente.Nombre : alquiler.Cliente.Nombre;
             txtCobrar.Clear();
 
             if (esReserva)
             {
+                if (reserva.Cliente == null || reserva.Cancha == null)
+                {
+                    MessageBox.Show("Error: Reserva incompleta. Falta asignar Cliente o Cancha.");
+                    this.Close();
+                    return;
+                }
+
+                lbNombreCobrar.Text = reserva.Cliente.Nombre;
                 txtCobrar.AppendText($"Cancha: {reserva.Cancha.Nombre}\r\n");
                 txtCobrar.AppendText($"Fecha: {reserva.Fecha:dd/MM/yyyy}\r\n");
                 txtCobrar.AppendText($"Hora: {reserva.Hora}\r\n");
@@ -53,6 +59,14 @@ namespace GUI
             }
             else
             {
+                if (alquiler.Cliente == null)
+                {
+                    MessageBox.Show("Error: Alquiler incompleto. Falta asignar Cliente.");
+                    this.Close();
+                    return;
+                }
+
+                lbNombreCobrar.Text = alquiler.Cliente.Nombre;
                 txtCobrar.AppendText($"Cliente: {alquiler.Cliente.Nombre}\r\n");
                 txtCobrar.AppendText($"Horas: {alquiler.Horas}\r\n");
                 txtCobrar.AppendText($"Insumos:\r\n\r\n");
@@ -73,10 +87,9 @@ namespace GUI
                 }
 
                 txtCobrar.AppendText($"Total: ${alquiler.Total:N0}\r\n");
-
-                LanguageManager.Suscribir(this);
-                LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
             }
+
+            LanguageManager.Actualizar(int.Parse(SessionManager.getInstance.usuario.IdiomaId.id));
         }
 
         public void Actualizar(string idioma)
@@ -138,4 +151,3 @@ namespace GUI
         }
     }
 }
-

@@ -128,14 +128,19 @@ namespace Mapper
         {
             throw new NotImplementedException();
         }
-        public string CalcularDVH(BeCliente cliente)
+        public void ActualizarDVH(BeCancha c)
         {
-            string datos = $"{cliente.id}|{cliente.DNI}|{cliente.Nombre}|{cliente.Telefono}|{cliente.Direccion}";
-            using (var sha256 = SHA256.Create())
+            string datos = $"{c.id}|{c.Nombre}|{c.Precio}|{c.Capacidad}|{c.Estado}|{c.Observaciones}";
+            string dvh = HashingHelper.CalcularHash(datos);
+
+            ArrayList parametros = new ArrayList
             {
-                byte[] hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(datos));
-                return Convert.ToBase64String(hash);
-            }
+                new SqlParameter("@Tabla", "Cancha"),
+                new SqlParameter("@Id", int.Parse(c.id)),
+                new SqlParameter("@DVH", dvh)
+            };
+
+            dao.Escribir("sp_Actualizar_DVH", parametros);
         }
     }
 }

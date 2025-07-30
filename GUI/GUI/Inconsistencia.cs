@@ -12,7 +12,7 @@ namespace GUI
         private bool reparada = false;
         private int _idiomaId;
 
-        public Inconsistencia(int idiomaId) 
+        public Inconsistencia(int idiomaId)
         {
             InitializeComponent();
             this._idiomaId = idiomaId;
@@ -43,7 +43,7 @@ namespace GUI
 
             foreach (var tabla in tablas)
             {
-                var errores = dv.VerificarTabla(tabla); 
+                var errores = dv.VerificarTabla(tabla);
                 foreach (var err in errores)
                     sb.AppendLine($"Tabla: {tabla}, {err}");
             }
@@ -59,24 +59,12 @@ namespace GUI
                 DigitoVerificador dv = new DigitoVerificador();
 
                 foreach (var tabla in tablas)
-                    dv.RecalcularTablaVertical(tabla);
-
-                StringBuilder sb = new StringBuilder();
-                bool hayErrores = false;
-
-                foreach (var tabla in tablas)
                 {
-                    var errores = dv.VerificarTabla(tabla); 
-                    foreach (var err in errores)
-                    {
-                        hayErrores = true;
-                        sb.AppendLine($"Tabla: {tabla}, {err}");
-                    }
+                    dv.RecalcularDVH(tabla);  // ✅ Ahora todo lo hace desde la clase DigitoVerificador
+                    dv.RecalcularDVV(tabla);
                 }
 
-                textBox1.Text = sb.ToString();
-
-                if (!hayErrores)
+                if (!HayErrores(out string errores))
                 {
                     reparada = true;
                     MessageBox.Show("Integridad reparada correctamente.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -84,7 +72,7 @@ namespace GUI
                 }
                 else
                 {
-                    reparada = false;
+                    textBox1.Text = errores;
                     MessageBox.Show("Aún existen inconsistencias en la base de datos. Por favor, verifique los datos o consulte a un administrador.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -94,6 +82,28 @@ namespace GUI
             }
         }
 
+        private bool HayErrores(out string erroresStr)
+        {
+            StringBuilder sb = new StringBuilder();
+            bool hayErrores = false;
+
+            string[] tablas = { "Cliente", "Cancha", "Reserva" };
+            DigitoVerificador dv = new DigitoVerificador();
+
+            foreach (var tabla in tablas)
+            {
+                var errores = dv.VerificarTabla(tabla);
+                foreach (var err in errores)
+                {
+                    hayErrores = true;
+                    sb.AppendLine($"Tabla: {tabla}, {err}");
+                }
+            }
+
+            erroresStr = sb.ToString();
+            return hayErrores;
+        }
+
         public void Actualizar(string pIdioma)
         {
             Idioma _idioma = LanguageManager.lIdioma.Find(x => x.id == pIdioma);
@@ -101,6 +111,11 @@ namespace GUI
             btnRestaurarInc.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "btnRestaurarInc").Texto;
             lbInconsistencias.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "lbInconsistencias").Texto;
             this.Text = _idioma.lEtiqueta.Find(x => x.ControlT == "Inconsistencia").Texto;
+        }
+
+        private void btnRestaurarInc_Click(object sender, EventArgs e)
+        {
+            // Queda pendiente si querés implementar lógica adicional.
         }
     }
 }

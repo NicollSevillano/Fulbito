@@ -19,6 +19,7 @@ public class BeCancha : IEntity
         Capacidad = int.Parse(array[3].ToString());
         Estado = array[4].ToString();
         Observaciones = array[5].ToString();
+        DVH = array[6].ToString();
     }
     public BeCancha() { }
     public string id { get; set; }
@@ -27,4 +28,5 @@ public class BeCancha : IEntity
     public int Capacidad { get; set; }
     public string Estado { get; set; }
     public string Observaciones { get; set; }
+    public string DVH { get; set; }
 }

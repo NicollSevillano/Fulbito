@@ -1,21 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\",
+  "WorkspaceRootPath": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|c:\\users\\nssev\\onedrive\\escritorio\\fulbito\\gui\\be\\becancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|solutionrelative:be\\becancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\gui\\gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5DF1EF46-6022-451F-BF4D-F360621DEC0B}|Bll\\Bll.csproj|c:\\users\\nssev\\onedrive\\escritorio\\fulbito\\gui\\bll\\bllcancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5DF1EF46-6022-451F-BF4D-F360621DEC0B}|Bll\\Bll.csproj|solutionrelative:bll\\bllcancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\gui\\inconsistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\inconsistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|c:\\users\\nssev\\onedrive\\escritorio\\fulbito\\gui\\servicios\\digitoverificador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|c:\\users\\nicoll\\desktop\\fulbito\\gui\\gui\\cobrarreserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D06530F0-6C3F-4EDF-8010-657D3CF8BDF9}|GUI\\GUI.csproj|solutionrelative:gui\\cobrarreserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|c:\\users\\nicoll\\desktop\\fulbito\\gui\\be\\belusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE930A84-64DA-47BB-BA21-2B8B7430F29C}|Be\\Be.csproj|solutionrelative:be\\belusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\servicios\\digitoverificador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|solutionrelative:servicios\\digitoverificador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|c:\\users\\nssev\\onedrive\\escritorio\\fulbito\\gui\\servicios\\hashinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\servicios\\hashinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E20F9EA-5FAC-45B7-AD48-AF60456B4996}|Servicios\\Servicios.csproj|solutionrelative:servicios\\hashinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,64 +34,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BllCancha.cs",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Bll\\BllCancha.cs",
-              "RelativeDocumentMoniker": "Bll\\BllCancha.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Bll\\BllCancha.cs",
-              "RelativeToolTip": "Bll\\BllCancha.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T01:40:25.579Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BeCancha.cs",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Be\\BeCancha.cs",
-              "RelativeDocumentMoniker": "Be\\BeCancha.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Be\\BeCancha.cs",
-              "RelativeToolTip": "Be\\BeCancha.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T01:39:57.913Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HashingHelper.cs",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Servicios\\HashingHelper.cs",
-              "RelativeDocumentMoniker": "Servicios\\HashingHelper.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Servicios\\HashingHelper.cs",
-              "RelativeToolTip": "Servicios\\HashingHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "BelUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\Be\\BelUsuario.cs",
+              "RelativeDocumentMoniker": "Be\\BelUsuario.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\Be\\BelUsuario.cs",
+              "RelativeToolTip": "Be\\BelUsuario.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAswDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T01:14:05.812Z",
+              "WhenOpened": "2025-07-30T07:36:35.915Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "CobrarReserva.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\CobrarReserva.cs",
+              "RelativeDocumentMoniker": "GUI\\CobrarReserva.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\CobrarReserva.cs",
+              "RelativeToolTip": "GUI\\CobrarReserva.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAEwFsAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T07:30:15.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogIn.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\LogIn.cs",
+              "RelativeDocumentMoniker": "GUI\\LogIn.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\LogIn.cs",
+              "RelativeToolTip": "GUI\\LogIn.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAqwJUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T07:26:31.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Inconsistencia.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\Inconsistencia.cs",
+              "RelativeDocumentMoniker": "GUI\\Inconsistencia.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\GUI\\Inconsistencia.cs",
+              "RelativeToolTip": "GUI\\Inconsistencia.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwHkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T06:04:11.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HashingHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\Servicios\\HashingHelper.cs",
+              "RelativeDocumentMoniker": "Servicios\\HashingHelper.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\Servicios\\HashingHelper.cs",
+              "RelativeToolTip": "Servicios\\HashingHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T01:14:05.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "DigitoVerificador.cs",
-              "DocumentMoniker": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Servicios\\DigitoVerificador.cs",
+              "DocumentMoniker": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\Servicios\\DigitoVerificador.cs",
               "RelativeDocumentMoniker": "Servicios\\DigitoVerificador.cs",
-              "ToolTip": "C:\\Users\\nssev\\OneDrive\\Escritorio\\Fulbito\\GUI\\Servicios\\DigitoVerificador.cs",
+              "ToolTip": "C:\\Users\\Nicoll\\Desktop\\Fulbito\\GUI\\Servicios\\DigitoVerificador.cs",
               "RelativeToolTip": "Servicios\\DigitoVerificador.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAowEoAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAywHoAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-29T23:49:35.875Z",
               "EditorCaption": ""

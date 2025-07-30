@@ -62,7 +62,6 @@ namespace GUI
             string id = dgvCanchas.SelectedRows[0].Cells[0].Value.ToString();
             return lCancha.Find(x => x.id == id);
         }
-
         private void btnAltaCancha_Click(object sender, EventArgs e)
         {
             try
@@ -94,7 +93,6 @@ namespace GUI
                 );
 
                 bllCancha.Alta(nuevaCancha);
-                new DigitoVerificador().RecalcularTablaVertical("Cancha");
                 lCancha = bllCancha.Consulta();
                 RefrescarCancha();
                 LogBitacora.AgregarEvento("Agregar cancha", 1, SessionManager.getInstance.usuario, "Canchas");
@@ -121,8 +119,7 @@ namespace GUI
                 var reservas = blReserva.Consulta().FindAll(x => x.Cancha.id == cancha.id);
                 reservas.ForEach(r => blReserva.Baja(int.Parse(r.id)));
 
-                bllCancha.Baja(int.Parse(cancha.id));
-                new DigitoVerificador().RecalcularTablaVertical("Cancha");
+                bllCancha.Baja(int.Parse(cancha.id)); 
                 lCancha = bllCancha.Consulta();
                 RefrescarCancha();
                 LogBitacora.AgregarEvento("Eliminar cancha", 2, SessionManager.getInstance.usuario, "Canchas");
@@ -169,8 +166,7 @@ namespace GUI
                 cancha.Estado = cmbEstadoCancha.SelectedItem?.ToString() ?? "Disponible";
                 cancha.Observaciones = txtObservacionesCancha.Text;
 
-                bllCancha.Modificacion(cancha);
-                new DigitoVerificador().RecalcularTablaVertical("Cancha");
+                bllCancha.Modificacion(cancha); 
                 lCancha = bllCancha.Consulta();
                 RefrescarCancha();
                 MessageBox.Show("Cancha modificada.");

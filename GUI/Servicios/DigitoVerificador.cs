@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Servicios
@@ -12,77 +13,132 @@ namespace Servicios
     {
         private Dao dao = new Dao();
 
-        public List<string> VerificarTabla(string tableName)
+        public List<string> VerificarTabla(string tabla)
         {
             List<string> errores = new List<string>();
 
-            string spListarDVH = $"sp_ListarDVH_{tableName}";
-            DataTable dtDVH = dao.Leer(spListarDVH);
+            string sp = $"sp_ListarDVH_{tabla}";
+            DataTable dt = dao.Leer(sp);
 
-            StringBuilder sbDVH = new StringBuilder();
-            foreach (DataRow row in dtDVH.Rows)
+            StringBuilder todosLosDVH = new StringBuilder();
+
+            foreach (DataRow row in dt.Rows)
             {
-                string dvhActual = row["DVH"]?.ToString() ?? "";
-                sbDVH.Append(dvhActual);
+                string id = row[0].ToString();
+                string dvhBD = row["DVH"].ToString();
+                string dvhCalculado = CalcularDVH(row, tabla);
 
-                if (string.IsNullOrWhiteSpace(dvhActual))
+                todosLosDVH.Append(dvhBD);
+
+                if (string.IsNullOrWhiteSpace(dvhBD))
                 {
-                    errores.Add($"Registro ID: {row[0]} tiene DVH vacío.");
+                    errores.Add($"Tabla: {tabla}, Registro ID: {id} tiene DVH vacío.");
+                }
+                else if (dvhBD != dvhCalculado)
+                {
+                    errores.Add($"Tabla: {tabla}, Registro ID: {id} tiene DVH incorrecto.");
                 }
             }
 
-            string nuevoDVV = GetSHA256Base64(sbDVH.ToString());
+            string nuevoDVV = GetSHA256Base64(todosLosDVH.ToString());
 
-            var parametros = new ArrayList { new SqlParameter("@Tabla", tableName) };
-            DataTable dtDVV = dao.Leer("sp_Obtener_DVV", parametros);
-
-            if (dtDVV.Rows.Count == 0)
+            var parametros = new ArrayList
             {
-                errores.Add($"No existe DVV para la tabla {tableName}.");
+                new SqlParameter("@Tabla", tabla)
+            };
+            DataTable dvvTabla = dao.Leer("sp_Obtener_DVV", parametros);
+
+            if (dvvTabla.Rows.Count == 0)
+            {
+                errores.Add($"No existe DVV para la tabla {tabla}.");
             }
             else
             {
-                string dvvBD = dtDVV.Rows[0]["DVV"].ToString();
+                string dvvBD = dvvTabla.Rows[0]["DVV"].ToString();
                 if (dvvBD != nuevoDVV)
                 {
-                    errores.Add($"DVV de la tabla {tableName} es inválido.");
+                    errores.Add($"DVV de la tabla {tabla} es inválido.");
                 }
             }
 
             return errores;
         }
 
-        public void RecalcularDVV(string tableName)
+        public void RecalcularDVV(string tabla)
         {
-            string spListarDVH = $"sp_ListarDVH_{tableName}";
-            DataTable dtDVH = dao.Leer(spListarDVH);
+            string sp = $"sp_ListarDVH_{tabla}";
+            DataTable dt = dao.Leer(sp);
 
-            StringBuilder sbDVH = new StringBuilder();
-            foreach (DataRow row in dtDVH.Rows)
+            StringBuilder sb = new StringBuilder();
+            foreach (DataRow row in dt.Rows)
             {
                 if (row["DVH"] != DBNull.Value)
-                    sbDVH.Append(row["DVH"].ToString());
+                    sb.Append(row["DVH"].ToString());
             }
 
-            string nuevoDVV = GetSHA256Base64(sbDVH.ToString());
+            string nuevoDVV = GetSHA256Base64(sb.ToString());
 
-            var parametros = new ArrayList
-        {
-            new SqlParameter("@Tabla", tableName),
-            new SqlParameter("@DVV", nuevoDVV)
-        };
+            ArrayList parametros = new ArrayList
+            {
+                new SqlParameter("@Tabla", tabla),
+                new SqlParameter("@DVV", nuevoDVV)
+            };
 
             dao.Escribir("sp_InsertarOVerwrite_DVV", parametros);
         }
 
-        private string GetSHA256Base64(string input)
+        public void RecalcularDVH(string tabla)
         {
-            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            string sp = $"sp_ListarDVH_{tabla}";
+            DataTable dt = dao.Leer(sp);
+
+            foreach (DataRow row in dt.Rows)
             {
-                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
-                return Convert.ToBase64String(hashBytes);
+                string id = row[0].ToString();
+                string dvh = CalcularDVH(row, tabla);
+
+                ArrayList parametros = new ArrayList
+                {
+                    new SqlParameter("@Tabla", tabla),
+                    new SqlParameter("@Id", int.Parse(id)),
+                    new SqlParameter("@DVH", dvh)
+                };
+
+                dao.Escribir("sp_Actualizar_DVH", parametros);
             }
         }
-    }
 
+        private string CalcularDVH(DataRow row, string tabla)
+        {
+            switch (tabla)
+            {
+                case "Cliente":
+                    return CalcularHash($"{row["Id"]}{row["DNI"]}{row["Nombre"]}{row["Telefono"]}{row["Direccion"]}");
+
+                case "Cancha":
+                    return CalcularHash($"{row["Id"]}{row["TipoCancha"]}{row["Precio"]}{row["Capacidad"]}{row["Estado"]}{row["Observaciones"]}");
+
+                case "Reserva":
+                    string cancelada = row["Cancelada"] == DBNull.Value ? "false" : row["Cancelada"].ToString();
+                    return CalcularHash($"{row["Id"]}{row["CodigoClient"]}{row["CodigoCancha"]}{Convert.ToDateTime(row["Fecha"]).ToString("yyyy-MM-dd HH:mm")}{cancelada}");
+
+                default:
+                    return "";
+            }
+        }
+
+        private string CalcularHash(string texto)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(texto));
+                return Convert.ToBase64String(hash);
+            }
+        }
+
+        private string GetSHA256Base64(string input)
+        {
+            return CalcularHash(input);
+        }
+    }
 }
